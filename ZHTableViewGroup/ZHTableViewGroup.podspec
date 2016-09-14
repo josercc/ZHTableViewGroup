@@ -7,9 +7,9 @@ Pod::Spec.new do |s|
                    DESC
   s.homepage     = "https://github.com/15038777234/ZHTableViewGroup"
   s.license      = "MIT"
-  s.author             = { "15038777234" => "15038777234@163.com" }
+  s.author       = { "15038777234" => "15038777234@163.com" }
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/15038777234/ZHTableViewGroup.git", :tag => s.version }
-  s.source_files  = "ZHTableViewGroup/ZHTableViewSource/*"
+  s.source_files = "ZHTableViewGroup/ZHTableViewGroup/ZHTableViewSource/*"
   s.requires_arc = true
 end
