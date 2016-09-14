@@ -11,6 +11,13 @@
 		5D6559471D8900B5004023D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6559461D8900B5004023D8 /* AppDelegate.m */; };
 		5D65594F1D8900B5004023D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D65594E1D8900B5004023D8 /* Assets.xcassets */; };
 		5D6559521D8900B5004023D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6559501D8900B5004023D8 /* LaunchScreen.storyboard */; };
+		5D6559601D89012C004023D8 /* ZHTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D65595B1D89012C004023D8 /* ZHTableViewCell.m */; };
+		5D6559611D89012C004023D8 /* ZHTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D65595D1D89012C004023D8 /* ZHTableViewDataSource.m */; };
+		5D6559621D89012C004023D8 /* ZHTableViewGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D65595F1D89012C004023D8 /* ZHTableViewGroup.m */; };
+		5D6559661D8901AD004023D8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6559651D8901AC004023D8 /* HomeViewController.m */; };
+		5D65596C1D8902CB004023D8 /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D65596B1D8902CB004023D8 /* HomeView.m */; };
+		5D65596F1D89051C004023D8 /* HomeCellStyleOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D65596E1D89051C004023D8 /* HomeCellStyleOne.m */; };
+		5D6559721D89052C004023D8 /* HomeCellStyleTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6559711D89052C004023D8 /* HomeCellStyleTwo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +28,20 @@
 		5D65594E1D8900B5004023D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D6559511D8900B5004023D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D6559531D8900B5004023D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D65595A1D89012C004023D8 /* ZHTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewCell.h; sourceTree = "<group>"; };
+		5D65595B1D89012C004023D8 /* ZHTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewCell.m; sourceTree = "<group>"; };
+		5D65595C1D89012C004023D8 /* ZHTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewDataSource.h; sourceTree = "<group>"; };
+		5D65595D1D89012C004023D8 /* ZHTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewDataSource.m; sourceTree = "<group>"; };
+		5D65595E1D89012C004023D8 /* ZHTableViewGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewGroup.h; sourceTree = "<group>"; };
+		5D65595F1D89012C004023D8 /* ZHTableViewGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewGroup.m; sourceTree = "<group>"; };
+		5D6559641D8901AC004023D8 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		5D6559651D8901AC004023D8 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		5D65596A1D8902CB004023D8 /* HomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
+		5D65596B1D8902CB004023D8 /* HomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
+		5D65596D1D89051C004023D8 /* HomeCellStyleOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCellStyleOne.h; sourceTree = "<group>"; };
+		5D65596E1D89051C004023D8 /* HomeCellStyleOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCellStyleOne.m; sourceTree = "<group>"; };
+		5D6559701D89052C004023D8 /* HomeCellStyleTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCellStyleTwo.h; sourceTree = "<group>"; };
+		5D6559711D89052C004023D8 /* HomeCellStyleTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCellStyleTwo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +74,9 @@
 		5D6559411D8900B5004023D8 /* ZHTableViewGroup */ = {
 			isa = PBXGroup;
 			children = (
+				5D6559681D8902A5004023D8 /* View */,
+				5D6559631D89018A004023D8 /* Controller */,
+				5D6559591D89012C004023D8 /* ZHTableViewSource */,
 				5D6559451D8900B5004023D8 /* AppDelegate.h */,
 				5D6559461D8900B5004023D8 /* AppDelegate.m */,
 				5D65594E1D8900B5004023D8 /* Assets.xcassets */,
@@ -69,6 +93,41 @@
 				5D6559431D8900B5004023D8 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5D6559591D89012C004023D8 /* ZHTableViewSource */ = {
+			isa = PBXGroup;
+			children = (
+				5D65595A1D89012C004023D8 /* ZHTableViewCell.h */,
+				5D65595B1D89012C004023D8 /* ZHTableViewCell.m */,
+				5D65595C1D89012C004023D8 /* ZHTableViewDataSource.h */,
+				5D65595D1D89012C004023D8 /* ZHTableViewDataSource.m */,
+				5D65595E1D89012C004023D8 /* ZHTableViewGroup.h */,
+				5D65595F1D89012C004023D8 /* ZHTableViewGroup.m */,
+			);
+			path = ZHTableViewSource;
+			sourceTree = "<group>";
+		};
+		5D6559631D89018A004023D8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5D6559641D8901AC004023D8 /* HomeViewController.h */,
+				5D6559651D8901AC004023D8 /* HomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5D6559681D8902A5004023D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D65596A1D8902CB004023D8 /* HomeView.h */,
+				5D65596B1D8902CB004023D8 /* HomeView.m */,
+				5D65596D1D89051C004023D8 /* HomeCellStyleOne.h */,
+				5D65596E1D89051C004023D8 /* HomeCellStyleOne.m */,
+				5D6559701D89052C004023D8 /* HomeCellStyleTwo.h */,
+				5D6559711D89052C004023D8 /* HomeCellStyleTwo.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +199,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D6559621D89012C004023D8 /* ZHTableViewGroup.m in Sources */,
+				5D6559721D89052C004023D8 /* HomeCellStyleTwo.m in Sources */,
+				5D65596F1D89051C004023D8 /* HomeCellStyleOne.m in Sources */,
 				5D6559471D8900B5004023D8 /* AppDelegate.m in Sources */,
+				5D6559601D89012C004023D8 /* ZHTableViewCell.m in Sources */,
+				5D65596C1D8902CB004023D8 /* HomeView.m in Sources */,
+				5D6559611D89012C004023D8 /* ZHTableViewDataSource.m in Sources */,
 				5D6559441D8900B5004023D8 /* main.m in Sources */,
+				5D6559661D8901AD004023D8 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
