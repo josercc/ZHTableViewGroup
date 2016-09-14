@@ -30,7 +30,7 @@ Manger UITableView DataSource Cells
 pod 'ZHTableViewGroup'
 ```
 
-### 2.直接下载demo拖拽`UITableViewDataSource`到工程里面
+### 2.直接下载demo拖拽`ZHTableViewSource`到工程里面
 
 ## 怎么使用
 
