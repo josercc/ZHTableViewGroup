@@ -1,0 +1,19 @@
+PODS:
+  - Masonry (1.0.2)
+  - ZHTableViewGroup (0.1.0)
+
+DEPENDENCIES:
+  - Masonry
+  - ZHTableViewGroup (from `../`)
+
+EXTERNAL SOURCES:
+  ZHTableViewGroup:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  ZHTableViewGroup: d865079c2240123f21433019144284a21d6d16ab
+
+PODFILE CHECKSUM: 021401a6334f105e6404e24ce9f6a3d8eff70b71
+
+COCOAPODS: 1.2.0
