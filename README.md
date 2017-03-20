@@ -1,74 +1,89 @@
-# ZHTableViewGroup
+# Swift 版本请移步[这里](https://github.com/josercc/ZHTableViewGroupSwift)
 
-[![CI Status](http://img.shields.io/travis/15038777234/ZHTableViewGroup.svg?style=flat)](https://travis-ci.org/15038777234/ZHTableViewGroup)
-[![Version](https://img.shields.io/cocoapods/v/ZHTableViewGroup.svg?style=flat)](http://cocoapods.org/pods/ZHTableViewGroup)
-[![License](https://img.shields.io/cocoapods/l/ZHTableViewGroup.svg?style=flat)](http://cocoapods.org/pods/ZHTableViewGroup)
-[![Platform](https://img.shields.io/cocoapods/p/ZHTableViewGroup.svg?style=flat)](http://cocoapods.org/pods/ZHTableViewGroup)
+# ZHTableViewGroup为 UITableView 而生
 
-## Example
+![](http://olg3v8vew.bkt.clouddn.com/2017-03-16-38.gif)
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
-## Installation
-
-ZHTableViewGroup is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+## 怎么安装
 
 ```ruby
-<<<<<<< HEAD
-pod "ZHTableViewGroup"
-=======
-pod 'ZHTableViewGroup'
+pod 'ZHTableViewGroupObjc'
 ```
 
-### 2.直接下载demo拖拽`ZHTableViewSource`到工程里面
 
-## 怎么使用
 
-### 文件的结构
+### 怎么使用
 
-![](https://raw.githubusercontent.com/15038777234/ZHTableViewGroup/master/ZHTableViewDataSource.png)
+1. ### 初始化 ZHTableViewDataSource
 
-在例子里面声明一个变量
+   ```objc
+   @property (nonatomic, strong) ZHTableViewDataSource *dataSource;
+   self.dataSource = [[ZHTableViewDataSource alloc] initWithTableView:self.tableView];
+   ```
 
-```objective-c
-@property (nonatomic, strong) ZHTableViewDataSource *dataSource;
+2. ### 初始化 ZHTableViewGroup 
+
+   ```objc
+   [self.dataSource addGroupWithCompletionHandle:^(ZHTableViewGroup *group) {
+   }
+   ```
+
+3. ### 初始化 ZHTableViewCell
+
+   ```objc
+   [group addCellWithCompletionHandle:^(ZHTableViewCell *cell) {  
+   }
+   ```
+
+4. ### 配置 ZHTableViewCell
+
+   ```swift
+     cell.anyClass = [UITableViewCell class];
+               cell.cellNumber = self.cellTexts.count;
+               cell.height = 44;
+               cell.identifier = @"UITableViewCellIdentifier";
+               [cell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+                   NSString *string = self.cellTexts[indexPath.row];
+                   cell.textLabel.text = string;
+                   if ([self.selectTitles containsObject:string]) {
+                       cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                   } else {
+                       cell.accessoryType = UITableViewCellAccessoryNone;
+                   }
+               }];
+               [cell setDidSelectRowCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+                   NSString *string = self.cellTexts[indexPath.row];
+                   if ([self.selectTitles containsObject:string]) {
+                       [self.selectTitles removeObject:string];
+                   } else {
+                       [self.selectTitles addObject:string];
+                   }
+                   [self.tableView reloadData];
+               }];
+
+   ```
+
+5. ### 配置 UITableView的代理
+
+   ```objc
+   - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+       return [ZHTableViewDataSource heightForRowAtDataSource:self.dataSource indexPath:indexPath customHeightCompletionHandle:nil];
+   }
+   - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+       return [ZHTableViewDataSource numberOfRowsInSectionWithDataSource:self.dataSource section:section];
+   }
+   - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+       return [ZHTableViewDataSource cellForRowAtWithDataSource:self.dataSource indexPath:indexPath];
+   }
+   - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+       [tableView deselectRowAtIndexPath:indexPath animated:YES];
+       [ZHTableViewDataSource didSelectRowAtWithDataSource:self.dataSource indexPath:indexPath];
+   }
+
+   ```
+
+### 6 清除配置
+
+```objc
+[self.dataSource clearData];
 ```
-
-在UITableView的代理实现这些方法
-
-```objective-c
-#pragma mark - UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.dataSource.sectionNumber;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    ZHTableViewGroup *group = [self.dataSource groupWithIndex:section];
-    return group.rowNumber;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ZHTableViewGroup *group = [self.dataSource groupWithIndex:indexPath.section];
-    UITableViewCell *cell = [group cellWithIndexPath:indexPath];
-    return cell;
-}
-
-#pragma mark - UITableViewDelegate
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ZHTableViewGroup *group = [self.dataSource groupWithIndex:indexPath.section];
-    [group didSelectRowAtIndexPath:indexPath];
-}
-
->>>>>>> origin/master
-```
-
-## Author
-
-15038777234, 15038777234@163.com
-
-## License
-
-ZHTableViewGroup is available under the MIT license. See the LICENSE file for more info.

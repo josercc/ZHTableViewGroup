@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49A3E2ABDEBD5DA77D02ED2A /* Pods_ZHTableViewGroup_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD2ED0C6DB511E4A11C24DE /* Pods_ZHTableViewGroup_Example.framework */; };
+		5D0692F31E7F6061008BC142 /* ZHTableViewGroupObjc.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5D0692F21E7F6061008BC142 /* ZHTableViewGroupObjc.podspec */; };
 		5D9BCC821E7D2872001BD760 /* ZHBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BCC811E7D2872001BD760 /* ZHBaseTableViewCell.m */; };
 		5D9BCC851E7D2AB0001BD760 /* ZHCellOneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BCC841E7D2AB0001BD760 /* ZHCellOneTableViewCell.m */; };
 		5D9BCC881E7D2B09001BD760 /* ZHCellTwoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BCC871E7D2B09001BD760 /* ZHCellTwoTableViewCell.m */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		07436A433659DFAD7A803F1A /* Pods_ZHTableViewGroup_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZHTableViewGroup_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A4CD91F48BA10BBFFB3CD84 /* Pods-ZHTableViewGroup_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHTableViewGroup_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZHTableViewGroup_Tests/Pods-ZHTableViewGroup_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		5D0692F21E7F6061008BC142 /* ZHTableViewGroupObjc.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ZHTableViewGroupObjc.podspec; path = ../ZHTableViewGroupObjc.podspec; sourceTree = "<group>"; };
 		5D9BCC801E7D2872001BD760 /* ZHBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHBaseTableViewCell.h; sourceTree = "<group>"; };
 		5D9BCC811E7D2872001BD760 /* ZHBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHBaseTableViewCell.m; sourceTree = "<group>"; };
 		5D9BCC831E7D2AB0001BD760 /* ZHCellOneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCellOneTableViewCell.h; sourceTree = "<group>"; };
@@ -73,7 +75,6 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		6088A60FFF10A6A695136AF0 /* ZHTableViewGroup.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZHTableViewGroup.podspec; path = ../ZHTableViewGroup.podspec; sourceTree = "<group>"; };
 		67A8FA6550F7D2AFCBA00DF5 /* Pods-ZHTableViewGroup_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHTableViewGroup_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZHTableViewGroup_Example/Pods-ZHTableViewGroup_Example.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79FC9CA70C15FE1C388D8A0E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -222,7 +223,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				6088A60FFF10A6A695136AF0 /* ZHTableViewGroup.podspec */,
+				5D0692F21E7F6061008BC142 /* ZHTableViewGroupObjc.podspec */,
 				D8B4600E00FBCC66C103D15D /* README.md */,
 				79FC9CA70C15FE1C388D8A0E /* LICENSE */,
 			);
@@ -313,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				5D0692F31E7F6061008BC142 /* ZHTableViewGroupObjc.podspec in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
