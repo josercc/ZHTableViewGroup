@@ -10,7 +10,7 @@
 
 @implementation ZHTableViewHeaderFooter
 
-- (instancetype)initWithStyle:(ZHTableViewHeaderFooterStyle *)style {
+- (instancetype)initWithStyle:(ZHTableViewHeaderFooterStyle)style {
     if (self = [super init]) {
         _style = style;
     }

@@ -60,7 +60,7 @@
 
 + (NSInteger)numberOfSectionsWithDataSource:(ZHTableViewDataSource *)dataSource {
     if (!dataSource) {
-        return nil;
+        return 0;
     }
     return dataSource.groups.count;
 }
@@ -144,7 +144,7 @@
     if (!dataSource) {
         return nil;
     }
-    if (dataSource.groups <= section) {
+    if (dataSource.groups.count <= section) {
         return nil;
     }
     return  dataSource.groups[section];

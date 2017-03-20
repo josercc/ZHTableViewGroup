@@ -17,6 +17,6 @@ typedef NS_ENUM(NSUInteger, ZHTableViewHeaderFooterStyle) {
 
 @property (nonatomic, assign) ZHTableViewHeaderFooterStyle style;
 
-- (instancetype)initWithStyle:(ZHTableViewHeaderFooterStyle *)style;
+- (instancetype)initWithStyle:(ZHTableViewHeaderFooterStyle)style;
 
 @end
