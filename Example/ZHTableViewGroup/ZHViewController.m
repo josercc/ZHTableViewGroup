@@ -7,7 +7,7 @@
 //
 
 #import "ZHViewController.h"
-#import <ZHTableViewGroup/ZHTableViewDataSource.h>
+#import <ZHTableViewGroupObjc/ZHTableViewDataSource.h>
 #import "ZHCellOneTableViewCell.h"
 #import "ZHCellTwoTableViewCell.h"
 #import "ZHOtherTableViewCell.h"
@@ -128,30 +128,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [ZHTableViewDataSource heightForRowAtDataSource:self.dataSource indexPath:indexPath customHeightCompletionHandle:nil];
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return [ZHTableViewDataSource heightForHeaderInSectionWithDataSource:self.dataSource section:section customHeightCompletionHandle:nil];
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return [ZHTableViewDataSource heightForFooterInSectionWithDataSource:self.dataSource section:section customHeightCompletionHandle:nil];
-}
-- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return [ZHTableViewDataSource viewForHeaderInSectionWithDataSource:self.dataSource section:section];
-}
-- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [ZHTableViewDataSource viewForFooterInSectionWithDataSource:self.dataSource section:section];
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [ZHTableViewDataSource numberOfRowsInSectionWithDataSource:self.dataSource section:section];
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [ZHTableViewDataSource cellForRowAtWithDataSource:self.dataSource indexPath:indexPath];
-}
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [ZHTableViewDataSource numberOfSectionsWithDataSource:self.dataSource];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

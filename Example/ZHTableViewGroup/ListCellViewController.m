@@ -7,7 +7,7 @@
 //
 
 #import "ListCellViewController.h"
-#import <ZHTableViewGroup/ZHTableViewDataSource.h>
+#import <ZHTableViewGroupObjc/ZHTableViewDataSource.h>
 
 @interface ListCellViewController ()
 @property (nonatomic, strong) ZHTableViewDataSource *dataSource;
@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dataSource = [[ZHTableViewDataSource alloc] initWithTableView:self.tableView];
+    self.dataSource.autoConfigurationTableViewDelegate = NO;
     [self.dataSource addGroupWithCompletionHandle:^(ZHTableViewGroup *group) {
         [group addCellWithCompletionHandle:^(ZHTableViewCell *cell) {
             cell.anyClass = [UITableViewCell class];

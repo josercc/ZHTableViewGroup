@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'ZHTableViewGroup_Example' do
-  pod 'ZHTableViewGroup', :path => '../'
+  pod 'ZHTableViewGroupObjc', :path => '../ZHTableViewGroupObjc.podspec'
   pod 'Masonry'
   target 'ZHTableViewGroup_Tests' do
     inherit! :search_paths

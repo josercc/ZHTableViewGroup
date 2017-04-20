@@ -65,7 +65,7 @@ THE SOFTWARE.
 			<key>License</key>
 			<string>MIT</string>
 			<key>Title</key>
-			<string>ZHTableViewGroup</string>
+			<string>ZHTableViewGroupObjc</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

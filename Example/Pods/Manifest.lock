@@ -1,19 +1,19 @@
 PODS:
   - Masonry (1.0.2)
-  - ZHTableViewGroup (0.1.0)
+  - ZHTableViewGroupObjc (2.0.1)
 
 DEPENDENCIES:
   - Masonry
-  - ZHTableViewGroup (from `../`)
+  - ZHTableViewGroupObjc (from `../ZHTableViewGroupObjc.podspec`)
 
 EXTERNAL SOURCES:
-  ZHTableViewGroup:
-    :path: "../"
+  ZHTableViewGroupObjc:
+    :path: "../ZHTableViewGroupObjc.podspec"
 
 SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  ZHTableViewGroup: d865079c2240123f21433019144284a21d6d16ab
+  ZHTableViewGroupObjc: 438681271d26ff065be9ad3a9853dcb1f1e335f8
 
-PODFILE CHECKSUM: 021401a6334f105e6404e24ce9f6a3d8eff70b71
+PODFILE CHECKSUM: 2c449362094546f7d263ba0db5867079c5d66c39
 
 COCOAPODS: 1.2.0

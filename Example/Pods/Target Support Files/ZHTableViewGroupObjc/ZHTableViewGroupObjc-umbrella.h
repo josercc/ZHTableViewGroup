@@ -10,12 +10,13 @@
 #endif
 #endif
 
+#import "ZHAutoConfigurationTableViewDelegate.h"
 #import "ZHTableViewBaseModel.h"
 #import "ZHTableViewCell.h"
 #import "ZHTableViewDataSource.h"
 #import "ZHTableViewGroup.h"
 #import "ZHTableViewHeaderFooter.h"
 
-FOUNDATION_EXPORT double ZHTableViewGroupVersionNumber;
-FOUNDATION_EXPORT const unsigned char ZHTableViewGroupVersionString[];
+FOUNDATION_EXPORT double ZHTableViewGroupObjcVersionNumber;
+FOUNDATION_EXPORT const unsigned char ZHTableViewGroupObjcVersionString[];
 
