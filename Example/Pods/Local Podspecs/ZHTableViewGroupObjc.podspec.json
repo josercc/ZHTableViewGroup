@@ -1,6 +1,6 @@
 {
   "name": "ZHTableViewGroupObjc",
-  "version": "2.0.1",
+  "version": "2.5.0",
   "summary": "Manger UITableView DataSource More Cell Style",
   "homepage": "https://github.com/josercc/ZHTableViewGroup",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/josercc/ZHTableViewGroup.git",
-    "tag": "2.0.1"
+    "tag": "2.5.0"
   },
   "platforms": {
     "ios": "8.0"

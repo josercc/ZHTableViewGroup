@@ -13,7 +13,7 @@
 #import "ZHOtherTableViewCell.h"
 #import "ListCellViewController.h"
 
-@interface ZHViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ZHViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) ZHTableViewDataSource *dataSource;
@@ -30,7 +30,6 @@
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.backgroundColor = [UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1.0];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-	// Do any additional setup after loading the view, typically from a nib.
     self.dataSource = [[ZHTableViewDataSource alloc] initWithTableView:self.tableView];
 
 }
@@ -124,11 +123,6 @@
     cell.identifier = identifier;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if (![segue.destinationViewController isKindOfClass:[UINavigationController class]]) {

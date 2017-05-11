@@ -26,15 +26,26 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6003F5AD195388D20070C39A"
-               BuildableName = "ZHTableViewGroup_Tests.xctest"
-               BlueprintName = "ZHTableViewGroup_Tests"
+               BlueprintIdentifier = "5D5C593F1EC468A800CA883D"
+               BuildableName = "ZHTableViewGroup_ExampleTests.xctest"
+               BlueprintName = "ZHTableViewGroup_ExampleTests"
+               ReferencedContainer = "container:ZHTableViewGroup.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5D5C594D1EC468B400CA883D"
+               BuildableName = "ZHTableViewGroup_ExampleUITests.xctest"
+               BlueprintName = "ZHTableViewGroup_ExampleUITests"
                ReferencedContainer = "container:ZHTableViewGroup.xcodeproj">
             </BuildableReference>
          </TestableReference>

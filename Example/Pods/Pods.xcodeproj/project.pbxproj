@@ -10,16 +10,14 @@
 		04A7D6AADAB213CE7D26F8EAD2F87536 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AD04C760F0EB4FE7B23D85D56145A97F /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		068EF598E554EC57038ACFB89CC2C47A /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FF217FE4E512E3883BAD867868CB42D9 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		091D17D5D8F832D28546A72B788CF0AE /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0183E721D7FD6AF70B4A911C1B1B95 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DD85E9E6A935A5D2527925CA0302605 /* Pods-ZHTableViewGroup_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 934BE13ABD89C32E143AF220BADA4142 /* Pods-ZHTableViewGroup_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DD85E9E6A935A5D2527925CA0302605 /* Pods-ZHTableViewGroup_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7347F0EE4F406714E83A64092A8C056 /* Pods-ZHTableViewGroup_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0F3DF5C3BEFCC9838B53C37735B414BE /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A214B89738295B4A4B00EEB1960E8865 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		0FDB2B4F75591851F0F119EAE70B3F63 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F69E835336330FF06E7268D32D667C9 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A6AA827EA4FA220B1889CA00F5CA282 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
 		1C4130BD54AE2DED52F2604B0C7469B4 /* ZHTableViewGroupObjc-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E2537D31CAB70CE99DE94FF775C0D42 /* ZHTableViewGroupObjc-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1FE884CEED22E040F7455B1BC505A23C /* Pods-ZHTableViewGroup_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE37E5725732B26C50C7A8B85A3CE3B5 /* Pods-ZHTableViewGroup_Example-dummy.m */; };
+		1FE884CEED22E040F7455B1BC505A23C /* Pods-ZHTableViewGroup_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C70EE9DD93FDE95B45FA69827F25FF0 /* Pods-ZHTableViewGroup_Example-dummy.m */; };
 		24FAA872FD55BA1F85EA08A948A0BFDD /* ZHAutoConfigurationTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B481D38A3559EB0D77F331A842EAE6 /* ZHAutoConfigurationTableViewDelegate.m */; };
 		2854C9B1086758BD2B6681206B6759B4 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6D5C71A7A4B3156186EC98A377E8543 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2949C0FC3ECB1FAF6804F42FF3A08822 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
-		3A53B0CBCAAFFBD8F560D677345AD18C /* Pods-ZHTableViewGroup_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 628FE0FCE66259B3049F8A2441F566DB /* Pods-ZHTableViewGroup_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F2C10DED6391DB4F2704FA24EAE1D4A /* ZHTableViewGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 506971BD715612817C1A712DFCC6981C /* ZHTableViewGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F8F9072EE7EB09928D69A33D8E1D62E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
 		457ACF9150DCF9AF445B129CC9678FB6 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 13FC8E35EDBC629D62166DD797E6DE52 /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,7 +47,6 @@
 		C0A16E00B4BC2D88A7833D5DAED62942 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A649F9297535214EF97548C9EA9FA33 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF22EAFFC2F81B0426E2165AC93E44 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = ECBBB506D4D551AB1A637EE3145A459E /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC8F9B4A1AC4E276EA8AA4C6F2BF3CD4 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 303B58A2959C8EEE96799AD558DDA1D3 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D05F4AA3ADC3E85349E3C7FE80AFB387 /* Pods-ZHTableViewGroup_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 025283003C8495104CC3F8D2E0603CC4 /* Pods-ZHTableViewGroup_Tests-dummy.m */; };
 		D8B1525CB3DFCBD8E5032680530413D9 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8187F5CAD09C6C6B2B54C65B4A807C9 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9ED13A0C6634146BA954D3A188640FB /* ZHTableViewBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 68785DF4822D9B8B1FE35DA00C9AF960 /* ZHTableViewBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC9C7E87B4E28F5FF5CC08A03A9A0FB6 /* ZHTableViewHeaderFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCA068B2A3FBB3228D9DED05923EB4A /* ZHTableViewHeaderFooter.m */; };
@@ -77,36 +74,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		025283003C8495104CC3F8D2E0603CC4 /* Pods-ZHTableViewGroup_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZHTableViewGroup_Tests-dummy.m"; sourceTree = "<group>"; };
-		07A69A0018A8A85C0CC7FBC40E58E4D4 /* Pods-ZHTableViewGroup_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ZHTableViewGroup_Tests.modulemap"; sourceTree = "<group>"; };
 		0925CC604B01F156279E8952DDE3EDDB /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
+		0C70EE9DD93FDE95B45FA69827F25FF0 /* Pods-ZHTableViewGroup_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZHTableViewGroup_Example-dummy.m"; sourceTree = "<group>"; };
 		0C9EBA8BA6A74CCEF5B9D90C2F98F70F /* ZHTableViewGroupObjc-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZHTableViewGroupObjc-dummy.m"; sourceTree = "<group>"; };
 		0E2537D31CAB70CE99DE94FF775C0D42 /* ZHTableViewGroupObjc-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZHTableViewGroupObjc-umbrella.h"; sourceTree = "<group>"; };
 		13FC8E35EDBC629D62166DD797E6DE52 /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
 		1F0183E721D7FD6AF70B4A911C1B1B95 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
-		2273965D65C67921AC6B4303DCADB52E /* Pods-ZHTableViewGroup_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZHTableViewGroup_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		267816E84732F2E53069A4D0E4565C77 /* Pods_ZHTableViewGroup_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZHTableViewGroup_Tests.framework; path = "Pods-ZHTableViewGroup_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		29B581C111F9BAA7A8DC1FE89242280C /* Pods-ZHTableViewGroup_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHTableViewGroup_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		2F69E835336330FF06E7268D32D667C9 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
 		3027ECF3675B7D92CFE998E7807ED8BD /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Masonry.modulemap; sourceTree = "<group>"; };
 		303B58A2959C8EEE96799AD558DDA1D3 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
-		32FDF446B332E7C58313D654CADE2D55 /* Pods-ZHTableViewGroup_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZHTableViewGroup_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		351339F2C63CB5AE02AE780B6F9750BB /* Pods-ZHTableViewGroup_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZHTableViewGroup_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		36AFF84F22B53D30BD7808A4A2EA35BE /* ZHTableViewGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewGroup.m; sourceTree = "<group>"; };
 		3980E01C213ECEDEABAC38C1CFD3946D /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		3E99FB83F189AFAEEA6D4E7A6F9E67F6 /* Pods-ZHTableViewGroup_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZHTableViewGroup_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		4BAD09C18A5716A5EE8872BAD9C305E7 /* Pods-ZHTableViewGroup_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZHTableViewGroup_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		4D72344B279B0DBBF74FAFA21FB1585C /* Pods_ZHTableViewGroup_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZHTableViewGroup_Example.framework; path = "Pods-ZHTableViewGroup_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		506971BD715612817C1A712DFCC6981C /* ZHTableViewGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZHTableViewGroup.h; sourceTree = "<group>"; };
 		537638D0C329C86D4ED401237F5D895F /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
 		5A649F9297535214EF97548C9EA9FA33 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		5DC5A1BB01F2259B459E0E0D432216DA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B9C6C0736A3AF50501E8DB47EF2B934 /* ZHTableViewGroupObjc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZHTableViewGroupObjc.framework; path = ZHTableViewGroupObjc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		611E26C24600589F4729E5EF510272FB /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
 		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		61881F60AB333EA86CE7881063A4BA60 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		61C635FA63B207AC12EA2BD25D894A65 /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
-		628FE0FCE66259B3049F8A2441F566DB /* Pods-ZHTableViewGroup_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZHTableViewGroup_Tests-umbrella.h"; sourceTree = "<group>"; };
 		6495A95CBF8858C495F920D3B08E80EE /* ZHTableViewGroupObjc.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ZHTableViewGroupObjc.modulemap; sourceTree = "<group>"; };
 		68785DF4822D9B8B1FE35DA00C9AF960 /* ZHTableViewBaseModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZHTableViewBaseModel.h; sourceTree = "<group>"; };
-		689FD526C5AE3DB608A73584F87C73A4 /* Pods-ZHTableViewGroup_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHTableViewGroup_Example-frameworks.sh"; sourceTree = "<group>"; };
 		6E4875E63FFAFF84A3CDFE99F28B551E /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		77F2CF8861113B6F7AAE7EA65C6A7C1B /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
 		79BEFB59B86F59C579FF7594DCF78FEB /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -114,42 +104,38 @@
 		7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		7F44A621BE24B87AEF75DD7193846188 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FCA068B2A3FBB3228D9DED05923EB4A /* ZHTableViewHeaderFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewHeaderFooter.m; sourceTree = "<group>"; };
-		867EAD3546D9410D98889CD7648B3D8A /* Pods_ZHTableViewGroup_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZHTableViewGroup_Example.framework; path = "Pods-ZHTableViewGroup_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88189BA494873EDB32C9E4D66A7E4F86 /* ZHTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZHTableViewCell.h; sourceTree = "<group>"; };
-		8A6563DA27867EC687B9027CAF2908F4 /* Pods-ZHTableViewGroup_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZHTableViewGroup_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		934BE13ABD89C32E143AF220BADA4142 /* Pods-ZHTableViewGroup_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZHTableViewGroup_Example-umbrella.h"; sourceTree = "<group>"; };
+		89CAF3E24CEEE07C53F831374CED78EC /* Pods-ZHTableViewGroup_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZHTableViewGroup_Example.release.xcconfig"; sourceTree = "<group>"; };
+		8AA9F3587993229229E1B8A80168E440 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93EC196D7607BD41C91AA50F17C50213 /* ZHTableViewDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewDataSource.m; sourceTree = "<group>"; };
 		96DCAB46CA2931B8140F2639F17404AF /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
-		97012DB626626573FFC322650F435622 /* ZHTableViewGroupObjc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZHTableViewGroupObjc.framework; path = ZHTableViewGroupObjc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F79D5D37A0D689A469CC1287819BEA /* ZHTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewCell.m; sourceTree = "<group>"; };
 		986CB32629319F7F2256662716334944 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
-		9A9804A5CD9001878E82D7C81EE1F7B5 /* Pods-ZHTableViewGroup_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHTableViewGroup_Tests-resources.sh"; sourceTree = "<group>"; };
 		A02D339E60E114FCC992372E93245BA1 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
 		A214B89738295B4A4B00EEB1960E8865 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		A237EF6FBAA183AAAC3DAC712454E48A /* ZHTableViewDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZHTableViewDataSource.h; sourceTree = "<group>"; };
+		A2D23DF866B8F9F5D61345BD0B7FBDB5 /* Pods-ZHTableViewGroup_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ZHTableViewGroup_Example.modulemap"; sourceTree = "<group>"; };
 		A46B2541A3F7D3D00BEA0A5D55AA686A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A54AB98BD14A06BFD6C9253A936559A8 /* Pods-ZHTableViewGroup_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZHTableViewGroup_Example.release.xcconfig"; sourceTree = "<group>"; };
-		A66B151B1C326A3FCDE62D8F8C2CE51B /* Pods-ZHTableViewGroup_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZHTableViewGroup_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A5196A28A8435D41712344303C1384BE /* Pods-ZHTableViewGroup_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZHTableViewGroup_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		A8D303F323C81E94878C04012BB13066 /* ZHTableViewGroupObjc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZHTableViewGroupObjc.xcconfig; sourceTree = "<group>"; };
 		AD04C760F0EB4FE7B23D85D56145A97F /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		B1C550CDA10D592ABB6A0383A3509F05 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
-		B7DAC33AD33F881F5A10E59BB30CCE80 /* Pods-ZHTableViewGroup_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHTableViewGroup_Example-resources.sh"; sourceTree = "<group>"; };
 		C33BDE0EA1481F80BD5C989DBF5A2863 /* ZHTableViewGroupObjc-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZHTableViewGroupObjc-prefix.pch"; sourceTree = "<group>"; };
-		C3618737BC57BF2A0432B4DD4FC20F66 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C484EF8499F67EC81CA7E27930A63CDC /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
+		C4F52DEA50B2EA3BB49B55CA3F8325DF /* Pods-ZHTableViewGroup_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZHTableViewGroup_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C6D5C71A7A4B3156186EC98A377E8543 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		C6DCB25805800D9975F0889EBCBC5C6B /* ZHTableViewBaseModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewBaseModel.m; sourceTree = "<group>"; };
 		CD9460636A228DA2C8F5EC4A2AB7EBB6 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		D2B481D38A3559EB0D77F331A842EAE6 /* ZHAutoConfigurationTableViewDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZHAutoConfigurationTableViewDelegate.m; sourceTree = "<group>"; };
-		DE37E5725732B26C50C7A8B85A3CE3B5 /* Pods-ZHTableViewGroup_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZHTableViewGroup_Example-dummy.m"; sourceTree = "<group>"; };
+		D7347F0EE4F406714E83A64092A8C056 /* Pods-ZHTableViewGroup_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZHTableViewGroup_Example-umbrella.h"; sourceTree = "<group>"; };
 		E24F4FB86BFED8F6D769DE0075434999 /* ZHTableViewHeaderFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZHTableViewHeaderFooter.h; sourceTree = "<group>"; };
-		E7E124B4E469B52ADE5815060E75CB36 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8CC2A3D3F178AA8D201C59424F6C9BC /* ZHAutoConfigurationTableViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZHAutoConfigurationTableViewDelegate.h; sourceTree = "<group>"; };
 		ECBBB506D4D551AB1A637EE3145A459E /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
-		EEAC4483935E016D00D85790E0DE4CA2 /* Pods-ZHTableViewGroup_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZHTableViewGroup_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		EF3F3103DDDA0AFB2B7F6E13DBFEE383 /* Pods-ZHTableViewGroup_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ZHTableViewGroup_Example.modulemap"; sourceTree = "<group>"; };
+		EE56DE906661318D8CB970FED8E5C8B3 /* Pods-ZHTableViewGroup_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHTableViewGroup_Example-resources.sh"; sourceTree = "<group>"; };
+		F1A4E518D39D9F744F755B03CD013525 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8187F5CAD09C6C6B2B54C65B4A807C9 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		FBBB45D1814DA64872A2A6A5E05C694A /* Pods-ZHTableViewGroup_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZHTableViewGroup_Example-frameworks.sh"; sourceTree = "<group>"; };
 		FE937DE71A73D4B7779FF934EC2373E2 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		FF217FE4E512E3883BAD867868CB42D9 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
 		FF3818136FED67BD32E3A7FAEDE4F68F /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
@@ -161,14 +147,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F8F9072EE7EB09928D69A33D8E1D62E /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4BEBE25D169FC1EA81E881D47C5A7221 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1A6AA827EA4FA220B1889CA00F5CA282 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,37 +170,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		038EF4F22BB4F2D4C1DB67B1C38930F5 /* Pods-ZHTableViewGroup_Tests */ = {
+		09FFEC17ED06AE8121F70C11C78C4DE0 /* Pods-ZHTableViewGroup_Example */ = {
 			isa = PBXGroup;
 			children = (
-				E7E124B4E469B52ADE5815060E75CB36 /* Info.plist */,
-				07A69A0018A8A85C0CC7FBC40E58E4D4 /* Pods-ZHTableViewGroup_Tests.modulemap */,
-				32FDF446B332E7C58313D654CADE2D55 /* Pods-ZHTableViewGroup_Tests-acknowledgements.markdown */,
-				3E99FB83F189AFAEEA6D4E7A6F9E67F6 /* Pods-ZHTableViewGroup_Tests-acknowledgements.plist */,
-				025283003C8495104CC3F8D2E0603CC4 /* Pods-ZHTableViewGroup_Tests-dummy.m */,
-				29B581C111F9BAA7A8DC1FE89242280C /* Pods-ZHTableViewGroup_Tests-frameworks.sh */,
-				9A9804A5CD9001878E82D7C81EE1F7B5 /* Pods-ZHTableViewGroup_Tests-resources.sh */,
-				628FE0FCE66259B3049F8A2441F566DB /* Pods-ZHTableViewGroup_Tests-umbrella.h */,
-				2273965D65C67921AC6B4303DCADB52E /* Pods-ZHTableViewGroup_Tests.debug.xcconfig */,
-				8A6563DA27867EC687B9027CAF2908F4 /* Pods-ZHTableViewGroup_Tests.release.xcconfig */,
-			);
-			name = "Pods-ZHTableViewGroup_Tests";
-			path = "Target Support Files/Pods-ZHTableViewGroup_Tests";
-			sourceTree = "<group>";
-		};
-		2C1FE063410A70C56855AE4EB7FD3B83 /* Pods-ZHTableViewGroup_Example */ = {
-			isa = PBXGroup;
-			children = (
-				5DC5A1BB01F2259B459E0E0D432216DA /* Info.plist */,
-				EF3F3103DDDA0AFB2B7F6E13DBFEE383 /* Pods-ZHTableViewGroup_Example.modulemap */,
-				A66B151B1C326A3FCDE62D8F8C2CE51B /* Pods-ZHTableViewGroup_Example-acknowledgements.markdown */,
-				4BAD09C18A5716A5EE8872BAD9C305E7 /* Pods-ZHTableViewGroup_Example-acknowledgements.plist */,
-				DE37E5725732B26C50C7A8B85A3CE3B5 /* Pods-ZHTableViewGroup_Example-dummy.m */,
-				689FD526C5AE3DB608A73584F87C73A4 /* Pods-ZHTableViewGroup_Example-frameworks.sh */,
-				B7DAC33AD33F881F5A10E59BB30CCE80 /* Pods-ZHTableViewGroup_Example-resources.sh */,
-				934BE13ABD89C32E143AF220BADA4142 /* Pods-ZHTableViewGroup_Example-umbrella.h */,
-				EEAC4483935E016D00D85790E0DE4CA2 /* Pods-ZHTableViewGroup_Example.debug.xcconfig */,
-				A54AB98BD14A06BFD6C9253A936559A8 /* Pods-ZHTableViewGroup_Example.release.xcconfig */,
+				8AA9F3587993229229E1B8A80168E440 /* Info.plist */,
+				A2D23DF866B8F9F5D61345BD0B7FBDB5 /* Pods-ZHTableViewGroup_Example.modulemap */,
+				351339F2C63CB5AE02AE780B6F9750BB /* Pods-ZHTableViewGroup_Example-acknowledgements.markdown */,
+				A5196A28A8435D41712344303C1384BE /* Pods-ZHTableViewGroup_Example-acknowledgements.plist */,
+				0C70EE9DD93FDE95B45FA69827F25FF0 /* Pods-ZHTableViewGroup_Example-dummy.m */,
+				FBBB45D1814DA64872A2A6A5E05C694A /* Pods-ZHTableViewGroup_Example-frameworks.sh */,
+				EE56DE906661318D8CB970FED8E5C8B3 /* Pods-ZHTableViewGroup_Example-resources.sh */,
+				D7347F0EE4F406714E83A64092A8C056 /* Pods-ZHTableViewGroup_Example-umbrella.h */,
+				C4F52DEA50B2EA3BB49B55CA3F8325DF /* Pods-ZHTableViewGroup_Example.debug.xcconfig */,
+				89CAF3E24CEEE07C53F831374CED78EC /* Pods-ZHTableViewGroup_Example.release.xcconfig */,
 			);
 			name = "Pods-ZHTableViewGroup_Example";
 			path = "Target Support Files/Pods-ZHTableViewGroup_Example";
@@ -244,17 +204,6 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		7932D2E640A42CE33D754706B7F33A09 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C3618737BC57BF2A0432B4DD4FC20F66 /* Masonry.framework */,
-				867EAD3546D9410D98889CD7648B3D8A /* Pods_ZHTableViewGroup_Example.framework */,
-				267816E84732F2E53069A4D0E4565C77 /* Pods_ZHTableViewGroup_Tests.framework */,
-				97012DB626626573FFC322650F435622 /* ZHTableViewGroupObjc.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -262,8 +211,8 @@
 				72AD2FE34F66097B4058D59F7676D674 /* Development Pods */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				E9B49E9D4F6BC02AA78DCF86BCED2145 /* Pods */,
-				7932D2E640A42CE33D754706B7F33A09 /* Products */,
-				E1CD6B16C297CE253B71C2B4A1570993 /* Targets Support Files */,
+				DF1C886469711BB18464015FFAECCEFD /* Products */,
+				F9618C38C5199E43336469C01D093DA3 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -349,13 +298,14 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		E1CD6B16C297CE253B71C2B4A1570993 /* Targets Support Files */ = {
+		DF1C886469711BB18464015FFAECCEFD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2C1FE063410A70C56855AE4EB7FD3B83 /* Pods-ZHTableViewGroup_Example */,
-				038EF4F22BB4F2D4C1DB67B1C38930F5 /* Pods-ZHTableViewGroup_Tests */,
+				F1A4E518D39D9F744F755B03CD013525 /* Masonry.framework */,
+				4D72344B279B0DBBF74FAFA21FB1585C /* Pods_ZHTableViewGroup_Example.framework */,
+				5B9C6C0736A3AF50501E8DB47EF2B934 /* ZHTableViewGroupObjc.framework */,
 			);
-			name = "Targets Support Files";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		E6EE98446B568159EE277B68FD442AF0 /* iOS */ = {
@@ -385,6 +335,14 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		F9618C38C5199E43336469C01D093DA3 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				09FFEC17ED06AE8121F70C11C78C4DE0 /* Pods-ZHTableViewGroup_Example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		FD8B28087B2EB888B92D1307E7174116 /* ZHTableViewGroup */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,14 +360,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DD85E9E6A935A5D2527925CA0302605 /* Pods-ZHTableViewGroup_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C314B5F732FCC4E820B4283F13A62BD1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3A53B0CBCAAFFBD8F560D677345AD18C /* Pods-ZHTableViewGroup_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +419,7 @@
 			);
 			name = "Pods-ZHTableViewGroup_Example";
 			productName = "Pods-ZHTableViewGroup_Example";
-			productReference = 867EAD3546D9410D98889CD7648B3D8A /* Pods_ZHTableViewGroup_Example.framework */;
+			productReference = 4D72344B279B0DBBF74FAFA21FB1585C /* Pods_ZHTableViewGroup_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		596130115969121B51063A5F047C3A50 /* ZHTableViewGroupObjc */ = {
@@ -486,24 +436,7 @@
 			);
 			name = ZHTableViewGroupObjc;
 			productName = ZHTableViewGroupObjc;
-			productReference = 97012DB626626573FFC322650F435622 /* ZHTableViewGroupObjc.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		5C7D02A7C356CF06E0BE085FB3037710 /* Pods-ZHTableViewGroup_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D0B7BA76432D05EE7ED39E46437BF6C4 /* Build configuration list for PBXNativeTarget "Pods-ZHTableViewGroup_Tests" */;
-			buildPhases = (
-				8BF9744932EBE30EA5D2811AE45E57FF /* Sources */,
-				4BEBE25D169FC1EA81E881D47C5A7221 /* Frameworks */,
-				C314B5F732FCC4E820B4283F13A62BD1 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-ZHTableViewGroup_Tests";
-			productName = "Pods-ZHTableViewGroup_Tests";
-			productReference = 267816E84732F2E53069A4D0E4565C77 /* Pods_ZHTableViewGroup_Tests.framework */;
+			productReference = 5B9C6C0736A3AF50501E8DB47EF2B934 /* ZHTableViewGroupObjc.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D52144DE9D7255DE912490FF5A806573 /* Masonry */ = {
@@ -520,7 +453,7 @@
 			);
 			name = Masonry;
 			productName = Masonry;
-			productReference = C3618737BC57BF2A0432B4DD4FC20F66 /* Masonry.framework */;
+			productReference = F1A4E518D39D9F744F755B03CD013525 /* Masonry.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -540,13 +473,12 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 7932D2E640A42CE33D754706B7F33A09 /* Products */;
+			productRefGroup = DF1C886469711BB18464015FFAECCEFD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				D52144DE9D7255DE912490FF5A806573 /* Masonry */,
 				124B08BB7318961083B92EC97C08C2EB /* Pods-ZHTableViewGroup_Example */,
-				5C7D02A7C356CF06E0BE085FB3037710 /* Pods-ZHTableViewGroup_Tests */,
 				596130115969121B51063A5F047C3A50 /* ZHTableViewGroupObjc */,
 			);
 		};
@@ -593,14 +525,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BF9744932EBE30EA5D2811AE45E57FF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D05F4AA3ADC3E85349E3C7FE80AFB387 /* Pods-ZHTableViewGroup_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -619,75 +543,49 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1B739794B2D722DB4F9741F018ACC89A /* Release */ = {
+		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A54AB98BD14A06BFD6C9253A936559A8 /* Pods-ZHTableViewGroup_Example.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ZHTableViewGroup_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ZHTableViewGroup_Example/Pods-ZHTableViewGroup_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ZHTableViewGroup_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
 			};
-			name = Release;
-		};
-		3376AE912BD6F9F7C7C5A2A331452ECF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A6563DA27867EC687B9027CAF2908F4 /* Pods-ZHTableViewGroup_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ZHTableViewGroup_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ZHTableViewGroup_Tests/Pods-ZHTableViewGroup_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ZHTableViewGroup_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
+			name = Debug;
 		};
 		361A22A3C2D6DFC9CFA8B87DEB0C5FFE /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -712,6 +610,81 @@
 				MODULEMAP_FILE = "Target Support Files/ZHTableViewGroupObjc/ZHTableViewGroupObjc.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = ZHTableViewGroupObjc;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		781B0AC299C8AECE154DEAD8B83784A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89CAF3E24CEEE07C53F831374CED78EC /* Pods-ZHTableViewGroup_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ZHTableViewGroup_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ZHTableViewGroup_Example/Pods-ZHTableViewGroup_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ZHTableViewGroup_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -782,160 +755,6 @@
 			};
 			name = Debug;
 		};
-		871471A1452AAB57F68BF6E673597CCD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EEAC4483935E016D00D85790E0DE4CA2 /* Pods-ZHTableViewGroup_Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ZHTableViewGroup_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ZHTableViewGroup_Example/Pods-ZHTableViewGroup_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ZHTableViewGroup_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		9B77358AD579D118436AE9C47703B909 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2273965D65C67921AC6B4303DCADB52E /* Pods-ZHTableViewGroup_Tests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-ZHTableViewGroup_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ZHTableViewGroup_Tests/Pods-ZHTableViewGroup_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_ZHTableViewGroup_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_DEBUG=1",
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
 		DDBED416AF7EF4E0711DC078BAC8DC3E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 61C635FA63B207AC12EA2BD25D894A65 /* Masonry.xcconfig */;
@@ -967,6 +786,41 @@
 			};
 			name = Debug;
 		};
+		EEDD9D362B0FB1C272A41D9681283D85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4F52DEA50B2EA3BB49B55CA3F8325DF /* Pods-ZHTableViewGroup_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ZHTableViewGroup_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ZHTableViewGroup_Example/Pods-ZHTableViewGroup_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ZHTableViewGroup_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -982,8 +836,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
-				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
+				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
+				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -991,8 +845,8 @@
 		6D6588F854B49FA507739AEAFFDAD88F /* Build configuration list for PBXNativeTarget "Pods-ZHTableViewGroup_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				871471A1452AAB57F68BF6E673597CCD /* Debug */,
-				1B739794B2D722DB4F9741F018ACC89A /* Release */,
+				EEDD9D362B0FB1C272A41D9681283D85 /* Debug */,
+				781B0AC299C8AECE154DEAD8B83784A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1002,15 +856,6 @@
 			buildConfigurations = (
 				867603565477A17FCC3508C1E5880D43 /* Debug */,
 				361A22A3C2D6DFC9CFA8B87DEB0C5FFE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D0B7BA76432D05EE7ED39E46437BF6C4 /* Build configuration list for PBXNativeTarget "Pods-ZHTableViewGroup_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9B77358AD579D118436AE9C47703B909 /* Debug */,
-				3376AE912BD6F9F7C7C5A2A331452ECF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
