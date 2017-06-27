@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, ZHTableViewCustomHeightType) {
+    ZHTableViewCustomHeightTypeCell,
+    ZHTableViewCustomHeightTypeHeader,
+    ZHTableViewCustomHeightTypeFooter
+};
+
 @class ZHTableViewDataSource;
 
 /**

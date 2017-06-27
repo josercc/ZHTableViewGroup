@@ -6,6 +6,10 @@
 //
 //
 
+@class ZHTableViewBaseModel;
+
+typedef CGFloat (^ZHTableViewBaseModelCustomHeightCompletionHandle)(UITableView *tableView, NSIndexPath *indexPath, ZHTableViewBaseModel *model);
+
 /**
  配置 Cell Header Footer 的数据 Model
  */
@@ -23,5 +27,9 @@
   高度 默认为 NSNotFound
  */
 @property (nonatomic, assign) CGFloat height;
+/**
+ * 自定义高度
+ */
+@property (nonatomic, copy) ZHTableViewBaseModelCustomHeightCompletionHandle customHeightCompletionHandle;
 
 @end

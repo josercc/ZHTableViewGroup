@@ -20,14 +20,24 @@
     return self;
 }
 
+- (ZHTableViewDataSourceCustomHeightCompletionHandle)completionHandleWithTableView:(UITableView *)tableView heightAtIndexPath:(NSIndexPath *)indexPath {
+    ZHTableViewDataSourceCustomHeightCompletionHandle completionHandle = ^CGFloat(ZHTableViewBaseModel *model) {
+        if (!model.customHeightCompletionHandle) {
+            return model.height;
+        }
+        return model.customHeightCompletionHandle(tableView,indexPath,model);
+    };
+    return completionHandle;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [ZHTableViewDataSource heightForRowAtDataSource:_dataSource indexPath:indexPath customHeightCompletionHandle:nil];
+    return [ZHTableViewDataSource heightForRowAtDataSource:_dataSource indexPath:indexPath customHeightCompletionHandle:[self completionHandleWithTableView:tableView heightAtIndexPath:indexPath]];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return [ZHTableViewDataSource heightForHeaderInSectionWithDataSource:_dataSource section:section customHeightCompletionHandle:nil];
+    return [ZHTableViewDataSource heightForHeaderInSectionWithDataSource:_dataSource section:section customHeightCompletionHandle:[self completionHandleWithTableView:tableView heightAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]]];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return [ZHTableViewDataSource heightForFooterInSectionWithDataSource:_dataSource section:section customHeightCompletionHandle:nil];
+    return [ZHTableViewDataSource heightForFooterInSectionWithDataSource:_dataSource section:section customHeightCompletionHandle:[self completionHandleWithTableView:tableView heightAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]]];
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     return [ZHTableViewDataSource viewForHeaderInSectionWithDataSource:_dataSource section:section];
