@@ -504,7 +504,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.josercc.gearbest.ZHTableViewGroup-ExampleTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.josercc.zhanghang.ZHTableViewGroup-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZHTableViewGroup_Example.app/ZHTableViewGroup_Example";
 			};
@@ -528,7 +528,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.josercc.gearbest.ZHTableViewGroup-ExampleTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.josercc.zhanghang.ZHTableViewGroup-ExampleTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZHTableViewGroup_Example.app/ZHTableViewGroup_Example";
 			};
@@ -551,7 +551,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.josercc.gearbest.ZHTableViewGroup-ExampleUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.josercc.zhanghang.ZHTableViewGroup-ExampleUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = ZHTableViewGroup_Example;
 			};
@@ -575,7 +575,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.josercc.gearbest.ZHTableViewGroup-ExampleUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.josercc.zhanghang.ZHTableViewGroup-ExampleUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = ZHTableViewGroup_Example;
 			};
@@ -665,7 +665,7 @@
 				INFOPLIST_FILE = "ZHTableViewGroup/ZHTableViewGroup-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.josercc.gearbest.ZHTableViewGroup-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.josercc.zhanghang.ZHTableViewGroup-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -683,7 +683,7 @@
 				INFOPLIST_FILE = "ZHTableViewGroup/ZHTableViewGroup-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.josercc.gearbest.ZHTableViewGroup-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.josercc.zhanghang.ZHTableViewGroup-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
