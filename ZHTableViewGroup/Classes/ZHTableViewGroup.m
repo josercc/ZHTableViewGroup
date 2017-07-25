@@ -107,7 +107,11 @@
     if (!headerFooter.identifier) {
         return nil;
     }
-    return [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerFooter.identifier];
+    UITableViewHeaderFooterView *headerFooterView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerFooter.identifier];
+    if (headerFooter.configurationHeaderFooterViewCompletionHandle) {
+        headerFooter.configurationHeaderFooterViewCompletionHandle(headerFooterView);
+    }
+    return headerFooterView;
 }
 
 

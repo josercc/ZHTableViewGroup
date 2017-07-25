@@ -96,6 +96,10 @@
     [cell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
         cell.textLabel.text = @"Your Background";
     }];
+    cell.customHeightCompletionHandle = ^CGFloat(UITableView *tableView, NSIndexPath *indexPath, ZHTableViewBaseModel *model) {
+        /// 可以使用一些第三方库或者自己的方法计算高度
+        return 0;
+    };
 
 }
 
