@@ -35,6 +35,7 @@
 }
 
 - (void)reloadCells {
+    /// 清理之前的数据
     [self.dataSource clearData];
     __weak typeof(self) weakSelf = self;
     [self.dataSource addGroupWithCompletionHandle:^(ZHTableViewGroup *group) {
@@ -84,9 +85,9 @@
     [self.dataSource reloadTableViewData];
 }
 
-- (void)registerOneCellWithCell:(ZHTableViewCell *)cell {
+- (void)registerOneCellWithCell:(ZHTableViewCell<ZHCellOneTableViewCell *> *)cell {
     [self setCell:cell cellNumber:1 anyClass:[ZHCellOneTableViewCell class] height:76 identifier:@"ZHCellOneTableViewCellIdentifier"];
-    [cell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+    [cell setConfigCompletionHandle:^(ZHCellOneTableViewCell *cell, NSIndexPath *indexPath) {
         cell.textLabel.text = @"Your Image";
     }];
 }
