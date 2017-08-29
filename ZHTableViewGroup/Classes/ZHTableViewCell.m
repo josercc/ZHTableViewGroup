@@ -18,6 +18,14 @@
     return self;
 }
 
+- (void)setConfigCompletionHandle:(void (^)(UITableViewCell *, NSIndexPath *))configCompletionHandle {
+    _configCompletionHandle = configCompletionHandle;
+}
+
+- (void)setDidSelectRowCompletionHandle:(void (^)(UITableViewCell *, NSIndexPath *))didSelectRowCompletionHandle {
+    _didSelectRowCompletionHandle = didSelectRowCompletionHandle;
+}
+
 - (void)didSelectRowAtWithCell:(UITableViewCell *)cell
                      indexPath:(NSIndexPath *)indexPath {
     if (!self.didSelectRowCompletionHandle) {
@@ -34,20 +42,7 @@
     self.configCompletionHandle(cell,indexPath);
 }
 
-- (void)setConfigCompletionHandle:(ZHTableViewCellCompletionHandle)configCompletionHandle {
-    _configCompletionHandle = configCompletionHandle;
-}
-
-- (void)setDidSelectRowCompletionHandle:(ZHTableViewCellCompletionHandle)didSelectRowCompletionHandle {
-    _didSelectRowCompletionHandle = didSelectRowCompletionHandle;
-}
-
-- (void)configurationCellWithCellNumber:(NSUInteger)cellNumber
-                             identifier:(NSString *)identifier
-                               anyClass:(Class)anyClass
-                                 height:(CGFloat)height
-                 configCompletionHandle:(ZHTableViewCellCompletionHandle)configCompletionHandle
-           didSelectRowCompletionHandle:(ZHTableViewCellCompletionHandle)didSelectRowCompletionHandle {
+- (void)configurationCellWithCellNumber:(NSUInteger)cellNumber identifier:(NSString *)identifier anyClass:(Class)anyClass height:(CGFloat)height configCompletionHandle:(void (^)(UITableViewCell *, NSIndexPath *))configCompletionHandle didSelectRowCompletionHandle:(void (^)(UITableViewCell *, NSIndexPath *))didSelectRowCompletionHandle {
     self.cellNumber = cellNumber;
     self.identifier = identifier;
     self.anyClass = anyClass;
