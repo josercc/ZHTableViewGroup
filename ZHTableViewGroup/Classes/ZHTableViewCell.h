@@ -8,12 +8,10 @@
 
 #import "ZHTableViewBaseModel.h"
 
-typedef void(^ZHTableViewCellCompletionHandle)(UITableViewCell *cell, NSIndexPath *indexPath);
-
 /**
  注册 Cell 样式
  */
-@interface ZHTableViewCell : ZHTableViewBaseModel
+@interface ZHTableViewCell<CellType:UITableViewCell *> : ZHTableViewBaseModel
 
 /**
   Cell 的个数 默认为1
@@ -22,11 +20,25 @@ typedef void(^ZHTableViewCellCompletionHandle)(UITableViewCell *cell, NSIndexPat
 /**
  配置 Cell的回调
  */
-@property (nonatomic, copy) ZHTableViewCellCompletionHandle configCompletionHandle;
+@property (nonatomic, copy) void(^configCompletionHandle)(CellType cell, NSIndexPath *indexPath);
 /**
   点击 Cell 的回调
  */
-@property (nonatomic, copy) ZHTableViewCellCompletionHandle didSelectRowCompletionHandle;
+@property (nonatomic, copy) void(^didSelectRowCompletionHandle)(CellType cell, NSIndexPath *indexPath);
+
+/**
+ * 为了是支持泛型
+
+ @param configCompletionHandle 设置的Block
+ */
+- (void)setConfigCompletionHandle:(void (^)(CellType cell, NSIndexPath * indexPath))configCompletionHandle;
+
+/**
+ * 为了支持泛型
+
+ @param didSelectRowCompletionHandle 点击回调的block
+ */
+- (void)setDidSelectRowCompletionHandle:(void (^)(CellType cell, NSIndexPath * indexPath))didSelectRowCompletionHandle;
 
 /**
  点击所在的 Cell 的执行方法
@@ -34,7 +46,7 @@ typedef void(^ZHTableViewCellCompletionHandle)(UITableViewCell *cell, NSIndexPat
  @param cell 点击的 Cell
  @param indexPath 点击 cell 所在的索引
  */
-- (void)didSelectRowAtWithCell:(UITableViewCell *)cell
+- (void)didSelectRowAtWithCell:(CellType)cell
                      indexPath:(NSIndexPath *)indexPath;
 
 /**
@@ -43,7 +55,7 @@ typedef void(^ZHTableViewCellCompletionHandle)(UITableViewCell *cell, NSIndexPat
  @param cell 配置的 Cell
  @param indexPath 配置 Cell 所在的索引
  */
-- (void)configCellWithCell:(UITableViewCell *)cell
+- (void)configCellWithCell:(CellType)cell
                  indexPath:(NSIndexPath *)indexPath;
 
 /**
@@ -60,7 +72,7 @@ typedef void(^ZHTableViewCellCompletionHandle)(UITableViewCell *cell, NSIndexPat
                              identifier:(NSString *)identifier
                                anyClass:(Class)anyClass
                                  height:(CGFloat)height
-                 configCompletionHandle:(ZHTableViewCellCompletionHandle)configCompletionHandle
-           didSelectRowCompletionHandle:(ZHTableViewCellCompletionHandle)didSelectRowCompletionHandle;
+configCompletionHandle:(void(^)(CellType cell, NSIndexPath *indexPath))configCompletionHandle
+           didSelectRowCompletionHandle:(void(^)(CellType cell, NSIndexPath *indexPath))didSelectRowCompletionHandle;
 
 @end

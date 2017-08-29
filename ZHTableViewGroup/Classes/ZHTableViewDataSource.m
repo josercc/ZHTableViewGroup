@@ -22,9 +22,17 @@
 - (instancetype)initWithTableView:(UITableView *)tableView {
     if (self = [super init]) {
         _tableView = tableView;
-        _autoConfigurationTableViewDelegate = YES;
+        self.autoConfigurationTableViewDelegate = YES;
     }
     return self;
+}
+
+- (void)setAutoConfigurationTableViewDelegate:(BOOL)autoConfigurationTableViewDelegate {
+    _autoConfigurationTableViewDelegate = autoConfigurationTableViewDelegate;
+    if (autoConfigurationTableViewDelegate) {
+        _tableView.dataSource = self.autoConfiguration;
+        _tableView.delegate = self.autoConfiguration;
+    }
 }
 
 - (void)addGroupWithCompletionHandle:(ZHTableViewDataSourceAddGroupCompletionHandle)completionHandle {
@@ -36,10 +44,6 @@
 }
 
 - (void)reloadTableViewData {
-    if (self.isAutoConfigurationTableViewDelegate) {
-        self.tableView.dataSource = self.autoConfiguration;
-        self.tableView.delegate = self.autoConfiguration;
-    }
     [self registerClasss];
     [self.tableView reloadData];
 }
@@ -123,7 +127,7 @@
     if (!group) {
         return nil;
     }
-    return [group headerFooterForStyle:style tableView:dataSource.tableView];
+    return [group headerFooterForStyle:style tableView:dataSource.tableView section:section];
 }
 
 + (CGFloat)heightForHeaderFooterInSectionWithDataSource:(ZHTableViewDataSource *)dataSource

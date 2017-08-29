@@ -25,6 +25,7 @@ pod 'ZHTableViewGroupObjc'
 
    ```objc
    [self.dataSource addGroupWithCompletionHandle:^(ZHTableViewGroup *group) {
+     // 可以注册Header Footer 各种各样的Cell
    }
    ```
 
@@ -32,6 +33,7 @@ pod 'ZHTableViewGroupObjc'
 
    ```objc
    [group addCellWithCompletionHandle:^(ZHTableViewCell *cell) {  
+     // 可以配置一种cell 可以是多个一样的必须是连续的
    }
    ```
 
@@ -39,10 +41,11 @@ pod 'ZHTableViewGroupObjc'
 
    ```swift
      cell.anyClass = [UITableViewCell class];
-               cell.cellNumber = self.cellTexts.count;
-               cell.height = 44;
-               cell.identifier = @"UITableViewCellIdentifier";
-               [cell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+               cell.cellNumber = self.cellTexts.count; //设置cell的个数
+               cell.height = 44; // 设置cell的高度
+               cell.identifier = @"UITableViewCellIdentifier"; // 设置标识符
+               [cell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) { 
+                 // 配置我们的cell
                    NSString *string = self.cellTexts[indexPath.row];
                    cell.textLabel.text = string;
                    if ([self.selectTitles containsObject:string]) {
@@ -52,6 +55,7 @@ pod 'ZHTableViewGroupObjc'
                    }
                }];
                [cell setDidSelectRowCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+                 // 点击cell的对应回调
                    NSString *string = self.cellTexts[indexPath.row];
                    if ([self.selectTitles containsObject:string]) {
                        [self.selectTitles removeObject:string];
@@ -60,10 +64,11 @@ pod 'ZHTableViewGroupObjc'
                    }
                    [self.tableView reloadData];
                }];
-
    ```
 
 5. ### 配置 UITableView的代理
+
+   > 现在可以自动设置代理 下面的方法默认是不需要设置的 如果有特殊的代码判断 需要自己实现 如果代码和下面一直  则不需要给UITableView设置代理即可
 
    ```objc
    - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

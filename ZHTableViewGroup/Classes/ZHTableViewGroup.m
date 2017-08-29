@@ -76,9 +76,11 @@
     }
     NSInteger count = 0;
     ZHTableViewCell *tableViewCell;
-    for (ZHTableViewCell *cell in self.cells) {
+    for (NSUInteger i = 0; i < self.cells.count; i ++) {
+        ZHTableViewCell *cell = self.cells[i];
+        NSUInteger tempCount = count;
         count += cell.cellNumber;
-        if (indexPath.row < count) {
+        if (indexPath.row >= tempCount && indexPath.row < count) {
             tableViewCell = cell;
             break;
         }
@@ -86,7 +88,7 @@
     return tableViewCell;
 }
 
-- (UITableViewHeaderFooterView *)headerFooterForStyle:(ZHTableViewHeaderFooterStyle)style tableView:(UITableView *)tableView {
+- (UITableViewHeaderFooterView *)headerFooterForStyle:(ZHTableViewHeaderFooterStyle)style tableView:(UITableView *)tableView section:(NSUInteger)section {
     if (!tableView) {
         return nil;
     }
@@ -108,9 +110,7 @@
         return nil;
     }
     UITableViewHeaderFooterView *headerFooterView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerFooter.identifier];
-    if (headerFooter.configurationHeaderFooterViewCompletionHandle) {
-        headerFooter.configurationHeaderFooterViewCompletionHandle(headerFooterView);
-    }
+    [headerFooter setHeaderFooter:headerFooterView section:section];
     return headerFooterView;
 }
 
