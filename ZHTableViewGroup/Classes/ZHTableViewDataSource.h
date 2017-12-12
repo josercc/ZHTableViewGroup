@@ -6,7 +6,7 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "ZHTableViewGroup.h"
 #import "ZHTableViewGroup.h"
 #import "ZHTableViewCell.h"
