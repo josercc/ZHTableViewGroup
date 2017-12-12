@@ -5,6 +5,7 @@
 //  Created by 张行 on 2017/3/18.
 //
 //
+#import <UIKit/UIKit.h>
 
 @class ZHTableViewBaseModel;
 
