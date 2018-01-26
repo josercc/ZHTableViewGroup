@@ -6,7 +6,7 @@
 //
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import "ZHTableViewHeaderFooter.h"
 #import "ZHTableViewCell.h"
 
@@ -33,4 +33,5 @@ typedef void(^ZHTableViewGroupAddHeaderFooterCompletionHandle)(ZHTableViewHeader
 
 - (UITableViewHeaderFooterView *)headerFooterForStyle:(ZHTableViewHeaderFooterStyle)style tableView:(UITableView *)tableView section:(NSUInteger)section;
 
+- (NSIndexPath *)indexPathWithCell:(ZHTableViewCell *)cell indexPath:(NSIndexPath *)indexPath;
 @end

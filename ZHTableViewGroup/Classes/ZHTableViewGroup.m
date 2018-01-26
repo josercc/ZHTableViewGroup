@@ -66,8 +66,20 @@
         return nil;
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewCell.identifier];
-    [tableViewCell configCellWithCell:cell indexPath:indexPath];
+    [tableViewCell configCellWithCell:cell indexPath:[self indexPathWithCell:tableViewCell indexPath:indexPath]];
     return cell;
+}
+
+- (NSIndexPath *)indexPathWithCell:(ZHTableViewCell *)cell indexPath:(NSIndexPath *)indexPath {
+	__block	NSUInteger startIndex = 0;
+	[self.cells enumerateObjectsUsingBlock:^(ZHTableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+		if (obj == cell) {
+			*stop = YES;
+			return;
+		}
+		startIndex += obj.cellNumber;
+	}];
+	return [NSIndexPath indexPathForRow:indexPath.row - startIndex inSection:indexPath.section];
 }
 
 - (ZHTableViewCell *)tableViewCellForIndexPath:(NSIndexPath *)indexPath {

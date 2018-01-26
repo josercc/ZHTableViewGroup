@@ -6,7 +6,7 @@
 //
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import "ZHTableViewGroup.h"
 #import "ZHTableViewGroup.h"
 #import "ZHTableViewCell.h"
@@ -143,5 +143,7 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
   清空之前数据
  */
 - (void)clearData;
+
++ (NSIndexPath *)indexPathWithDataSource:(ZHTableViewDataSource *)dataSource indexPath:(NSIndexPath *)indexPath;
 
 @end
