@@ -124,7 +124,7 @@
     if (!headerFooter.identifier) {
         return nil;
     }
-    UICollectionReusableView *headerFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerFooterView.reuseIdentifier forIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
+    UICollectionReusableView *headerFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerFooter.identifier forIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
     [headerFooter setHeaderFooter:headerFooterView section:section];
     return headerFooterView;
 }

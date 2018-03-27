@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZHTableViewBaseModel.h"
+#import "ZHCollectionViewBaseModel.h"
 
 /**
  * 配置UICollectionVieweaderFooterView的回调
@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, ZHCollectionViewHeaderFooterStyle) {
     ZHCollectionViewHeaderFooterStyleFooter
 };
 
-@interface ZHCollectionViewHeaderFooter<HeaderFooter:UICollectionReusableView *> : ZHTableViewBaseModel
+@interface ZHCollectionViewHeaderFooter<HeaderFooter:UICollectionReusableView *> : ZHCollectionViewBaseModel
 
 @property (nonatomic, assign) ZHCollectionViewHeaderFooterStyle style;
 
