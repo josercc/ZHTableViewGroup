@@ -25,7 +25,7 @@
         if (!model.customHeightCompletionHandle) {
             return model.height;
         }
-        return model.customHeightCompletionHandle(tableView,indexPath,model);
+        return model.customHeightCompletionHandle(tableView,[ZHTableViewDataSource indexPathWithDataSource:_dataSource indexPath:indexPath],model);
     };
     return completionHandle;
 }

@@ -110,8 +110,13 @@
         cell.textLabel.text = title;
         cell.detailTextLabel.text = detailTitle;
         cell.accessoryType = accessoryType;
+        cell.accessoryView = [[UISwitch alloc] initWithFrame:CGRectZero];
     }];
 
+    [cell setDidSelectRowCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+        UISwitch *switch1 = cell.accessoryView;
+        [switch1 setOn:!switch1.on animated:YES];
+    }];
 }
 
 - (void)registerBlankCell:(ZHTableViewCell *)cell {

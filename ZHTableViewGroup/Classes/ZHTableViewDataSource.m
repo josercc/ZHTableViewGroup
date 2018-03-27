@@ -59,12 +59,16 @@
 
 + (UITableViewCell *)cellForRowAtWithDataSource:(ZHTableViewDataSource *)dataSource
                                       indexPath:(NSIndexPath *)indexPath {
+    return [self cellForRowAtWithDataSource:dataSource indexPath:indexPath config:YES];
+}
+
++ (UITableViewCell *)cellForRowAtWithDataSource:(ZHTableViewDataSource *)dataSource indexPath:(NSIndexPath *)indexPath config:(BOOL)config {
     ZHTableViewGroup *group = [self groupForSectionWithDataSource:dataSource section:indexPath.section];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     if (!group) {
         return cell;
     }
-    UITableViewCell *resultCell = [group cellForTableViewWithTableView:dataSource.tableView indexPath:indexPath];
+    UITableViewCell *resultCell = [group cellForTableViewWithTableView:dataSource.tableView indexPath:indexPath config:config];
     if (!resultCell) {
         return cell;
     }
@@ -84,17 +88,37 @@
     if (!cell) {
         return 0;
     }
+    UITableViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath];
+    CGFloat automaticHeight = [automaticHeightCell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
+    if (cell.height == NSNotFound && automaticHeight != CGFLOAT_MAX) {
+        cell.height = automaticHeight;
+    }
     return [self heightWithCustomHandle:cell.height customCompletionHandle:customHeightCompletionHandle baseModel:cell];
 }
 
 + (void)didSelectRowAtWithDataSource:(ZHTableViewDataSource *)dataSource
                            indexPath:(NSIndexPath *)indexPath {
+    
     ZHTableViewCell *tableViewCell = [self cellForIndexPath:dataSource indexPath:indexPath];
     if (!tableViewCell) {
         return;
     }
-    UITableViewCell *cell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath];
-    [tableViewCell didSelectRowAtWithCell:cell indexPath:indexPath];
+    __block UITableViewCell *cell = ({
+        cell = nil;
+        /* 因为点击的 CELL 一定是在屏幕可见的范围之内 所以直接取 */
+        [dataSource.tableView.visibleCells enumerateObjectsUsingBlock:^(__kindof UITableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSIndexPath *visibleIndexPath = [dataSource.tableView indexPathForCell:obj];
+            if ([indexPath compare:visibleIndexPath] == NSOrderedSame) {
+                cell = obj;
+            }
+        }];
+        cell;
+    });
+    if (!cell) {
+        return;
+    }
+	ZHTableViewGroup *group = [self groupForSectionWithDataSource:dataSource section:indexPath.section];
+    [tableViewCell didSelectRowAtWithCell:cell indexPath:[group indexPathWithCell:tableViewCell indexPath:indexPath]];
 }
 
 + (CGFloat)heightForHeaderInSectionWithDataSource:(ZHTableViewDataSource *)dataSource
@@ -139,10 +163,13 @@
     }
     NSInteger height = 0;
     ZHTableViewBaseModel *baseModel;
+    UITableViewHeaderFooterView *headFooter = [self viewHeaderFooterInSectionWithDtaSource:dataSource section:section style:style];
+    CGFloat automaticHeight = [headFooter sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
     switch (style) {
         case ZHTableViewHeaderFooterStyleHeader: {
             height = group.header.height;
             baseModel = group.header;
+            
         }
             break;
         case  ZHTableViewHeaderFooterStyleFooter: {
@@ -151,19 +178,22 @@
         }
             break;
     }
+    if (height == NSNotFound && automaticHeight != CGFLOAT_MAX) {
+        height = automaticHeight;
+    }
     return [self heightWithCustomHandle:height customCompletionHandle:customHeightCompletionHandle baseModel:baseModel];
 }
 
 + (CGFloat)heightWithCustomHandle:(CGFloat)height
            customCompletionHandle:(ZHTableViewDataSourceCustomHeightCompletionHandle)customCompletionHandle
                         baseModel:(ZHTableViewBaseModel *)baseModel {
-    if (height == NSNotFound) {
-        if (customCompletionHandle) {
-            return customCompletionHandle(baseModel);
-        }
-        return 0;
-    }
-    return height;
+	if (customCompletionHandle) {
+		return customCompletionHandle(baseModel);
+	}
+	if (height != 0) {
+		return height;
+	}
+    return 44;
 }
 
 
@@ -185,6 +215,12 @@
         return nil;
     }
     return [group tableViewCellForIndexPath:indexPath];
+}
+
++ (NSIndexPath *)indexPathWithDataSource:(ZHTableViewDataSource *)dataSource indexPath:(NSIndexPath *)indexPath {
+	ZHTableViewGroup *group = [self groupForSectionWithDataSource:dataSource section:indexPath.section];
+	ZHTableViewCell *tableViewCell = [self cellForIndexPath:dataSource indexPath:indexPath];
+	return [group indexPathWithCell:tableViewCell indexPath:indexPath];
 }
 
 - (void)registerClasss {
