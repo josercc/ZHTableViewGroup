@@ -54,7 +54,7 @@
     _footer = footer;
 }
 
-- (UITableViewCell *)cellForTableViewWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)cellForTableViewWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath config:(BOOL)config{
     if (!tableView) {
         return nil;
     }
@@ -66,7 +66,9 @@
         return nil;
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewCell.identifier];
-    [tableViewCell configCellWithCell:cell indexPath:[self indexPathWithCell:tableViewCell indexPath:indexPath]];
+    if (config) {
+        [tableViewCell configCellWithCell:cell indexPath:[self indexPathWithCell:tableViewCell indexPath:indexPath]];
+    }
     return cell;
 }
 
