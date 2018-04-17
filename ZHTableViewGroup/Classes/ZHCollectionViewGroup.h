@@ -31,7 +31,7 @@ typedef void(^ZHCollectionViewGroupAddHeaderFooterCompletionHandle)(ZHCollection
 
 - (ZHCollectionViewCell *)CollectionViewCellForIndexPath:(NSIndexPath *)indexPath;
 
-- (UICollectionReusableView *)headerFooterForStyle:(ZHCollectionViewHeaderFooterStyle)style CollectionView:(UICollectionView *)CollectionView section:(NSUInteger)section;
+- (UICollectionReusableView *)headerFooterForStyle:(ZHCollectionViewHeaderFooterStyle)style collectionView:(UICollectionView *)collectionView section:(NSUInteger)section;
 
 - (NSIndexPath *)indexPathWithCell:(ZHCollectionViewCell *)cell indexPath:(NSIndexPath *)indexPath;
 @end

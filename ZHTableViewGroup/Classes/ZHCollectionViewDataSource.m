@@ -12,16 +12,18 @@
 @interface ZHCollectionViewDataSource ()
 
 @property (nonatomic, strong) NSMutableArray<ZHCollectionViewGroup *> *groups;
-@property (nonatomic, strong) UICollectionView *CollectionView;
+@property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) ZHAutoConfigurationCollectionViewDelegate *autoConfiguration;
 
 @end
 
-@implementation ZHCollectionViewDataSource
+@implementation ZHCollectionViewDataSource {
+	
+}
 
 - (instancetype)initWithCollectionView:(UICollectionView *)CollectionView {
     if (self = [super init]) {
-        _CollectionView = CollectionView;
+        _collectionView = CollectionView;
         self.autoConfigurationCollectionViewDelegate = YES;
     }
     return self;
@@ -30,8 +32,8 @@
 - (void)setAutoConfigurationCollectionViewDelegate:(BOOL)autoConfigurationCollectionViewDelegate {
     _autoConfigurationCollectionViewDelegate = autoConfigurationCollectionViewDelegate;
     if (autoConfigurationCollectionViewDelegate) {
-        _CollectionView.dataSource = self.autoConfiguration;
-        _CollectionView.delegate = self.autoConfiguration;
+        _collectionView.dataSource = self.autoConfiguration;
+        _collectionView.delegate = self.autoConfiguration;
     }
 }
 
@@ -45,7 +47,7 @@
 
 - (void)reloadCollectionViewData {
     [self registerClasss];
-    [self.CollectionView reloadData];
+    [self.collectionView reloadData];
 }
 
 + (NSInteger)numberOfRowsInSectionWithDataSource:(ZHCollectionViewDataSource *)dataSource
@@ -64,7 +66,7 @@
     if (!group) {
         return cell;
     }
-    UICollectionViewCell *resultCell = [group cellForCollectionViewWithCollectionView:dataSource.CollectionView indexPath:indexPath];
+    UICollectionViewCell *resultCell = [group cellForCollectionViewWithCollectionView:dataSource.collectionView indexPath:indexPath];
     if (!resultCell) {
         return cell;
     }
@@ -78,20 +80,6 @@
     return dataSource.groups.count;
 }
 
-+ (CGFloat)heightForRowAtDataSource:(ZHCollectionViewDataSource *)dataSource
-                          indexPath:(NSIndexPath *)indexPath customHeightCompletionHandle:(ZHCollectionViewDataSourceCustomHeightCompletionHandle)customHeightCompletionHandle {
-    ZHCollectionViewCell *cell = [self cellForIndexPath:dataSource indexPath:indexPath];
-    if (!cell) {
-        return 0;
-    }
-    UICollectionViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath];
-    CGFloat automaticHeight = [automaticHeightCell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
-    if (cell.height == NSNotFound && automaticHeight != CGFLOAT_MAX) {
-        cell.height = automaticHeight;
-    }
-    return [self heightWithCustomHandle:cell.height customCompletionHandle:customHeightCompletionHandle baseModel:cell];
-}
-
 + (void)didSelectRowAtWithDataSource:(ZHCollectionViewDataSource *)dataSource
                            indexPath:(NSIndexPath *)indexPath {
     ZHCollectionViewCell *CollectionViewCell = [self cellForIndexPath:dataSource indexPath:indexPath];
@@ -101,16 +89,6 @@
     UICollectionViewCell *cell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath];
     ZHCollectionViewGroup *group = [self groupForSectionWithDataSource:dataSource section:indexPath.section];
     [CollectionViewCell didSelectRowAtWithCell:cell indexPath:[group indexPathWithCell:CollectionViewCell indexPath:indexPath]];
-}
-
-+ (CGFloat)heightForHeaderInSectionWithDataSource:(ZHCollectionViewDataSource *)dataSource
-                                          section:(NSInteger)section customHeightCompletionHandle:(ZHCollectionViewDataSourceCustomHeightCompletionHandle)customHeightCompletionHandle {
-    return [self heightForHeaderFooterInSectionWithDataSource:dataSource section:section style:ZHCollectionViewHeaderFooterStyleHeader customHeightCompletionHandle:customHeightCompletionHandle];
-}
-
-+ (CGFloat)heightForFooterInSectionWithDataSource:(ZHCollectionViewDataSource *)dataSource
-                                          section:(NSInteger)section customHeightCompletionHandle:(ZHCollectionViewDataSourceCustomHeightCompletionHandle)customHeightCompletionHandle {
-    return [self heightForHeaderFooterInSectionWithDataSource:dataSource section:section style:ZHCollectionViewHeaderFooterStyleFooter customHeightCompletionHandle:customHeightCompletionHandle];
 }
 
 + (UICollectionReusableView *)viewForHeaderInSectionWithDataSource:(ZHCollectionViewDataSource *)dataSource
@@ -133,37 +111,7 @@
     if (!group) {
         return nil;
     }
-    return [group headerFooterForStyle:style CollectionView:dataSource.CollectionView section:section];
-}
-
-+ (CGFloat)heightForHeaderFooterInSectionWithDataSource:(ZHCollectionViewDataSource *)dataSource
-                                                section:(NSInteger)section style:(ZHCollectionViewHeaderFooterStyle)style
-                           customHeightCompletionHandle:(ZHCollectionViewDataSourceCustomHeightCompletionHandle)customHeightCompletionHandle {
-    ZHCollectionViewGroup *group = [self groupForSectionWithDataSource:dataSource section:section];
-    if(!group) {
-        return 0;
-    }
-    NSInteger height = 0;
-    ZHCollectionViewBaseModel *baseModel;
-    UICollectionReusableView *headFooter = [self viewHeaderFooterInSectionWithDtaSource:dataSource section:section style:style];
-    CGFloat automaticHeight = [headFooter sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
-    switch (style) {
-        case ZHCollectionViewHeaderFooterStyleHeader: {
-            height = group.header.height;
-            baseModel = group.header;
-            
-        }
-            break;
-        case  ZHCollectionViewHeaderFooterStyleFooter: {
-            height = group.footer.height;
-            baseModel = group.footer;
-        }
-            break;
-    }
-    if (height == NSNotFound && automaticHeight != CGFLOAT_MAX) {
-        height = automaticHeight;
-    }
-    return [self heightWithCustomHandle:height customCompletionHandle:customHeightCompletionHandle baseModel:baseModel];
+    return [group headerFooterForStyle:style collectionView:dataSource.collectionView section:section];
 }
 
 + (CGFloat)heightWithCustomHandle:(CGFloat)height
@@ -205,9 +153,39 @@
     return [group indexPathWithCell:CollectionViewCell indexPath:indexPath];
 }
 
++ (CGSize)sizeForItemWithDataSource:(ZHCollectionViewDataSource *)dataSource indexPath:(NSIndexPath *)indexPath {
+	ZHCollectionViewCell *cell = [self cellForIndexPath:dataSource indexPath:indexPath];
+	if (!CGSizeEqualToSize(cell.size, CGSizeZero)) {
+		return cell.size;
+	}
+	UICollectionViewCell *collectionViewCell = [dataSource collectionViewWithClass:cell.anyClass];
+	[cell configCellWithCell:collectionViewCell indexPath:indexPath];
+	return [collectionViewCell sizeThatFits:[dataSource sizeFit]];
+}
+
++ (CGSize)referenceSizeForHeaderFooterWithDataSource:(ZHCollectionViewDataSource *)dataSource style:(ZHCollectionViewHeaderFooterStyle)style section:(NSUInteger)section {
+	ZHCollectionViewGroup *group = [self groupForSectionWithDataSource:dataSource section:section];
+	ZHCollectionViewHeaderFooter *headerFooter  = style == ZHCollectionViewHeaderFooterStyleHeader ? group.header : group.footer;
+	if (!CGSizeEqualToSize(headerFooter.size, CGSizeZero)) {
+		return headerFooter.size;
+	}
+	UICollectionReusableView *view = [[headerFooter.anyClass alloc] initWithFrame:CGRectZero];
+	[headerFooter setHeaderFooter:view section:section];
+	return [view sizeThatFits:[dataSource sizeFit]];
+}
+
+- (UICollectionViewCell *)collectionViewWithClass:(Class)class {
+	UICollectionViewCell *cell = [[class alloc] initWithFrame:CGRectZero];
+	return cell;
+}
+
+- (CGSize)sizeFit {
+	return CGSizeMake(CGRectGetWidth(_collectionView.frame), CGFLOAT_MAX);
+}
+
 - (void)registerClasss {
     for (ZHCollectionViewGroup *group in self.groups) {
-        [group registerHeaderFooterCellWithCollectionView:self.CollectionView];
+        [group registerHeaderFooterCellWithCollectionView:self.collectionView];
     }
 }
 

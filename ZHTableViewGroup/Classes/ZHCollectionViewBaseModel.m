@@ -12,7 +12,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _height = NSNotFound;
+        _size = CGSizeZero;
     }
     return self;
 }

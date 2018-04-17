@@ -72,7 +72,7 @@
 - (void)configurationCellWithCellNumber:(NSUInteger)cellNumber
                              identifier:(NSString *)identifier
                                anyClass:(Class)anyClass
-                                 height:(CGFloat)height
+                                 size:(CGSize)size
                  configCompletionHandle:(void(^)(CellType cell, NSIndexPath *indexPath))configCompletionHandle
            didSelectRowCompletionHandle:(void(^)(CellType cell, NSIndexPath *indexPath))didSelectRowCompletionHandle;
 

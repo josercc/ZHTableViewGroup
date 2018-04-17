@@ -26,8 +26,17 @@ typedef CGFloat (^ZHCollectionViewBaseModelCustomHeightCompletionHandle)(UIColle
 @property (nonatomic, strong) Class anyClass;
 /**
  高度 默认为 NSNotFound
+ height 属性废弃 用size
  */
-@property (nonatomic, assign) CGFloat height;
+//@property (nonatomic, assign) CGFloat height;
+
+
+/**
+ * 设置 UICollectionCell UICollectionReusableView 的大小
+ * 默认 CGSizeZero
+ */
+@property (nonatomic, assign) CGSize size;
+
 /**
  * 自定义高度
  */

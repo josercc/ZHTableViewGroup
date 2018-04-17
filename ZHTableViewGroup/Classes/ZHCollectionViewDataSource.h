@@ -145,5 +145,9 @@ typedef CGFloat (^ZHCollectionViewDataSourceCustomHeightCompletionHandle)(ZHColl
 
 + (NSIndexPath *)indexPathWithDataSource:(ZHCollectionViewDataSource *)dataSource indexPath:(NSIndexPath *)indexPath;
 
++ (CGSize)sizeForItemWithDataSource:(ZHCollectionViewDataSource *)dataSource indexPath:(NSIndexPath *)indexPath;
+
++ (CGSize)referenceSizeForHeaderFooterWithDataSource:(ZHCollectionViewDataSource *)dataSource style:(ZHCollectionViewHeaderFooterStyle)style section:(NSUInteger)section;
+
 @end
 
