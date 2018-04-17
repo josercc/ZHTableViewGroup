@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5DC98EAD208589C9009AE998"
-               BuildableName = "ZHTableViewGroup.framework"
-               BlueprintName = "ZHTableViewGroup iOS"
-               ReferencedContainer = "container:ZHTableViewGroup.xcodeproj">
+               BlueprintIdentifier = "596130115969121B51063A5F047C3A50"
+               BuildableName = "ZHTableViewGroupObjc.framework"
+               BlueprintName = "ZHTableViewGroupObjc"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,10 +47,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5DC98EAD208589C9009AE998"
-            BuildableName = "ZHTableViewGroup.framework"
-            BlueprintName = "ZHTableViewGroup iOS"
-            ReferencedContainer = "container:ZHTableViewGroup.xcodeproj">
+            BlueprintIdentifier = "596130115969121B51063A5F047C3A50"
+            BuildableName = "ZHTableViewGroupObjc.framework"
+            BlueprintName = "ZHTableViewGroupObjc"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,10 +65,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5DC98EAD208589C9009AE998"
-            BuildableName = "ZHTableViewGroup.framework"
-            BlueprintName = "ZHTableViewGroup iOS"
-            ReferencedContainer = "container:ZHTableViewGroup.xcodeproj">
+            BlueprintIdentifier = "596130115969121B51063A5F047C3A50"
+            BuildableName = "ZHTableViewGroupObjc.framework"
+            BlueprintName = "ZHTableViewGroupObjc"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
