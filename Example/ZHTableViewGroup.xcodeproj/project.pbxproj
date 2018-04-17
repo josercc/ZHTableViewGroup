@@ -42,7 +42,7 @@
 		5DC98F3D2085A080009AE998 /* ZHAutoConfigurationTableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98F242085A080009AE998 /* ZHAutoConfigurationTableViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DC98F3E2085A080009AE998 /* ZHCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC98F252085A080009AE998 /* ZHCollectionViewCell.m */; };
 		5DC98F3F2085A080009AE998 /* ZHTableViewHeaderFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC98F262085A080009AE998 /* ZHTableViewHeaderFooter.m */; };
-		5DC98F412085A0ED009AE998 /* ZHTableViewGroup_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98F402085A0ED009AE998 /* ZHTableViewGroup_iOS.h */; };
+		5DC98F412085A0ED009AE998 /* ZHTableViewGroup_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98F402085A0ED009AE998 /* ZHTableViewGroup_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -363,9 +363,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DC98F412085A0ED009AE998 /* ZHTableViewGroup_iOS.h in Headers */,
 				5DC98F362085A080009AE998 /* ZHAutoConfigurationCollectionViewDelegate.h in Headers */,
 				5DC98F3D2085A080009AE998 /* ZHAutoConfigurationTableViewDelegate.h in Headers */,
-				5DC98F412085A0ED009AE998 /* ZHTableViewGroup_iOS.h in Headers */,
 				5DC98F2D2085A080009AE998 /* ZHTableViewGroup.h in Headers */,
 				5DC98F322085A080009AE998 /* ZHCollectionViewBaseModel.h in Headers */,
 				5DC98F312085A080009AE998 /* ZHCollectionViewCell.h in Headers */,

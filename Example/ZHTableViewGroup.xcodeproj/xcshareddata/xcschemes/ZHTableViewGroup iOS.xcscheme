@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "596130115969121B51063A5F047C3A50"
+               BlueprintIdentifier = "5DC98F002085A02A009AE998"
                BuildableName = "ZHTableViewGroupObjc.framework"
-               BlueprintName = "ZHTableViewGroupObjc"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintName = "ZHTableViewGroup iOS"
+               ReferencedContainer = "container:ZHTableViewGroup.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,10 +47,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "596130115969121B51063A5F047C3A50"
+            BlueprintIdentifier = "5DC98F002085A02A009AE998"
             BuildableName = "ZHTableViewGroupObjc.framework"
-            BlueprintName = "ZHTableViewGroupObjc"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintName = "ZHTableViewGroup iOS"
+            ReferencedContainer = "container:ZHTableViewGroup.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,10 +65,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "596130115969121B51063A5F047C3A50"
+            BlueprintIdentifier = "5DC98F002085A02A009AE998"
             BuildableName = "ZHTableViewGroupObjc.framework"
-            BlueprintName = "ZHTableViewGroupObjc"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintName = "ZHTableViewGroup iOS"
+            ReferencedContainer = "container:ZHTableViewGroup.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
