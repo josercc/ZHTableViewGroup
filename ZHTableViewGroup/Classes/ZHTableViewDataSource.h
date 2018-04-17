@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "ZHTableViewGroup.h"
-#import "ZHTableViewGroup.h"
 #import "ZHTableViewCell.h"
 #import "ZHAutoConfigurationTableViewDelegate.h"
 #import "ZHTableViewBaseModel.h"
