@@ -16,6 +16,33 @@
 		5D9BCC881E7D2B09001BD760 /* ZHCellTwoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BCC871E7D2B09001BD760 /* ZHCellTwoTableViewCell.m */; };
 		5D9BCC8B1E7D2B3F001BD760 /* ZHOtherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BCC8A1E7D2B3F001BD760 /* ZHOtherTableViewCell.m */; };
 		5D9BCC8E1E7D2FA5001BD760 /* ListCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BCC8D1E7D2FA5001BD760 /* ListCellViewController.m */; };
+		5DC98EB5208589C9009AE998 /* ZHTableViewGroup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC98EAE208589C9009AE998 /* ZHTableViewGroup.framework */; };
+		5DC98EB6208589C9009AE998 /* ZHTableViewGroup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC98EAE208589C9009AE998 /* ZHTableViewGroup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5DC98ED320858A15009AE998 /* ZHCollectionViewBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98EBB20858A13009AE998 /* ZHCollectionViewBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DC98ED420858A15009AE998 /* ZHCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98EBC20858A13009AE998 /* ZHCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DC98ED520858A15009AE998 /* ZHAutoConfigurationTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC98EBD20858A13009AE998 /* ZHAutoConfigurationTableViewDelegate.m */; };
+		5DC98ED620858A15009AE998 /* ZHCollectionViewHeaderFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC98EBE20858A13009AE998 /* ZHCollectionViewHeaderFooter.m */; };
+		5DC98ED720858A15009AE998 /* ZHAutoConfigurationCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC98EBF20858A13009AE998 /* ZHAutoConfigurationCollectionViewDelegate.m */; };
+		5DC98ED820858A15009AE998 /* ZHTableViewHeaderFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98EC020858A13009AE998 /* ZHTableViewHeaderFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DC98ED920858A15009AE998 /* ZHTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC98EC120858A13009AE998 /* ZHTableViewCell.m */; };
+		5DC98EDA20858A15009AE998 /* ZHTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC98EC220858A13009AE998 /* ZHTableViewDataSource.m */; };
+		5DC98EDB20858A15009AE998 /* ZHAutoConfigurationCollectionViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98EC320858A13009AE998 /* ZHAutoConfigurationCollectionViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DC98EDC20858A15009AE998 /* ZHTableViewGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC98EC420858A14009AE998 /* ZHTableViewGroup.m */; };
+		5DC98EDD20858A15009AE998 /* ZHCollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98EC520858A14009AE998 /* ZHCollectionViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DC98EDE20858A15009AE998 /* ZHTableViewGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98EC620858A14009AE998 /* ZHTableViewGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DC98EDF20858A15009AE998 /* ZHCollectionViewBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC98EC720858A14009AE998 /* ZHCollectionViewBaseModel.m */; };
+		5DC98EE020858A15009AE998 /* ZHTableViewBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98EC820858A14009AE998 /* ZHTableViewBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DC98EE120858A15009AE998 /* ZHTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98EC920858A14009AE998 /* ZHTableViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DC98EE220858A15009AE998 /* ZHCollectionViewHeaderFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98ECA20858A14009AE998 /* ZHCollectionViewHeaderFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DC98EE320858A15009AE998 /* ZHCollectionViewGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98ECB20858A14009AE998 /* ZHCollectionViewGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DC98EE420858A15009AE998 /* ZHTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98ECC20858A14009AE998 /* ZHTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DC98EE520858A15009AE998 /* ZHTableViewBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC98ECD20858A14009AE998 /* ZHTableViewBaseModel.m */; };
+		5DC98EE620858A15009AE998 /* ZHCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC98ECE20858A15009AE998 /* ZHCollectionViewDataSource.m */; };
+		5DC98EE720858A15009AE998 /* ZHAutoConfigurationTableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC98ECF20858A15009AE998 /* ZHAutoConfigurationTableViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DC98EE820858A15009AE998 /* ZHCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC98ED020858A15009AE998 /* ZHCollectionViewCell.m */; };
+		5DC98EE920858A15009AE998 /* ZHTableViewHeaderFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC98ED120858A15009AE998 /* ZHTableViewHeaderFooter.m */; };
+		5DC98EEA20858A15009AE998 /* ZHCollectionViewGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC98ED220858A15009AE998 /* ZHCollectionViewGroup.m */; };
+		5DC98EEB20858A54009AE998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -43,7 +70,28 @@
 			remoteGlobalIDString = 6003F589195388D20070C39A;
 			remoteInfo = ZHTableViewGroup_Example;
 		};
+		5DC98EB3208589C9009AE998 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DC98EAD208589C9009AE998;
+			remoteInfo = "ZHTableViewGroup iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5DC98EBA208589C9009AE998 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5DC98EB6208589C9009AE998 /* ZHTableViewGroup.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		07436A433659DFAD7A803F1A /* Pods_ZHTableViewGroup_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZHTableViewGroup_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +113,32 @@
 		5D9BCC8A1E7D2B3F001BD760 /* ZHOtherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHOtherTableViewCell.m; sourceTree = "<group>"; };
 		5D9BCC8C1E7D2FA5001BD760 /* ListCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCellViewController.h; sourceTree = "<group>"; };
 		5D9BCC8D1E7D2FA5001BD760 /* ListCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCellViewController.m; sourceTree = "<group>"; };
+		5DC98EAE208589C9009AE998 /* ZHTableViewGroup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZHTableViewGroup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DC98EB1208589C9009AE998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DC98EBB20858A13009AE998 /* ZHCollectionViewBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHCollectionViewBaseModel.h; path = ../../ZHTableViewGroup/Classes/ZHCollectionViewBaseModel.h; sourceTree = "<group>"; };
+		5DC98EBC20858A13009AE998 /* ZHCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHCollectionViewCell.h; path = ../../ZHTableViewGroup/Classes/ZHCollectionViewCell.h; sourceTree = "<group>"; };
+		5DC98EBD20858A13009AE998 /* ZHAutoConfigurationTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHAutoConfigurationTableViewDelegate.m; path = ../../ZHTableViewGroup/Classes/ZHAutoConfigurationTableViewDelegate.m; sourceTree = "<group>"; };
+		5DC98EBE20858A13009AE998 /* ZHCollectionViewHeaderFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHCollectionViewHeaderFooter.m; path = ../../ZHTableViewGroup/Classes/ZHCollectionViewHeaderFooter.m; sourceTree = "<group>"; };
+		5DC98EBF20858A13009AE998 /* ZHAutoConfigurationCollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHAutoConfigurationCollectionViewDelegate.m; path = ../../ZHTableViewGroup/Classes/ZHAutoConfigurationCollectionViewDelegate.m; sourceTree = "<group>"; };
+		5DC98EC020858A13009AE998 /* ZHTableViewHeaderFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHTableViewHeaderFooter.h; path = ../../ZHTableViewGroup/Classes/ZHTableViewHeaderFooter.h; sourceTree = "<group>"; };
+		5DC98EC120858A13009AE998 /* ZHTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHTableViewCell.m; path = ../../ZHTableViewGroup/Classes/ZHTableViewCell.m; sourceTree = "<group>"; };
+		5DC98EC220858A13009AE998 /* ZHTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHTableViewDataSource.m; path = ../../ZHTableViewGroup/Classes/ZHTableViewDataSource.m; sourceTree = "<group>"; };
+		5DC98EC320858A13009AE998 /* ZHAutoConfigurationCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHAutoConfigurationCollectionViewDelegate.h; path = ../../ZHTableViewGroup/Classes/ZHAutoConfigurationCollectionViewDelegate.h; sourceTree = "<group>"; };
+		5DC98EC420858A14009AE998 /* ZHTableViewGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHTableViewGroup.m; path = ../../ZHTableViewGroup/Classes/ZHTableViewGroup.m; sourceTree = "<group>"; };
+		5DC98EC520858A14009AE998 /* ZHCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHCollectionViewDataSource.h; path = ../../ZHTableViewGroup/Classes/ZHCollectionViewDataSource.h; sourceTree = "<group>"; };
+		5DC98EC620858A14009AE998 /* ZHTableViewGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHTableViewGroup.h; path = ../../ZHTableViewGroup/Classes/ZHTableViewGroup.h; sourceTree = "<group>"; };
+		5DC98EC720858A14009AE998 /* ZHCollectionViewBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHCollectionViewBaseModel.m; path = ../../ZHTableViewGroup/Classes/ZHCollectionViewBaseModel.m; sourceTree = "<group>"; };
+		5DC98EC820858A14009AE998 /* ZHTableViewBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHTableViewBaseModel.h; path = ../../ZHTableViewGroup/Classes/ZHTableViewBaseModel.h; sourceTree = "<group>"; };
+		5DC98EC920858A14009AE998 /* ZHTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHTableViewDataSource.h; path = ../../ZHTableViewGroup/Classes/ZHTableViewDataSource.h; sourceTree = "<group>"; };
+		5DC98ECA20858A14009AE998 /* ZHCollectionViewHeaderFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHCollectionViewHeaderFooter.h; path = ../../ZHTableViewGroup/Classes/ZHCollectionViewHeaderFooter.h; sourceTree = "<group>"; };
+		5DC98ECB20858A14009AE998 /* ZHCollectionViewGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHCollectionViewGroup.h; path = ../../ZHTableViewGroup/Classes/ZHCollectionViewGroup.h; sourceTree = "<group>"; };
+		5DC98ECC20858A14009AE998 /* ZHTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHTableViewCell.h; path = ../../ZHTableViewGroup/Classes/ZHTableViewCell.h; sourceTree = "<group>"; };
+		5DC98ECD20858A14009AE998 /* ZHTableViewBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHTableViewBaseModel.m; path = ../../ZHTableViewGroup/Classes/ZHTableViewBaseModel.m; sourceTree = "<group>"; };
+		5DC98ECE20858A15009AE998 /* ZHCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHCollectionViewDataSource.m; path = ../../ZHTableViewGroup/Classes/ZHCollectionViewDataSource.m; sourceTree = "<group>"; };
+		5DC98ECF20858A15009AE998 /* ZHAutoConfigurationTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHAutoConfigurationTableViewDelegate.h; path = ../../ZHTableViewGroup/Classes/ZHAutoConfigurationTableViewDelegate.h; sourceTree = "<group>"; };
+		5DC98ED020858A15009AE998 /* ZHCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHCollectionViewCell.m; path = ../../ZHTableViewGroup/Classes/ZHCollectionViewCell.m; sourceTree = "<group>"; };
+		5DC98ED120858A15009AE998 /* ZHTableViewHeaderFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHTableViewHeaderFooter.m; path = ../../ZHTableViewGroup/Classes/ZHTableViewHeaderFooter.m; sourceTree = "<group>"; };
+		5DC98ED220858A15009AE998 /* ZHCollectionViewGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHCollectionViewGroup.m; path = ../../ZHTableViewGroup/Classes/ZHCollectionViewGroup.m; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* ZHTableViewGroup_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHTableViewGroup_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -104,12 +178,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5DC98EAA208589C9009AE998 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DC98EEB20858A54009AE998 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6003F587195388D20070C39A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
+				5DC98EB5208589C9009AE998 /* ZHTableViewGroup.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
 				49A3E2ABDEBD5DA77D02ED2A /* Pods_ZHTableViewGroup_Example.framework in Frameworks */,
 			);
@@ -151,6 +234,38 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		5DC98EAF208589C9009AE998 /* ZHTableViewGroup iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5DC98EC320858A13009AE998 /* ZHAutoConfigurationCollectionViewDelegate.h */,
+				5DC98EBF20858A13009AE998 /* ZHAutoConfigurationCollectionViewDelegate.m */,
+				5DC98ECF20858A15009AE998 /* ZHAutoConfigurationTableViewDelegate.h */,
+				5DC98EBD20858A13009AE998 /* ZHAutoConfigurationTableViewDelegate.m */,
+				5DC98EBB20858A13009AE998 /* ZHCollectionViewBaseModel.h */,
+				5DC98EC720858A14009AE998 /* ZHCollectionViewBaseModel.m */,
+				5DC98EBC20858A13009AE998 /* ZHCollectionViewCell.h */,
+				5DC98ED020858A15009AE998 /* ZHCollectionViewCell.m */,
+				5DC98EC520858A14009AE998 /* ZHCollectionViewDataSource.h */,
+				5DC98ECE20858A15009AE998 /* ZHCollectionViewDataSource.m */,
+				5DC98ECB20858A14009AE998 /* ZHCollectionViewGroup.h */,
+				5DC98ED220858A15009AE998 /* ZHCollectionViewGroup.m */,
+				5DC98ECA20858A14009AE998 /* ZHCollectionViewHeaderFooter.h */,
+				5DC98EBE20858A13009AE998 /* ZHCollectionViewHeaderFooter.m */,
+				5DC98EC820858A14009AE998 /* ZHTableViewBaseModel.h */,
+				5DC98ECD20858A14009AE998 /* ZHTableViewBaseModel.m */,
+				5DC98ECC20858A14009AE998 /* ZHTableViewCell.h */,
+				5DC98EC120858A13009AE998 /* ZHTableViewCell.m */,
+				5DC98EC920858A14009AE998 /* ZHTableViewDataSource.h */,
+				5DC98EC220858A13009AE998 /* ZHTableViewDataSource.m */,
+				5DC98EC620858A14009AE998 /* ZHTableViewGroup.h */,
+				5DC98EC420858A14009AE998 /* ZHTableViewGroup.m */,
+				5DC98EC020858A13009AE998 /* ZHTableViewHeaderFooter.h */,
+				5DC98ED120858A15009AE998 /* ZHTableViewHeaderFooter.m */,
+				5DC98EB1208589C9009AE998 /* Info.plist */,
+			);
+			path = "ZHTableViewGroup iOS";
+			sourceTree = "<group>";
+		};
 		5FF1C03F1767995D44D5E8C7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +284,7 @@
 				6003F593195388D20070C39A /* Example for ZHTableViewGroup */,
 				5D5C59411EC468A800CA883D /* ZHTableViewGroup_ExampleTests */,
 				5D5C594F1EC468B400CA883D /* ZHTableViewGroup_ExampleUITests */,
+				5DC98EAF208589C9009AE998 /* ZHTableViewGroup iOS */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				5FF1C03F1767995D44D5E8C7 /* Pods */,
@@ -181,6 +297,7 @@
 				6003F58A195388D20070C39A /* ZHTableViewGroup_Example.app */,
 				5D5C59401EC468A800CA883D /* ZHTableViewGroup_ExampleTests.xctest */,
 				5D5C594E1EC468B400CA883D /* ZHTableViewGroup_ExampleUITests.xctest */,
+				5DC98EAE208589C9009AE998 /* ZHTableViewGroup.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,6 +357,28 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		5DC98EAB208589C9009AE998 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DC98EE220858A15009AE998 /* ZHCollectionViewHeaderFooter.h in Headers */,
+				5DC98EE420858A15009AE998 /* ZHTableViewCell.h in Headers */,
+				5DC98ED320858A15009AE998 /* ZHCollectionViewBaseModel.h in Headers */,
+				5DC98EDD20858A15009AE998 /* ZHCollectionViewDataSource.h in Headers */,
+				5DC98EDE20858A15009AE998 /* ZHTableViewGroup.h in Headers */,
+				5DC98EE720858A15009AE998 /* ZHAutoConfigurationTableViewDelegate.h in Headers */,
+				5DC98ED420858A15009AE998 /* ZHCollectionViewCell.h in Headers */,
+				5DC98EE320858A15009AE998 /* ZHCollectionViewGroup.h in Headers */,
+				5DC98EE020858A15009AE998 /* ZHTableViewBaseModel.h in Headers */,
+				5DC98EE120858A15009AE998 /* ZHTableViewDataSource.h in Headers */,
+				5DC98EDB20858A15009AE998 /* ZHAutoConfigurationCollectionViewDelegate.h in Headers */,
+				5DC98ED820858A15009AE998 /* ZHTableViewHeaderFooter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		5D5C593F1EC468A800CA883D /* ZHTableViewGroup_ExampleTests */ = {
 			isa = PBXNativeTarget;
@@ -277,6 +416,24 @@
 			productReference = 5D5C594E1EC468B400CA883D /* ZHTableViewGroup_ExampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		5DC98EAD208589C9009AE998 /* ZHTableViewGroup iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DC98EB9208589C9009AE998 /* Build configuration list for PBXNativeTarget "ZHTableViewGroup iOS" */;
+			buildPhases = (
+				5DC98EA9208589C9009AE998 /* Sources */,
+				5DC98EAA208589C9009AE998 /* Frameworks */,
+				5DC98EAB208589C9009AE998 /* Headers */,
+				5DC98EAC208589C9009AE998 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ZHTableViewGroup iOS";
+			productName = "ZHTableViewGroup iOS";
+			productReference = 5DC98EAE208589C9009AE998 /* ZHTableViewGroup.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		6003F589195388D20070C39A /* ZHTableViewGroup_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "ZHTableViewGroup_Example" */;
@@ -287,10 +444,12 @@
 				6003F588195388D20070C39A /* Resources */,
 				231DD34C98C587AAC8AB127F /* [CP] Embed Pods Frameworks */,
 				8DCE5D4B24063B846424EDA0 /* [CP] Copy Pods Resources */,
+				5DC98EBA208589C9009AE998 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5DC98EB4208589C9009AE998 /* PBXTargetDependency */,
 			);
 			name = ZHTableViewGroup_Example;
 			productName = ZHTableViewGroup;
@@ -318,6 +477,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 6003F589195388D20070C39A;
 					};
+					5DC98EAD208589C9009AE998 = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = 9RWES6K38C;
+						ProvisioningStyle = Automatic;
+					};
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = 9RWES6K38C;
 					};
@@ -339,6 +503,7 @@
 				6003F589195388D20070C39A /* ZHTableViewGroup_Example */,
 				5D5C593F1EC468A800CA883D /* ZHTableViewGroup_ExampleTests */,
 				5D5C594D1EC468B400CA883D /* ZHTableViewGroup_ExampleUITests */,
+				5DC98EAD208589C9009AE998 /* ZHTableViewGroup iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -352,6 +517,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5D5C594C1EC468B400CA883D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DC98EAC208589C9009AE998 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -437,6 +609,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5DC98EA9208589C9009AE998 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DC98ED720858A15009AE998 /* ZHAutoConfigurationCollectionViewDelegate.m in Sources */,
+				5DC98ED920858A15009AE998 /* ZHTableViewCell.m in Sources */,
+				5DC98EE820858A15009AE998 /* ZHCollectionViewCell.m in Sources */,
+				5DC98EE520858A15009AE998 /* ZHTableViewBaseModel.m in Sources */,
+				5DC98EEA20858A15009AE998 /* ZHCollectionViewGroup.m in Sources */,
+				5DC98ED620858A15009AE998 /* ZHCollectionViewHeaderFooter.m in Sources */,
+				5DC98EDC20858A15009AE998 /* ZHTableViewGroup.m in Sources */,
+				5DC98EDF20858A15009AE998 /* ZHCollectionViewBaseModel.m in Sources */,
+				5DC98ED520858A15009AE998 /* ZHAutoConfigurationTableViewDelegate.m in Sources */,
+				5DC98EE620858A15009AE998 /* ZHCollectionViewDataSource.m in Sources */,
+				5DC98EDA20858A15009AE998 /* ZHTableViewDataSource.m in Sources */,
+				5DC98EE920858A15009AE998 /* ZHTableViewHeaderFooter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6003F586195388D20070C39A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -464,6 +655,11 @@
 			isa = PBXTargetDependency;
 			target = 6003F589195388D20070C39A /* ZHTableViewGroup_Example */;
 			targetProxy = 5D5C59531EC468B400CA883D /* PBXContainerItemProxy */;
+		};
+		5DC98EB4208589C9009AE998 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DC98EAD208589C9009AE998 /* ZHTableViewGroup iOS */;
+			targetProxy = 5DC98EB3208589C9009AE998 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -581,6 +777,93 @@
 			};
 			name = Release;
 		};
+		5DC98EB7208589C9009AE998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9RWES6K38C;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "ZHTableViewGroup iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.globalegrow.ZHTableViewGroup-iOS";
+				PRODUCT_NAME = ZHTableViewGroup;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5DC98EB8208589C9009AE998 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9RWES6K38C;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "ZHTableViewGroup iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.globalegrow.ZHTableViewGroup-iOS";
+				PRODUCT_NAME = ZHTableViewGroup;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		6003F5BD195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -659,11 +942,13 @@
 			baseConfigurationReference = B555482AACCBEF69445B3DC5 /* Pods-ZHTableViewGroup_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9RWES6K38C;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHTableViewGroup/ZHTableViewGroup-Prefix.pch";
 				INFOPLIST_FILE = "ZHTableViewGroup/ZHTableViewGroup-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.josercc.zhanghang.ZHTableViewGroup-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -677,11 +962,13 @@
 			baseConfigurationReference = 67A8FA6550F7D2AFCBA00DF5 /* Pods-ZHTableViewGroup_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9RWES6K38C;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZHTableViewGroup/ZHTableViewGroup-Prefix.pch";
 				INFOPLIST_FILE = "ZHTableViewGroup/ZHTableViewGroup-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.josercc.zhanghang.ZHTableViewGroup-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -700,6 +987,7 @@
 				5D5C59491EC468A800CA883D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D5C59551EC468B400CA883D /* Build configuration list for PBXNativeTarget "ZHTableViewGroup_ExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -708,6 +996,16 @@
 				5D5C59571EC468B400CA883D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DC98EB9208589C9009AE998 /* Build configuration list for PBXNativeTarget "ZHTableViewGroup iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DC98EB7208589C9009AE998 /* Debug */,
+				5DC98EB8208589C9009AE998 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6003F585195388D10070C39A /* Build configuration list for PBXProject "ZHTableViewGroup" */ = {
 			isa = XCConfigurationList;

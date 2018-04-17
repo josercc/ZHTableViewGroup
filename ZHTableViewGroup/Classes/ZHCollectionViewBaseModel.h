@@ -6,6 +6,7 @@
 //
 //
 
+@import UIKit;
 @class ZHCollectionViewBaseModel;
 
 typedef CGFloat (^ZHCollectionViewBaseModelCustomHeightCompletionHandle)(UICollectionView *collectionView, NSIndexPath *indexPath, ZHCollectionViewBaseModel *model);
