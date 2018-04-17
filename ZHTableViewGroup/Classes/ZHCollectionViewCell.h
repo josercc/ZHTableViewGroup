@@ -65,7 +65,7 @@
  @param cellNumber cell 的数量
  @param identifier 标识符
  @param anyClass cell 的类名
- @param height 高度
+ @param size 高度
  @param configCompletionHandle 配置 cell
  @param didSelectRowCompletionHandle 点击 cell 方法
  */

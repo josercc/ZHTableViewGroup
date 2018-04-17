@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ZHCollectionViewGroup.h"
-#import "ZHCollectionViewCell.h"
 #import "ZHAutoConfigurationCollectionViewDelegate.h"
-#import "ZHCollectionViewBaseModel.h"
-#import "ZHCollectionViewHeaderFooter.h"
 
 /**
  添加分组的回调

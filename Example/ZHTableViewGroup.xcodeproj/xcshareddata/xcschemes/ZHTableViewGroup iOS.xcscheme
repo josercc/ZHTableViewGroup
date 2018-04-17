@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5DC98EAD208589C9009AE998"
-               BuildableName = "ZHTableViewGroup_iOS.framework"
+               BuildableName = "ZHTableViewGroup.framework"
                BlueprintName = "ZHTableViewGroup iOS"
                ReferencedContainer = "container:ZHTableViewGroup.xcodeproj">
             </BuildableReference>
@@ -48,7 +48,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5DC98EAD208589C9009AE998"
-            BuildableName = "ZHTableViewGroup_iOS.framework"
+            BuildableName = "ZHTableViewGroup.framework"
             BlueprintName = "ZHTableViewGroup iOS"
             ReferencedContainer = "container:ZHTableViewGroup.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5DC98EAD208589C9009AE998"
-            BuildableName = "ZHTableViewGroup_iOS.framework"
+            BuildableName = "ZHTableViewGroup.framework"
             BlueprintName = "ZHTableViewGroup iOS"
             ReferencedContainer = "container:ZHTableViewGroup.xcodeproj">
          </BuildableReference>
