@@ -67,9 +67,20 @@
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewCell.identifier];
     if (config) {
-        [tableViewCell configCellWithCell:cell indexPath:[self indexPathWithCell:tableViewCell indexPath:indexPath]];
+        [self tableViewCell:tableViewCell
+                 configCell:cell
+                atIndexPath:indexPath];
     }
     return cell;
+}
+
+- (void)tableViewCell:(ZHTableViewCell *)tableViewCell
+           configCell:(UITableViewCell *)cell
+          atIndexPath:(NSIndexPath *)indexPath {
+    NSIndexPath *really = [self indexPathWithCell:tableViewCell
+                                        indexPath:indexPath];
+    [tableViewCell configCellWithCell:cell
+                            indexPath:really];
 }
 
 - (NSIndexPath *)indexPathWithCell:(ZHTableViewCell *)cell indexPath:(NSIndexPath *)indexPath {

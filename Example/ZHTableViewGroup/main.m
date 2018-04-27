@@ -6,7 +6,7 @@
 //  Copyright (c) 2017 15038777234. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 #import "ZHAppDelegate.h"
 
 int main(int argc, char * argv[])

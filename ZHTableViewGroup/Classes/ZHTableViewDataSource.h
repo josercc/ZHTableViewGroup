@@ -36,6 +36,11 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
 @property (nonatomic, assign, getter=isAutoConfigurationTableViewDelegate) BOOL autoConfigurationTableViewDelegate;
 
 /**
+ * 是否开启即将展示 复制数据 默认为 NO
+ */
+@property (nonatomic, assign) BOOL isWillDisplayData;
+
+/**
  唯一的初始化ZHTableViewDataSource
 
  @param tableView 托管的 UITableView 的对象 必须存在
@@ -142,5 +147,7 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
 - (void)clearData;
 
 + (NSIndexPath *)indexPathWithDataSource:(ZHTableViewDataSource *)dataSource indexPath:(NSIndexPath *)indexPath;
+
++ (void)dataSource:(ZHTableViewDataSource *)dataSource willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

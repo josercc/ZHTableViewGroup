@@ -59,7 +59,7 @@
 
 + (UITableViewCell *)cellForRowAtWithDataSource:(ZHTableViewDataSource *)dataSource
                                       indexPath:(NSIndexPath *)indexPath {
-    return [self cellForRowAtWithDataSource:dataSource indexPath:indexPath config:YES];
+    return [self cellForRowAtWithDataSource:dataSource indexPath:indexPath config:!dataSource.isWillDisplayData];
 }
 
 + (UITableViewCell *)cellForRowAtWithDataSource:(ZHTableViewDataSource *)dataSource indexPath:(NSIndexPath *)indexPath config:(BOOL)config {
@@ -221,6 +221,21 @@
 	ZHTableViewGroup *group = [self groupForSectionWithDataSource:dataSource section:indexPath.section];
 	ZHTableViewCell *tableViewCell = [self cellForIndexPath:dataSource indexPath:indexPath];
 	return [group indexPathWithCell:tableViewCell indexPath:indexPath];
+}
+
++ (void)dataSource:(ZHTableViewDataSource *)dataSource
+   willDisplayCell:(UITableViewCell *)cell
+ forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!dataSource.isWillDisplayData) {
+        return;
+    }
+    ZHTableViewGroup *group = [self groupForSectionWithDataSource:dataSource
+                                                          section:indexPath.section];
+    ZHTableViewCell *tableViewCell = [self cellForIndexPath:dataSource
+                                                  indexPath:indexPath];
+    [group tableViewCell:tableViewCell
+              configCell:cell
+             atIndexPath:indexPath];
 }
 
 - (void)registerClasss {

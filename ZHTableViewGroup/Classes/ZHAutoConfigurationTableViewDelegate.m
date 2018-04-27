@@ -20,18 +20,25 @@
     return self;
 }
 
-- (ZHTableViewDataSourceCustomHeightCompletionHandle)completionHandleWithTableView:(UITableView *)tableView heightAtIndexPath:(NSIndexPath *)indexPath {
-    ZHTableViewDataSourceCustomHeightCompletionHandle completionHandle = ^CGFloat(ZHTableViewBaseModel *model) {
+- (ZHTableViewDataSourceCustomHeightCompletionHandle)completionHandleWithTableView:(UITableView *)tableView
+                                                                 heightAtIndexPath:(NSIndexPath *)indexPath {
+    return ^CGFloat(ZHTableViewBaseModel *model) {
         if (!model.customHeightCompletionHandle) {
             return model.height;
         }
-        return model.customHeightCompletionHandle(tableView,[ZHTableViewDataSource indexPathWithDataSource:_dataSource indexPath:indexPath],model);
-    };
-    return completionHandle;
+        NSIndexPath *reallyIndexPath = [ZHTableViewDataSource indexPathWithDataSource:_dataSource
+                                                                            indexPath:indexPath];
+        return model.customHeightCompletionHandle(tableView,reallyIndexPath,model);
+    };;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [ZHTableViewDataSource heightForRowAtDataSource:_dataSource indexPath:indexPath customHeightCompletionHandle:[self completionHandleWithTableView:tableView heightAtIndexPath:indexPath]];
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZHTableViewDataSourceCustomHeightCompletionHandle handle = [self completionHandleWithTableView:tableView
+                                                                                 heightAtIndexPath:indexPath];
+    return [ZHTableViewDataSource heightForRowAtDataSource:_dataSource
+                                                 indexPath:indexPath
+                              customHeightCompletionHandle:handle];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return [ZHTableViewDataSource heightForHeaderInSectionWithDataSource:_dataSource section:section customHeightCompletionHandle:[self completionHandleWithTableView:tableView heightAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]]];
@@ -58,6 +65,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [ZHTableViewDataSource didSelectRowAtWithDataSource:_dataSource indexPath:indexPath];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section {
+    
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [ZHTableViewDataSource dataSource:_dataSource willDisplayCell:cell forRowAtIndexPath:indexPath];
 }
 
 @end

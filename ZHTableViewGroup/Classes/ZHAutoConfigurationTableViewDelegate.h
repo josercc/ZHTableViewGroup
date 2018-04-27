@@ -6,7 +6,7 @@
 //
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, ZHTableViewCustomHeightType) {
     ZHTableViewCustomHeightTypeCell,

@@ -34,4 +34,8 @@ typedef void(^ZHTableViewGroupAddHeaderFooterCompletionHandle)(ZHTableViewHeader
 - (UITableViewHeaderFooterView *)headerFooterForStyle:(ZHTableViewHeaderFooterStyle)style tableView:(UITableView *)tableView section:(NSUInteger)section;
 
 - (NSIndexPath *)indexPathWithCell:(ZHTableViewCell *)cell indexPath:(NSIndexPath *)indexPath;
+
+- (void)tableViewCell:(ZHTableViewCell *)tableViewCell
+           configCell:(UITableViewCell *)cell
+          atIndexPath:(NSIndexPath *)indexPath;
 @end
