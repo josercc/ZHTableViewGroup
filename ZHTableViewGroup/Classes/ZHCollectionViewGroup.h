@@ -18,7 +18,7 @@ typedef void(^ZHCollectionViewGroupAddHeaderFooterCompletionHandle)(ZHCollection
 @property (nonatomic, strong) ZHCollectionViewHeaderFooter *header;
 @property (nonatomic, strong) ZHCollectionViewHeaderFooter *footer;
 @property (nonatomic, assign, readonly) NSInteger cellCount;
-@property (nonatomic, strong) NSMutableArray<ZHCollectionViewCell *> *cells;
+@property (nonatomic, strong, readonly) NSMutableArray<ZHCollectionViewCell *> *cells;
 
 - (void)registerHeaderFooterCellWithCollectionView:(UICollectionView *)CollectionView;
 

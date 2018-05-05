@@ -34,7 +34,7 @@ typedef CGFloat (^ZHCollectionViewDataSourceCustomHeightCompletionHandle)(ZHColl
  */
 @property (nonatomic, assign, getter=isAutoConfigurationCollectionViewDelegate) BOOL autoConfigurationCollectionViewDelegate;
 
-@property (nonatomic, strong) NSMutableArray<ZHCollectionViewGroup *> *groups;
+@property (nonatomic, strong, readonly) NSMutableArray<ZHCollectionViewGroup *> *groups;
 
 /**
  唯一的初始化ZHCollectionViewDataSource
