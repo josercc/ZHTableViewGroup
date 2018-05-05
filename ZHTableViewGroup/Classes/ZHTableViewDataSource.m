@@ -35,7 +35,7 @@
 }
 
 - (void)reloadTableViewData {
-    if (self.autoConfiguration) {
+    if (self.isAutoConfigurationTableViewDelegate) {
         _tableView.dataSource = self.autoConfiguration;
         _tableView.delegate = self.autoConfiguration;
     }
