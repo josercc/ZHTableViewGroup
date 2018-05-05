@@ -85,10 +85,10 @@
         return 0;
     }
     UITableViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath];
-    CGFloat automaticHeight = [automaticHeightCell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
-    if (cell.height == NSNotFound && automaticHeight != CGFLOAT_MAX) {
-        cell.height = automaticHeight;
-    }
+//    CGFloat automaticHeight = [automaticHeightCell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
+//    if (cell.height == NSNotFound && automaticHeight != CGFLOAT_MAX) {
+//        cell.height = automaticHeight;
+//    }
     return [self heightWithCustomHandle:cell.height customCompletionHandle:customHeightCompletionHandle baseModel:cell];
 }
 
