@@ -86,13 +86,10 @@
         return 0;
     }
     UITableViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath];
-    IMP imp1 = class_getMethodImplementation([automaticHeightCell class], @selector(sizeThatFits:));
-    IMP imp2 = class_getMethodImplementation([UIView class], @selector(sizeThatFits:));
-    if (imp1 != imp2) {
-        CGFloat automaticHeight = [automaticHeightCell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
-        if (cell.height == NSNotFound && automaticHeight != CGFLOAT_MAX) {
-            cell.height = automaticHeight;
-        }
+    CGFloat automaticHeight = [dataSource automaticHeightWithView:automaticHeightCell
+                                                      memberClass:[UITableViewCell class]];
+    if (cell.height == NSNotFound && automaticHeight != CGFLOAT_MAX) {
+        cell.height = automaticHeight;
     }
     return [self heightWithCustomHandle:cell.height customCompletionHandle:customHeightCompletionHandle baseModel:cell];
 }
@@ -165,7 +162,8 @@
     NSInteger height = 0;
     ZHTableViewBaseModel *baseModel;
     UITableViewHeaderFooterView *headFooter = [self viewHeaderFooterInSectionWithDtaSource:dataSource section:section style:style];
-    CGFloat automaticHeight = [headFooter sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
+    CGFloat automaticHeight = [dataSource automaticHeightWithView:headFooter
+                                                      memberClass:[UITableViewHeaderFooterView class]];
     switch (style) {
         case ZHTableViewHeaderFooterStyleHeader: {
             height = group.header.height;
@@ -183,6 +181,16 @@
         height = automaticHeight;
     }
     return [self heightWithCustomHandle:height customCompletionHandle:customHeightCompletionHandle baseModel:baseModel];
+}
+
+- (CGFloat)automaticHeightWithView:(UIView *)view
+                       memberClass:(Class)memberClass {
+    IMP imp1 = class_getMethodImplementation([view class], @selector(sizeThatFits:));
+    IMP imp2 = class_getMethodImplementation(memberClass, @selector(sizeThatFits:));
+    if (![view isMemberOfClass:memberClass] && imp1 != imp2) {
+        return [view sizeThatFits:CGSizeMake(CGRectGetWidth(self.tableView.frame), CGFLOAT_MAX)].height;
+    }
+    return CGFLOAT_MAX;
 }
 
 + (CGFloat)heightWithCustomHandle:(CGFloat)height

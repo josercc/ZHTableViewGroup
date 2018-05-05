@@ -17,4 +17,8 @@
     return self;
 }
 
+- (CGSize)sizeThatFits:(CGSize)size {
+    return CGSizeZero;
+}
+
 @end
