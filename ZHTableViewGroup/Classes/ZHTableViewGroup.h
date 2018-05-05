@@ -18,6 +18,7 @@ typedef void(^ZHTableViewGroupAddHeaderFooterCompletionHandle)(ZHTableViewHeader
 @property (nonatomic, strong) ZHTableViewHeaderFooter *header;
 @property (nonatomic, strong) ZHTableViewHeaderFooter *footer;
 @property (nonatomic, assign, readonly) NSInteger cellCount;
+@property (nonatomic, strong, readonly) NSMutableArray<ZHTableViewCell *> *cells;
 
 - (void)registerHeaderFooterCellWithTableView:(UITableView *)tableView;
 

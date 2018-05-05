@@ -41,6 +41,11 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
 @property (nonatomic, assign) BOOL isWillDisplayData;
 
 /**
+ * 数据组
+ */
+@property (nonatomic, strong, readonly) NSMutableArray<ZHTableViewGroup *> *groups;
+
+/**
  唯一的初始化ZHTableViewDataSource
 
  @param tableView 托管的 UITableView 的对象 必须存在
