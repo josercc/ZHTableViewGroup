@@ -22,6 +22,7 @@
 - (instancetype)initWithTableView:(UITableView *)tableView {
     if (self = [super init]) {
         _tableView = tableView;
+        _autoConfigurationTableViewDelegate = YES;
     }
     return self;
 }

@@ -24,17 +24,9 @@
 - (instancetype)initWithCollectionView:(UICollectionView *)CollectionView {
     if (self = [super init]) {
         _collectionView = CollectionView;
-        self.autoConfigurationCollectionViewDelegate = YES;
+        _autoConfigurationCollectionViewDelegate = YES;
     }
     return self;
-}
-
-- (void)setAutoConfigurationCollectionViewDelegate:(BOOL)autoConfigurationCollectionViewDelegate {
-    _autoConfigurationCollectionViewDelegate = autoConfigurationCollectionViewDelegate;
-    if (autoConfigurationCollectionViewDelegate) {
-        _collectionView.dataSource = self.autoConfiguration;
-        _collectionView.delegate = self.autoConfiguration;
-    }
 }
 
 - (void)addGroupWithCompletionHandle:(ZHCollectionViewDataSourceAddGroupCompletionHandle)completionHandle {
@@ -46,6 +38,10 @@
 }
 
 - (void)reloadCollectionViewData {
+    if (self.isAutoConfigurationCollectionViewDelegate) {
+        _collectionView.dataSource = self.autoConfiguration;
+        _collectionView.delegate = self.autoConfiguration;
+    }
     [self registerClasss];
     [self.collectionView reloadData];
 }
