@@ -113,11 +113,11 @@
 + (CGFloat)heightWithCustomHandle:(CGFloat)height
            customCompletionHandle:(ZHCollectionViewDataSourceCustomHeightCompletionHandle)customCompletionHandle
                         baseModel:(ZHCollectionViewBaseModel *)baseModel {
-    if (customCompletionHandle) {
-        return customCompletionHandle(baseModel);
-    }
     if (height != 0) {
         return height;
+    }
+    if (customCompletionHandle) {
+        return customCompletionHandle(baseModel);
     }
     return 44;
 }

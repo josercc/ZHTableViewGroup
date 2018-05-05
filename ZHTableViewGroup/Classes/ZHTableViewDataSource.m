@@ -183,12 +183,12 @@
 + (CGFloat)heightWithCustomHandle:(CGFloat)height
            customCompletionHandle:(ZHTableViewDataSourceCustomHeightCompletionHandle)customCompletionHandle
                         baseModel:(ZHTableViewBaseModel *)baseModel {
-	if (customCompletionHandle) {
-		return customCompletionHandle(baseModel);
-	}
 	if (height != 0) {
 		return height;
 	}
+    if (customCompletionHandle) {
+        return customCompletionHandle(baseModel);
+    }
     return 44;
 }
 
