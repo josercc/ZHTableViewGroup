@@ -22,17 +22,8 @@
 - (instancetype)initWithTableView:(UITableView *)tableView {
     if (self = [super init]) {
         _tableView = tableView;
-        self.autoConfigurationTableViewDelegate = YES;
     }
     return self;
-}
-
-- (void)setAutoConfigurationTableViewDelegate:(BOOL)autoConfigurationTableViewDelegate {
-    _autoConfigurationTableViewDelegate = autoConfigurationTableViewDelegate;
-    if (autoConfigurationTableViewDelegate) {
-        _tableView.dataSource = self.autoConfiguration;
-        _tableView.delegate = self.autoConfiguration;
-    }
 }
 
 - (void)addGroupWithCompletionHandle:(ZHTableViewDataSourceAddGroupCompletionHandle)completionHandle {
@@ -44,6 +35,10 @@
 }
 
 - (void)reloadTableViewData {
+    if (self.autoConfiguration) {
+        _tableView.dataSource = self.autoConfiguration;
+        _tableView.delegate = self.autoConfiguration;
+    }
     [self registerClasss];
     [self.tableView reloadData];
 }
