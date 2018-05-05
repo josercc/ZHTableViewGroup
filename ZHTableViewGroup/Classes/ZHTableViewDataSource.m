@@ -8,6 +8,7 @@
 
 #import "ZHTableViewDataSource.h"
 #import "ZHAutoConfigurationTableViewDelegate.h"
+#import <objc/runtime.h>
 
 @interface ZHTableViewDataSource ()
 
@@ -85,10 +86,14 @@
         return 0;
     }
     UITableViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath];
-//    CGFloat automaticHeight = [automaticHeightCell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
-//    if (cell.height == NSNotFound && automaticHeight != CGFLOAT_MAX) {
-//        cell.height = automaticHeight;
-//    }
+    IMP imp1 = class_getMethodImplementation([automaticHeightCell class], @selector(sizeThatFits:));
+    IMP imp2 = class_getMethodImplementation([UIView class], @selector(sizeThatFits:));
+    if (imp1 != imp2) {
+        CGFloat automaticHeight = [automaticHeightCell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
+        if (cell.height == NSNotFound && automaticHeight != CGFLOAT_MAX) {
+            cell.height = automaticHeight;
+        }
+    }
     return [self heightWithCustomHandle:cell.height customCompletionHandle:customHeightCompletionHandle baseModel:cell];
 }
 
