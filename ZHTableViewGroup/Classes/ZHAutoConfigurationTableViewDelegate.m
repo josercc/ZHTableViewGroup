@@ -79,4 +79,16 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     [ZHTableViewDataSource dataSource:_dataSource willDisplayCell:cell forRowAtIndexPath:indexPath];
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (_dataSource.scrollViewDidScrollCompletionHandle) {
+        _dataSource.scrollViewDidScrollCompletionHandle(scrollView);
+    }
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    if (_dataSource.scrollViewWillBeginDraggingCompletionHandle) {
+        _dataSource.scrollViewWillBeginDraggingCompletionHandle(scrollView);
+    }
+}
+
 @end

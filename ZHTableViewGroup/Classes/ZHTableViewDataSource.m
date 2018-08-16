@@ -8,7 +8,6 @@
 
 #import "ZHTableViewDataSource.h"
 #import "ZHAutoConfigurationTableViewDelegate.h"
-#import <objc/runtime.h>
 
 @interface ZHTableViewDataSource ()
 
@@ -37,11 +36,19 @@
 }
 
 - (void)reloadTableViewData {
-    if (self.isAutoConfigurationTableViewDelegate) {
-        _tableView.dataSource = self.autoConfiguration;
-        _tableView.delegate = self.autoConfiguration;
+    if (!self.tableView.dataSource) {
+        if (self.isAutoConfigurationTableViewDelegate) {
+            self.tableView.dataSource = self.autoConfiguration;
+        } else {
+            NSAssert(NO, @"必须给 UITableView 设置 DataSource 代理");
+        }
     }
-    [self registerClasss];
+    if (!self.tableView.delegate) {
+        if (self.isAutoConfigurationTableViewDelegate) {
+            self.tableView.delegate = self.autoConfiguration;
+        }
+    }
+    [self registerClass];
     [self.tableView reloadData];
 }
 
@@ -85,13 +92,26 @@
     if (!cell) {
         return 0;
     }
-    UITableViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath];
-    CGFloat automaticHeight = [dataSource automaticHeightWithView:automaticHeightCell
-                                                      memberClass:[UITableViewCell class]];
+    
+    CGFloat automaticHeight = ({
+        automaticHeight = CGFLOAT_MAX;
+        if (cell.height == NSNotFound) {
+            UITableViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath];
+            NSIndexPath *realyIndexPath = [self indexPathWithDataSource:dataSource
+                                                              indexPath:indexPath];
+            [cell configCellWithCell:automaticHeightCell
+                           indexPath:realyIndexPath];
+            automaticHeight = [automaticHeightCell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
+        }
+        automaticHeight;
+    });
+    CGFloat height = cell.height;
     if (cell.height == NSNotFound && automaticHeight != CGFLOAT_MAX) {
-        cell.height = automaticHeight;
+        height = automaticHeight;
     }
-    return [self heightWithCustomHandle:cell.height customCompletionHandle:customHeightCompletionHandle baseModel:cell];
+    return [self heightWithCustomHandle:height
+                 customCompletionHandle:customHeightCompletionHandle
+                              baseModel:cell];
 }
 
 + (void)didSelectRowAtWithDataSource:(ZHTableViewDataSource *)dataSource
@@ -162,8 +182,7 @@
     NSInteger height = 0;
     ZHTableViewBaseModel *baseModel;
     UITableViewHeaderFooterView *headFooter = [self viewHeaderFooterInSectionWithDtaSource:dataSource section:section style:style];
-    CGFloat automaticHeight = [dataSource automaticHeightWithView:headFooter
-                                                      memberClass:[UITableViewHeaderFooterView class]];
+    CGFloat automaticHeight = [headFooter sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
     switch (style) {
         case ZHTableViewHeaderFooterStyleHeader: {
             height = group.header.height;
@@ -183,28 +202,38 @@
     return [self heightWithCustomHandle:height customCompletionHandle:customHeightCompletionHandle baseModel:baseModel];
 }
 
-- (CGFloat)automaticHeightWithView:(UIView *)view
-                       memberClass:(Class)memberClass {
-    IMP imp1 = class_getMethodImplementation([view class], @selector(sizeThatFits:));
-    IMP imp2 = class_getMethodImplementation(memberClass, @selector(sizeThatFits:));
-    if (![view isMemberOfClass:memberClass] && imp1 != imp2) {
-        return [view sizeThatFits:CGSizeMake(CGRectGetWidth(self.tableView.frame), CGFLOAT_MAX)].height;
-    }
-    return CGFLOAT_MAX;
-}
-
 + (CGFloat)heightWithCustomHandle:(CGFloat)height
            customCompletionHandle:(ZHTableViewDataSourceCustomHeightCompletionHandle)customCompletionHandle
                         baseModel:(ZHTableViewBaseModel *)baseModel {
-	if (height != 0) {
-		return height;
-	}
-    if (customCompletionHandle) {
-        return customCompletionHandle(baseModel);
-    }
-    return 44;
+    return [self lookBestHeightWithBlock:^CGFloat(NSUInteger index, BOOL *stop) {
+        if (index == 0) {
+            return height;
+        } else if (index == 1 && customCompletionHandle) {
+            return customCompletionHandle(baseModel);
+        } else {
+            *stop = YES;
+            return 0;
+        }
+    }];
 }
 
++ (BOOL)isVirifyHeight:(CGFloat)height {
+    return height != NSNotFound && height != CGFLOAT_MAX;
+}
+
++ (CGFloat)lookBestHeightWithBlock:(CGFloat(^)(NSUInteger index, BOOL *stop))block {
+    CGFloat height = 0;
+    BOOL stop = NO;
+    NSUInteger index = 0;
+    while (!stop) {
+        height = block(index, &stop);
+        if ([self isVirifyHeight:height]) {
+            return height;
+        }
+        index ++;
+    }
+    return height;
+}
 
 + (ZHTableViewGroup *)groupForSectionWithDataSource:(ZHTableViewDataSource *)dataSource
                                             section:(NSInteger)section {
@@ -247,7 +276,7 @@
              atIndexPath:indexPath];
 }
 
-- (void)registerClasss {
+- (void)registerClass {
     for (ZHTableViewGroup *group in self.groups) {
         [group registerHeaderFooterCellWithTableView:self.tableView];
     }

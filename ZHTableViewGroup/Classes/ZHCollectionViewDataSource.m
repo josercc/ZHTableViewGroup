@@ -24,9 +24,17 @@
 - (instancetype)initWithCollectionView:(UICollectionView *)CollectionView {
     if (self = [super init]) {
         _collectionView = CollectionView;
-        _autoConfigurationCollectionViewDelegate = YES;
+        self.autoConfigurationCollectionViewDelegate = YES;
     }
     return self;
+}
+
+- (void)setAutoConfigurationCollectionViewDelegate:(BOOL)autoConfigurationCollectionViewDelegate {
+    _autoConfigurationCollectionViewDelegate = autoConfigurationCollectionViewDelegate;
+    if (autoConfigurationCollectionViewDelegate) {
+        _collectionView.dataSource = self.autoConfiguration;
+        _collectionView.delegate = self.autoConfiguration;
+    }
 }
 
 - (void)addGroupWithCompletionHandle:(ZHCollectionViewDataSourceAddGroupCompletionHandle)completionHandle {
@@ -38,12 +46,9 @@
 }
 
 - (void)reloadCollectionViewData {
-    if (self.isAutoConfigurationCollectionViewDelegate) {
-        _collectionView.dataSource = self.autoConfiguration;
-        _collectionView.delegate = self.autoConfiguration;
-    }
     [self registerClasss];
     [self.collectionView reloadData];
+    
 }
 
 + (NSInteger)numberOfRowsInSectionWithDataSource:(ZHCollectionViewDataSource *)dataSource
@@ -113,7 +118,7 @@
 + (CGFloat)heightWithCustomHandle:(CGFloat)height
            customCompletionHandle:(ZHCollectionViewDataSourceCustomHeightCompletionHandle)customCompletionHandle
                         baseModel:(ZHCollectionViewBaseModel *)baseModel {
-    if (height != 0) {
+    if (height != 0 && height != NSNotFound && height != CGFLOAT_MAX) {
         return height;
     }
     if (customCompletionHandle) {

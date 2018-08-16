@@ -10,7 +10,6 @@
 #import "ZHTableViewGroup.h"
 #import "ZHAutoConfigurationTableViewDelegate.h"
 
-
 /**
   添加分组的回调
 
@@ -40,9 +39,6 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
  */
 @property (nonatomic, assign) BOOL isWillDisplayData;
 
-/**
- * 数据组
- */
 @property (nonatomic, strong, readonly) NSMutableArray<ZHTableViewGroup *> *groups;
 
 /**
@@ -59,6 +55,8 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
  @param completionHandle 返回新注册的分组对象 可以进行配置
  */
 - (void)addGroupWithCompletionHandle:(ZHTableViewDataSourceAddGroupCompletionHandle)completionHandle;
+
+- (void)registerClass;
 
 /**
   进行刷新 UITableView
@@ -154,5 +152,11 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
 + (NSIndexPath *)indexPathWithDataSource:(ZHTableViewDataSource *)dataSource indexPath:(NSIndexPath *)indexPath;
 
 + (void)dataSource:(ZHTableViewDataSource *)dataSource willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
+
+#pragma mark - Delegate Block
+/* UITableView 滑动, scrollViewDidScroll的代理 */
+@property (nonatomic, copy) void (^scrollViewDidScrollCompletionHandle)(UIScrollView *scrollView);
+/* UITableView 滑动,scrollViewWillBeginDragging的代理 */
+@property (nonatomic, copy) void (^scrollViewWillBeginDraggingCompletionHandle)(UIScrollView *scrollView);
 
 @end
