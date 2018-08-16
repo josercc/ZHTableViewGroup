@@ -40,30 +40,14 @@ pod 'ZHTableViewGroupObjc'
 4. ### 配置 ZHTableViewCell
 
    ```swift
-     cell.anyClass = [UITableViewCell class];
-               cell.cellNumber = self.cellTexts.count; //设置cell的个数
-               cell.height = 44; // 设置cell的高度
-               cell.identifier = @"UITableViewCellIdentifier"; // 设置标识符
-               [cell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) { 
-                 // 配置我们的cell
-                   NSString *string = self.cellTexts[indexPath.row];
-                   cell.textLabel.text = string;
-                   if ([self.selectTitles containsObject:string]) {
-                       cell.accessoryType = UITableViewCellAccessoryCheckmark;
-                   } else {
-                       cell.accessoryType = UITableViewCellAccessoryNone;
-                   }
-               }];
-               [cell setDidSelectRowCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
-                 // 点击cell的对应回调
-                   NSString *string = self.cellTexts[indexPath.row];
-                   if ([self.selectTitles containsObject:string]) {
-                       [self.selectTitles removeObject:string];
-                   } else {
-                       [self.selectTitles addObject:string];
-                   }
-                   [self.tableView reloadData];
-               }];
+            cell.anyClass = [UITableViewCell class]; // 配置 Class
+            cell.cellNumber = self.cellTexts.count; //设置cell的个数
+            cell.height = 44; // 设置cell的高度
+            cell.identifier = @"UITableViewCellIdentifier"; // 设置标识符
+            [cell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) { 
+            }];
+            [cell setDidSelectRowCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+            }];
    ```
 
 5. ### 配置 UITableView的代理
