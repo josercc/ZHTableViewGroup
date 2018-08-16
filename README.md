@@ -14,65 +14,62 @@ pod 'ZHTableViewGroupObjc'
 
 ### 怎么使用
 
-1. ### 初始化 ZHTableViewDataSource
+####  初始化 ZHTableViewDataSource
 
-   ```objc
-   @property (nonatomic, strong) ZHTableViewDataSource *dataSource;
-   self.dataSource = [[ZHTableViewDataSource alloc] initWithTableView:self.tableView];
-   ```
+```objc
+[[ZHTableViewDataSource alloc] initWithTableView:self.homeTableView]
+```
+### 初始化 ZHTableViewGroup
 
-2. ### 初始化 ZHTableViewGroup 
+```objc
+[self.dataSource addGroupWithCompletionHandle:^(ZHTableViewGroup *group) {
+  // 可以注册Header Footer 各种各样的Cell
+}
+```
+#### 初始化 ZHTableViewCell
 
-   ```objc
-   [self.dataSource addGroupWithCompletionHandle:^(ZHTableViewGroup *group) {
-     // 可以注册Header Footer 各种各样的Cell
-   }
-   ```
+```objc
+[group addCellWithCompletionHandle:^(ZHTableViewCell *cell) {  
+  // 可以配置一种cell 可以是多个一样的必须是连续的
+}
+```
+#### 配置 ZHTableViewCell
 
-3. ### 初始化 ZHTableViewCell
+```swift
+ cell.anyClass = [UITableViewCell class]; // 配置 Class
+ cell.cellNumber = self.cellTexts.count; //设置cell的个数
+ cell.height = 44; // 设置cell的高度
+ cell.identifier = @"UITableViewCellIdentifier"; // 设置标识符
+ [cell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) { 
+ }];
+ [cell setDidSelectRowCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+ }];
+```
+#### 单独配置 UITableView的代理
 
-   ```objc
-   [group addCellWithCompletionHandle:^(ZHTableViewCell *cell) {  
-     // 可以配置一种cell 可以是多个一样的必须是连续的
-   }
-   ```
+> 仅仅只需要设置 UITableView Delegate 即可
 
-4. ### 配置 ZHTableViewCell
-
-   ```swift
-            cell.anyClass = [UITableViewCell class]; // 配置 Class
-            cell.cellNumber = self.cellTexts.count; //设置cell的个数
-            cell.height = 44; // 设置cell的高度
-            cell.identifier = @"UITableViewCellIdentifier"; // 设置标识符
-            [cell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) { 
-            }];
-            [cell setDidSelectRowCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
-            }];
-   ```
-
-5. ### 配置 UITableView的代理
-
-   > 现在可以自动设置代理 下面的方法默认是不需要设置的 如果有特殊的代码判断 需要自己实现 如果代码和下面一直  则不需要给UITableView设置代理即可
-
-   ```objc
-   - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-       return [ZHTableViewDataSource heightForRowAtDataSource:self.dataSource indexPath:indexPath customHeightCompletionHandle:nil];
-   }
-   - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-       return [ZHTableViewDataSource numberOfRowsInSectionWithDataSource:self.dataSource section:section];
-   }
-   - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-       return [ZHTableViewDataSource cellForRowAtWithDataSource:self.dataSource indexPath:indexPath];
-   }
-   - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-       [tableView deselectRowAtIndexPath:indexPath animated:YES];
-       [ZHTableViewDataSource didSelectRowAtWithDataSource:self.dataSource indexPath:indexPath];
-   }
-
-   ```
-
-### 6 清除配置
+```objc
+tableView.delegate = self;
+```
+#### 清除配置
 
 ```objc
 [self.dataSource clearData];
 ```
+
+#### 注册和进行刷新
+
+```objc
+[self.tableViewDataSource reloadTableViewData];
+```
+
+#### 设置泛型
+
+![](http://ipicimage-1251019290.coscd.myqcloud.com/2018-08-16-072220.jpg)
+
+## 关于 UICollectionView
+
+关于 UICollectionView 的数据源托管已经仿照 UITableView 实现，一样的配方。但是没有 UITableView 附加的功能多，但是基本功能都是有的。
+
+其他功能正在逐渐完善。
