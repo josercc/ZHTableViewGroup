@@ -9,8 +9,15 @@
 #import "ZHAutoConfigurationCollectionViewDelegate.h"
 #import "ZHCollectionViewDataSource.h"
 
+@interface ZHAutoConfigurationCollectionViewDelegate ()
+
+@property (nonatomic, weak) ZHCollectionViewDataSource *dataSource;
+
+@end
+
+
 @implementation ZHAutoConfigurationCollectionViewDelegate {
-    ZHCollectionViewDataSource *_dataSource;
+    
 }
 
 - (instancetype)initWithDataSource:(ZHCollectionViewDataSource *)dataSource {
@@ -55,6 +62,29 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
     return [ZHCollectionViewDataSource referenceSizeForHeaderFooterWithDataSource:_dataSource style:ZHCollectionViewHeaderFooterStyleFooter section:section];
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    ZHCollectionViewGroup *group = _dataSource.groups[section];
+    return group.sectionEdgeInsets;
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (_dataSource.scrollViewDidEndDraggingWillDecelerate) {
+        _dataSource.scrollViewDidEndDraggingWillDecelerate(scrollView, decelerate);
+    }
+    
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (_dataSource.scrollViewDidEndDecelerating) {
+        _dataSource.scrollViewDidEndDecelerating(scrollView);
+    }
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    if (_dataSource.scrollViewDidEndScrollingAnimation) {
+        _dataSource.scrollViewDidEndScrollingAnimation(scrollView);
+    }
 }
 
 @end

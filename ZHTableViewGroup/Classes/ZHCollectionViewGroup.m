@@ -16,6 +16,13 @@
 
 @implementation ZHCollectionViewGroup
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _sectionEdgeInsets = UIEdgeInsetsZero;
+    }
+    return self;
+}
+
 - (void)registerHeaderFooterCellWithCollectionView:(UICollectionView *)collectionView {
     if (self.header && self.header.identifier) {
         [collectionView registerClass:self.header.anyClass forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:self.header.identifier];

@@ -12,7 +12,7 @@
 @interface ZHCollectionViewDataSource ()
 
 @property (nonatomic, strong) NSMutableArray<ZHCollectionViewGroup *> *groups;
-@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, weak) UICollectionView *collectionView;
 @property (nonatomic, strong) ZHAutoConfigurationCollectionViewDelegate *autoConfiguration;
 
 @end
@@ -21,20 +21,16 @@
 	
 }
 
+- (void)dealloc {
+    NSLog(@"ZHCollectionViewDataSource 释放了");
+}
+
 - (instancetype)initWithCollectionView:(UICollectionView *)CollectionView {
     if (self = [super init]) {
         _collectionView = CollectionView;
-        self.autoConfigurationCollectionViewDelegate = YES;
+        _autoConfigurationCollectionViewDelegate = YES;
     }
     return self;
-}
-
-- (void)setAutoConfigurationCollectionViewDelegate:(BOOL)autoConfigurationCollectionViewDelegate {
-    _autoConfigurationCollectionViewDelegate = autoConfigurationCollectionViewDelegate;
-    if (autoConfigurationCollectionViewDelegate) {
-        _collectionView.dataSource = self.autoConfiguration;
-        _collectionView.delegate = self.autoConfiguration;
-    }
 }
 
 - (void)addGroupWithCompletionHandle:(ZHCollectionViewDataSourceAddGroupCompletionHandle)completionHandle {
@@ -46,9 +42,14 @@
 }
 
 - (void)reloadCollectionViewData {
+    if (!self.collectionView.dataSource && self.isAutoConfigurationCollectionViewDelegate) {
+        self.collectionView.dataSource = self.autoConfiguration;
+    }
+    if (!self.collectionView.delegate && self.isAutoConfigurationCollectionViewDelegate) {
+        self.collectionView.delegate = self.autoConfiguration;
+    }
     [self registerClasss];
     [self.collectionView reloadData];
-    
 }
 
 + (NSInteger)numberOfRowsInSectionWithDataSource:(ZHCollectionViewDataSource *)dataSource

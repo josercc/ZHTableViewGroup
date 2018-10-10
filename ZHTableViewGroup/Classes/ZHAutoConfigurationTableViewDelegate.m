@@ -9,9 +9,13 @@
 #import "ZHAutoConfigurationTableViewDelegate.h"
 #import "ZHTableViewDataSource.h"
 
-@implementation ZHAutoConfigurationTableViewDelegate {
-    ZHTableViewDataSource *_dataSource;
-}
+@interface ZHAutoConfigurationTableViewDelegate ()
+
+@property (nonatomic, weak) ZHTableViewDataSource *dataSource;
+
+@end
+
+@implementation ZHAutoConfigurationTableViewDelegate
 
 - (instancetype)initWithDataSource:(ZHTableViewDataSource *)dataSource {
     if (self = [super init]) {
@@ -36,15 +40,33 @@
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZHTableViewDataSourceCustomHeightCompletionHandle handle = [self completionHandleWithTableView:tableView
                                                                                  heightAtIndexPath:indexPath];
-    return [ZHTableViewDataSource heightForRowAtDataSource:_dataSource
-                                                 indexPath:indexPath
-                              customHeightCompletionHandle:handle];
+    CGFloat height = [ZHTableViewDataSource heightForRowAtDataSource:_dataSource
+                                                           indexPath:indexPath
+                                        customHeightCompletionHandle:handle];
+    if (_dataSource.heightForRowAtIndexPath) {
+        _dataSource.heightForRowAtIndexPath(tableView, indexPath, height);
+    }
+    return height;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return [ZHTableViewDataSource heightForHeaderInSectionWithDataSource:_dataSource section:section customHeightCompletionHandle:[self completionHandleWithTableView:tableView heightAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]]];
+- (CGFloat)tableView:(UITableView *)tableView
+heightForHeaderInSection:(NSInteger)section {
+    CGFloat height = [ZHTableViewDataSource heightForHeaderInSectionWithDataSource:_dataSource
+                                                                           section:section
+                                                      customHeightCompletionHandle:[self completionHandleWithTableView:tableView
+                                                                                                     heightAtIndexPath:[NSIndexPath indexPathForRow:0
+                                                                                                                                          inSection:section]]];
+    if (_dataSource.heightForHeaderInSection) {
+        _dataSource.heightForHeaderInSection(tableView, section, height);
+    }
+    return height;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return [ZHTableViewDataSource heightForFooterInSectionWithDataSource:_dataSource section:section customHeightCompletionHandle:[self completionHandleWithTableView:tableView heightAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]]];
+- (CGFloat)tableView:(UITableView *)tableView
+heightForFooterInSection:(NSInteger)section {
+    CGFloat height = [ZHTableViewDataSource heightForFooterInSectionWithDataSource:_dataSource section:section customHeightCompletionHandle:[self completionHandleWithTableView:tableView heightAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]]];
+    if (_dataSource.heightForFooterInSection) {
+        _dataSource.heightForFooterInSection(tableView, section, height);
+    }
+    return height;
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     return [ZHTableViewDataSource viewForHeaderInSectionWithDataSource:_dataSource section:section];

@@ -83,42 +83,12 @@ typedef CGFloat (^ZHCollectionViewDataSourceCustomHeightCompletionHandle)(ZHColl
 + (NSInteger)numberOfSectionsWithDataSource:(ZHCollectionViewDataSource *)dataSource;
 
 /**
- 获取Cell 所在索引的高度 如果autoConfigurationCollectionViewDelegate = YES 此方法不用调用
- 
- @param dataSource ZHCollectionViewDataSource数据源
- @param indexPath 索引
- @param customHeightCompletionHandle 自定义高度回调 实现 ZHCollectionViewCell 属性 cellHeight 无效
- @return  Cell 的高度
- */
-+ (CGFloat)heightForRowAtDataSource:(ZHCollectionViewDataSource *)dataSource indexPath:(NSIndexPath *)indexPath customHeightCompletionHandle:(ZHCollectionViewDataSourceCustomHeightCompletionHandle)customHeightCompletionHandle;
-
-/**
  点击 Cell 的回调
  
  @param dataSource ZHCollectionViewDataSource数据源
  @param indexPath 点击的索引
  */
 + (void)didSelectRowAtWithDataSource:(ZHCollectionViewDataSource *)dataSource indexPath:(NSIndexPath *)indexPath;
-
-/**
- 获取 Header 的高度
- 
- @param dataSource ZHCollectionViewDataSource数据源
- @param section 分组索引
- @param customHeightCompletionHandle 自定义高度回调
- @return 分组 Header 高度
- */
-+ (CGFloat)heightForHeaderInSectionWithDataSource:(ZHCollectionViewDataSource *)dataSource section:(NSInteger)section customHeightCompletionHandle:(ZHCollectionViewDataSourceCustomHeightCompletionHandle)customHeightCompletionHandle;
-
-/**
- 获取 Footer 的高度
- 
- @param dataSource ZHCollectionViewDataSource数据源
- @param section 分组索引
- @param customHeightCompletionHandle 自定义高度回调
- @return 分组 Footer 高度
- */
-+ (CGFloat)heightForFooterInSectionWithDataSource:(ZHCollectionViewDataSource *)dataSource section:(NSInteger)section customHeightCompletionHandle:(ZHCollectionViewDataSourceCustomHeightCompletionHandle)customHeightCompletionHandle;
 
 /**
  获取Header
@@ -147,6 +117,10 @@ typedef CGFloat (^ZHCollectionViewDataSourceCustomHeightCompletionHandle)(ZHColl
 + (CGSize)sizeForItemWithDataSource:(ZHCollectionViewDataSource *)dataSource indexPath:(NSIndexPath *)indexPath;
 
 + (CGSize)referenceSizeForHeaderFooterWithDataSource:(ZHCollectionViewDataSource *)dataSource style:(ZHCollectionViewHeaderFooterStyle)style section:(NSUInteger)section;
+
+@property (nonatomic, copy) void (^scrollViewDidEndDraggingWillDecelerate)(UIScrollView *scrollView, BOOL willDecelerate);
+@property (nonatomic, copy) void (^scrollViewDidEndDecelerating)(UIScrollView *scrollView);
+@property (nonatomic, copy) void (^scrollViewDidEndScrollingAnimation)(UIScrollView *scrollView);
 
 @end
 

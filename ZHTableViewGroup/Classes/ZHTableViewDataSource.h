@@ -38,6 +38,10 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
  * 是否开启即将展示 复制数据 默认为 NO
  */
 @property (nonatomic, assign) BOOL isWillDisplayData;
+/**
+ 添加优先级 如果 YES 启用新的优先级 先判断设置的高度 没有获取自定义 Block 的高度 其次是自动计算高度
+ */
+@property (nonatomic, assign) BOOL priorityHeight;
 
 @property (nonatomic, strong, readonly) NSMutableArray<ZHTableViewGroup *> *groups;
 
@@ -153,6 +157,9 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
 
 + (void)dataSource:(ZHTableViewDataSource *)dataSource willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
 
+@property (nonatomic, copy) void (^heightForRowAtIndexPath)(UITableView *tableView, NSIndexPath *indexPath, CGFloat height);
+@property (nonatomic, copy) void (^heightForHeaderInSection)(UITableView *tableView, NSUInteger section, CGFloat height);
+@property (nonatomic, copy) void (^heightForFooterInSection)(UITableView *tableView, NSUInteger section, CGFloat height);
 #pragma mark - Delegate Block
 /* UITableView 滑动, scrollViewDidScroll的代理 */
 @property (nonatomic, copy) void (^scrollViewDidScrollCompletionHandle)(UIScrollView *scrollView);
