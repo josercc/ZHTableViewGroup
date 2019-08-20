@@ -128,6 +128,37 @@ tableView.driverData(MakeDriverGroup {
 
 ### 简单的 UICollectionView
 
+```objc
+collectionView.driverData(MakeDriverGroup {
+  list.makeGroup(MakeDriverNode {
+      group.makeHeader(ZHDriverNode(MakeDriverBlock(UICollectionReusableView) {
+          [content setConfigBlock:^(UICollectionReusableView * _Nonnull view, NSUInteger index) {
+              view.backgroundColor = [UIColor lightGrayColor];
+          }];
+      }))
+      .size(CGSizeMake(CGRectGetWidth(collectionView.frame), 49));
+
+      group.makeCell(ZHDriverNode(MakeDriverBlock(UICollectionViewCell) {
+          [content setConfigBlock:^(UICollectionViewCell * _Nonnull view, NSUInteger index) {
+              view.backgroundColor = index % 2 == 0 ? [UIColor redColor] : [UIColor greenColor];
+          }];
+      }))
+      .size(CGSizeMake(100, 100))
+      .number(100);
+
+      group.makeFooter(ZHDriverNode(MakeDriverBlock(UICollectionReusableView) {
+          [content setConfigBlock:^(UICollectionReusableView * _Nonnull view, NSUInteger index) {
+              view.backgroundColor = [UIColor darkGrayColor];
+          }];
+      }))
+      .size(CGSizeMake(CGRectGetWidth(collectionView.frame), 49));
+  })
+  .sectionEdgeInsets(UIEdgeInsetsMake(20, 20, 20, 20));
+});
+```
+
+
+
 ## 怎么安装
 
 ### Cocoapods
