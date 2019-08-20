@@ -1,75 +1,146 @@
-# Swift 版本请移步[这里](https://github.com/josercc/ZHTableViewGroupSwift)
+---
+filename:images
+---
 
-# ZHTableViewGroup为 UITableView 而生
 
-![](http://olg3v8vew.bkt.clouddn.com/2017-03-16-38.gif)
+
+## Swift 版本请移步[这里](https://github.com/josercc/SwiftTableViewGroup)
+
+###  DriverListNode为 UITableView和 UICollectionView 而生
+
+> `ZHTableViewGroup`已经更名为`DriverListNode`
+
+## 演示
+
+### 简单的 UITableView
+
+![image-20190820114515302](images/2019-08-20-035055.png)
+
+```objc
+NSUInteger count = arc4random() % 10 + 1;
+    tableView.driverData(MakeDriverGroup {
+        list.makeGroup(MakeDriverNode {
+            group.makeCell(ZHDriverNode(MakeDriverBlock(UITableViewCell) {
+                [content setConfigBlock:^(UITableViewCell * _Nonnull view, NSUInteger index) {
+                    view.textLabel.text = [@(index) stringValue];
+                }];
+            }))
+            .number(count)
+            .height(44);
+        });
+    });
+```
+
+### 复杂的 UITableView
+
+![image-20190820115521632](images/image-20190820115521632.png)
+
+![image-20190820115538881](images/image-20190820115538881.png)
+
+```objc
+tableView.driverData(MakeDriverGroup {
+        list.makeGroup(MakeDriverNode {
+            group.makeHeader(ZHDriverNode(MakeDriverBlock(UITableViewHeaderFooterView) {
+                [content setConfigBlock:^(UITableViewHeaderFooterView * _Nonnull view, NSUInteger index) {
+                    view.textLabel.text = @"固定10个一样的 Cell";
+                }];
+            }))
+            .height(49);
+            
+            group.makeCell(ZHDriverNode(MakeDriverBlock(UITableViewCell) {
+                [content setConfigBlock:^(UITableViewCell * _Nonnull view, NSUInteger index) {
+                    view.textLabel.text = [@(index) stringValue];
+                }];
+            }))
+            .height(44)
+            .number(10);
+        });
+        
+        list.makeGroup(MakeDriverNode {
+            group.makeHeader(ZHDriverNode(MakeDriverBlock(UITableViewHeaderFooterView) {
+                [content setConfigBlock:^(UITableViewHeaderFooterView * _Nonnull view, NSUInteger index) {
+                    view.textLabel.text = @"展示高度区域";
+                }];
+            }))
+            .height(49);
+            
+            group.makeCell(ZHDriverNode(MakeDriverBlock(UITableViewCell) {
+                [content setConfigBlock:^(UITableViewCell * _Nonnull view, NSUInteger index) {
+                    view.textLabel.text = @"这是固定高度30";
+                }];
+            }))
+            .height(30);
+            
+            group.makeCell(ZHDriverNode(MakeDriverBlock(AutomitcHeightCell) {
+                [content setConfigBlock:^(AutomitcHeightCell * _Nonnull view, NSUInteger index) {
+                    view.multiLineLabel.text = @"这是自动通过`sizeToFit方法计算自动高度的 Cell,会根据我们自己设置的值返回 Cell 的高度。这是自动通过`sizeToFit方法计算自动高度的 Cell,会根据我们自己设置的值返回 Cell 的高度。";
+                }];
+            }));
+            
+            group.makeCell(ZHDriverNode(MakeDriverBlock(UITableViewCell) {
+                [content setConfigBlock:^(UITableViewCell * _Nonnull view, NSUInteger index) {
+                    view.textLabel.text = @"这个是自定义高度100";
+                }];
+                [content setCustomHeightBlock:^CGFloat(UITableViewCell * _Nonnull view, NSUInteger index) {
+                    return 100;
+                }];
+            }))
+            .height(50);
+        });
+        
+        list.makeGroup(MakeDriverNode {
+            group.makeHeader(ZHDriverNode(MakeDriverBlock(UITableViewHeaderFooterView) {
+                [content setConfigBlock:^(UITableViewHeaderFooterView * _Nonnull view, NSUInteger index) {
+                    view.textLabel.text = @"创建间隙";
+                }];
+            }))
+            .height(49);
+            
+            group.makeSpeacer(UIColor.lightGrayColor);
+            
+            group.makeFooter(ZHDriverNode(MakeDriverBlock(UITableViewHeaderFooterView) {
+                [content setConfigBlock:^(UITableViewHeaderFooterView * _Nonnull view, NSUInteger index) {
+                    view.textLabel.text = @"展示创建 Footer";
+                }];
+            }))
+            .height(49);
+        });
+    });
+```
+
+### 可变数据 UITableView
+
+![image-20190820115647037](images/image-20190820115647037.png)
+
+```objc
+tableView.driverData(MakeDriverGroup {
+        list.makeGroup(MakeDriverNode {
+            group.makeCell(ZHDriverNode(MakeDriverBlock(UITableViewCell) {
+                [content setConfigBlock:^(UITableViewCell * _Nonnull view, NSUInteger index) {
+                    view.textLabel.text = texts[index];
+                }];
+            }))
+            .number(texts.count)
+            .height(44);
+        });
+    });
+```
+
+### 简单的 UICollectionView
 
 ## 怎么安装
 
+### Cocoapods
+
 ```ruby
-pod 'ZHTableViewGroupObjc'
+pod 'DriverListNode'
+```
+
+### Carthage
+
+```ruby
+github "josercc/ZHTableViewGroup"
 ```
 
 
 
-### 怎么使用
-
-####  初始化 ZHTableViewDataSource
-
-```objc
-[[ZHTableViewDataSource alloc] initWithTableView:self.homeTableView]
-```
-### 初始化 ZHTableViewGroup
-
-```objc
-[self.dataSource addGroupWithCompletionHandle:^(ZHTableViewGroup *group) {
-  // 可以注册Header Footer 各种各样的Cell
-}
-```
-#### 初始化 ZHTableViewCell
-
-```objc
-[group addCellWithCompletionHandle:^(ZHTableViewCell *cell) {  
-  // 可以配置一种cell 可以是多个一样的必须是连续的
-}
-```
-#### 配置 ZHTableViewCell
-
-```swift
- cell.anyClass = [UITableViewCell class]; // 配置 Class
- cell.cellNumber = self.cellTexts.count; //设置cell的个数
- cell.height = 44; // 设置cell的高度
- cell.identifier = @"UITableViewCellIdentifier"; // 设置标识符
- [cell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) { 
- }];
- [cell setDidSelectRowCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
- }];
-```
-#### 单独配置 UITableView的代理
-
-> 仅仅只需要设置 UITableView Delegate 即可
-
-```objc
-tableView.delegate = self;
-```
-#### 清除配置
-
-```objc
-[self.dataSource clearData];
-```
-
-#### 注册和进行刷新
-
-```objc
-[self.tableViewDataSource reloadTableViewData];
-```
-
-#### 设置泛型
-
-![](http://ipicimage-1251019290.coscd.myqcloud.com/2018-08-16-072220.jpg)
-
-## 关于 UICollectionView
-
-关于 UICollectionView 的数据源托管已经仿照 UITableView 实现，一样的配方。但是没有 UITableView 附加的功能多，但是基本功能都是有的。
-
-其他功能正在逐渐完善。

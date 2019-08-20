@@ -1,6 +1,0 @@
-framework module ZHTableViewGroupObjc {
-  umbrella header "ZHTableViewGroupObjc-umbrella.h"
-
-  export *
-  module * { export * }
-}
