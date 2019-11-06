@@ -11,22 +11,23 @@
 @implementation DriverNode
 
 - (instancetype)initWithAnyClass:(Class)anyClass
-                           block:(DriverBlockContent *(^)(void))block {
+                           block:(void(^)(DriverBlockContent *))block {
     if (self = [super init]) {
         _anyClass = anyClass;
         _identifier = [NSString stringWithFormat:@"%@:%@",NSStringFromClass(_anyClass),@(self.hash)];
         _cellHeight = NSNotFound;
         _cellNumber = 1;
         _enableCell = YES;
+        _blockContent = [[DriverBlockContent alloc] init];
         if (block) {
-            _blockContent = block();
+            block(_blockContent);
         }
     }
     return self;
 }
 
 + (instancetype)makeDriverAnyClass:(Class)anyClass
-                             block:(DriverBlockContent *(^)(void))block {
+                             block:(void (^)(DriverBlockContent * _Nonnull))block {
     return [[DriverNode alloc] initWithAnyClass:anyClass
                                           block:block];
 }
@@ -61,4 +62,7 @@
 
 @end
 
+FOUNDATION_EXPORT DriverNode *ZHDriverNode(Class anyclass, void(^block)(DriverBlockContent *content)) {
+    return [DriverNode makeDriverAnyClass:anyclass block:block];
+}
 

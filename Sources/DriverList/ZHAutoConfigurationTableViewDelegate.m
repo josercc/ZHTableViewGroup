@@ -113,4 +113,10 @@ heightForFooterInSection:(NSInteger)section {
     }
 }
 
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+    if (_dataSource.scrollViewWillBeginDeceleratingCompletionHandle) {
+        _dataSource.scrollViewWillBeginDeceleratingCompletionHandle(scrollView);
+    }
+}
+
 @end

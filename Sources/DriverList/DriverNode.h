@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) DriverBlockContent *blockContent;
 
 + (instancetype)makeDriverAnyClass:(Class)anyClass
-                             block:(DriverBlockContent *(^)(void))block;
+                             block:(void(^)(DriverBlockContent *content))block;
 
 
 - (DriverNode *(^)(CGFloat))height;
@@ -34,5 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (DriverNode *(^)(CGSize))size;
 
 @end
+
+FOUNDATION_EXPORT DriverNode *ZHDriverNode(Class anyclass, void(^block)(DriverBlockContent *content));
 
 NS_ASSUME_NONNULL_END

@@ -22,15 +22,11 @@
 }
 
 #pragma mark - DriverDataSource
-- (void)reloadListWithDriverBlock:(void(^)(void))block {
-    [self makeDriverList:^(DriverList * _Nonnull list) {
-        ZHDriverList(list);
-        if (block) {
-            block();
-        }
-    }];
+- (void (^)(void(^)(DriverList *list)))driverData {
+    return ^(void(^block)(DriverList *list)) {
+        [self makeDriverList:block];
+    };
 }
-
 - (void)makeDriverList:(void (^)(DriverList * _Nonnull))block {
     if (!block) {
         return;

@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol DriverDataSource <NSObject>
 
-- (void)reloadListWithDriverBlock:(void(^)(void))block;
+- (void(^)(void(^)(DriverList *list)))driverData;
 
 @end
 

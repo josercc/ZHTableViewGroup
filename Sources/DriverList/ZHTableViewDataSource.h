@@ -165,6 +165,7 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
 @property (nonatomic, copy) void (^scrollViewDidScrollCompletionHandle)(UIScrollView *scrollView);
 /* UITableView 滑动,scrollViewWillBeginDragging的代理 */
 @property (nonatomic, copy) void (^scrollViewWillBeginDraggingCompletionHandle)(UIScrollView *scrollView);
-
+@property (nonatomic, copy) void (^scrollViewWillBeginDeceleratingCompletionHandle)(UIScrollView *scrollView);
+- (void)fixMoreBlankTableViewCellWithCellIdentifident:(NSString *)identifier;
 
 @end

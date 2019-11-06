@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'DriverListNode'
+  s.name             = 'ZHTableViewGroupObjc'
   s.version          = '3.4.0'
   s.summary          = 'Manger UITableView DataSource More Cell Style'
 

@@ -52,6 +52,23 @@
     [self.tableView reloadData];
 }
 
+- (void)fixMoreBlankTableViewCellWithCellIdentifident:(NSString *)identifier {
+    __block BOOL isExitSpanceCell = NO;
+    [self.groups enumerateObjectsUsingBlock:^(ZHTableViewGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj.cells enumerateObjectsUsingBlock:^(ZHTableViewCell * _Nonnull obj1, NSUInteger idx1, BOOL * _Nonnull stop) {
+            if ([obj1.identifier isEqualToString:identifier]) {
+                if (isExitSpanceCell) {
+                    [obj.cells removeObject:obj1];
+                } else {
+                    isExitSpanceCell = YES;
+                }
+            } else {
+                isExitSpanceCell = NO;
+            }
+        }];
+    }];
+}
+
 + (NSInteger)numberOfRowsInSectionWithDataSource:(ZHTableViewDataSource *)dataSource
                                          section:(NSInteger)section {
     ZHTableViewGroup *group = [self groupForSectionWithDataSource:dataSource section:section];
