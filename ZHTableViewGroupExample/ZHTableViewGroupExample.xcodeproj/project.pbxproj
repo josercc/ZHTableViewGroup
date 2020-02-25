@@ -16,31 +16,35 @@
 		17722FCD2404A78500CEC436 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17722FCC2404A78500CEC436 /* main.m */; };
 		17722FDF2404A7D300CEC436 /* ZHTableViewGroupObjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17722FD82404A7D300CEC436 /* ZHTableViewGroupObjc.framework */; };
 		17722FE02404A7D300CEC436 /* ZHTableViewGroupObjc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17722FD82404A7D300CEC436 /* ZHTableViewGroupObjc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1772300E2404A80800CEC436 /* ZHCollectionViewBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FE52404A80600CEC436 /* ZHCollectionViewBaseModel.h */; };
-		177230102404A80800CEC436 /* ZHAutoConfigurationCollectionViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FE72404A80700CEC436 /* ZHAutoConfigurationCollectionViewDelegate.h */; };
+		1772300E2404A80800CEC436 /* ZHCollectionViewBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FE52404A80600CEC436 /* ZHCollectionViewBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		177230102404A80800CEC436 /* ZHAutoConfigurationCollectionViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FE72404A80700CEC436 /* ZHAutoConfigurationCollectionViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		177230112404A80800CEC436 /* ZHCollectionViewBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17722FE82404A80700CEC436 /* ZHCollectionViewBaseModel.m */; };
 		177230122404A80800CEC436 /* ZHAutoConfigurationTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17722FE92404A80700CEC436 /* ZHAutoConfigurationTableViewDelegate.m */; };
-		177230132404A80800CEC436 /* ZHTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FEA2404A80700CEC436 /* ZHTableViewDataSource.h */; };
+		177230132404A80800CEC436 /* ZHTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FEA2404A80700CEC436 /* ZHTableViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		177230142404A80800CEC436 /* ZHAutoConfigurationCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17722FEB2404A80700CEC436 /* ZHAutoConfigurationCollectionViewDelegate.m */; };
 		177230152404A80800CEC436 /* ZHCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 17722FEC2404A80700CEC436 /* ZHCollectionViewDataSource.m */; };
 		177230162404A80800CEC436 /* ZHCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17722FED2404A80700CEC436 /* ZHCollectionViewCell.m */; };
-		177230172404A80800CEC436 /* ZHCollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FEE2404A80700CEC436 /* ZHCollectionViewDataSource.h */; };
-		177230182404A80800CEC436 /* ZHTableViewBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FEF2404A80700CEC436 /* ZHTableViewBaseModel.h */; };
+		177230172404A80800CEC436 /* ZHCollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FEE2404A80700CEC436 /* ZHCollectionViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		177230182404A80800CEC436 /* ZHTableViewBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FEF2404A80700CEC436 /* ZHTableViewBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1772301A2404A80800CEC436 /* ZHTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17722FF12404A80700CEC436 /* ZHTableViewCell.m */; };
-		1772301B2404A80800CEC436 /* ZHCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FF22404A80700CEC436 /* ZHCollectionViewCell.h */; };
-		1772301C2404A80800CEC436 /* ZHTableViewGroupObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FF32404A80700CEC436 /* ZHTableViewGroupObjc.h */; };
+		1772301B2404A80800CEC436 /* ZHCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FF22404A80700CEC436 /* ZHCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1772301C2404A80800CEC436 /* ZHTableViewGroupObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FF32404A80700CEC436 /* ZHTableViewGroupObjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1772301E2404A80800CEC436 /* ZHTableViewBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17722FF52404A80700CEC436 /* ZHTableViewBaseModel.m */; };
 		1772301F2404A80800CEC436 /* ZHCollectionViewHeaderFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 17722FF62404A80700CEC436 /* ZHCollectionViewHeaderFooter.m */; };
 		177230202404A80800CEC436 /* ZHTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 17722FF72404A80700CEC436 /* ZHTableViewDataSource.m */; };
-		177230252404A80800CEC436 /* ZHCollectionViewHeaderFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FFC2404A80700CEC436 /* ZHCollectionViewHeaderFooter.h */; };
-		177230272404A80800CEC436 /* ZHAutoConfigurationTableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FFE2404A80700CEC436 /* ZHAutoConfigurationTableViewDelegate.h */; };
-		1772302B2404A80800CEC436 /* ZHTableViewGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 177230032404A80800CEC436 /* ZHTableViewGroup.h */; };
+		177230252404A80800CEC436 /* ZHCollectionViewHeaderFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FFC2404A80700CEC436 /* ZHCollectionViewHeaderFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		177230272404A80800CEC436 /* ZHAutoConfigurationTableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 17722FFE2404A80700CEC436 /* ZHAutoConfigurationTableViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1772302B2404A80800CEC436 /* ZHTableViewGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 177230032404A80800CEC436 /* ZHTableViewGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1772302C2404A80800CEC436 /* ZHTableViewHeaderFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 177230042404A80800CEC436 /* ZHTableViewHeaderFooter.m */; };
-		1772302D2404A80800CEC436 /* ZHTableViewHeaderFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 177230052404A80800CEC436 /* ZHTableViewHeaderFooter.h */; };
+		1772302D2404A80800CEC436 /* ZHTableViewHeaderFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 177230052404A80800CEC436 /* ZHTableViewHeaderFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1772302E2404A80800CEC436 /* ZHCollectionViewGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 177230062404A80800CEC436 /* ZHCollectionViewGroup.m */; };
 		1772302F2404A80800CEC436 /* ZHTableViewGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 177230072404A80800CEC436 /* ZHTableViewGroup.m */; };
-		177230312404A80800CEC436 /* ZHTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 177230092404A80800CEC436 /* ZHTableViewCell.h */; };
-		177230322404A80800CEC436 /* ZHCollectionViewGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 1772300A2404A80800CEC436 /* ZHCollectionViewGroup.h */; };
+		177230312404A80800CEC436 /* ZHTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 177230092404A80800CEC436 /* ZHTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		177230322404A80800CEC436 /* ZHCollectionViewGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 1772300A2404A80800CEC436 /* ZHCollectionViewGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17C9D6502404CACF00D7B871 /* ReloadHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D64A2404C3F500D7B871 /* ReloadHeightViewController.m */; };
+		17C9D6592404F1F300D7B871 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D6572404F1F300D7B871 /* TableViewController.m */; };
+		17C9D65A2404F1F300D7B871 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C9D6582404F1F300D7B871 /* TableViewController.xib */; };
+		17C9D65D2404FF0900D7B871 /* SetHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D65C2404FF0900D7B871 /* SetHeightViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +111,13 @@
 		177230072404A80800CEC436 /* ZHTableViewGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHTableViewGroup.m; path = ../CollectionView/ZHTableViewGroup.m; sourceTree = "<group>"; };
 		177230092404A80800CEC436 /* ZHTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHTableViewCell.h; path = ../CollectionView/ZHTableViewCell.h; sourceTree = "<group>"; };
 		1772300A2404A80800CEC436 /* ZHCollectionViewGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewGroup.h; sourceTree = "<group>"; };
+		17C9D6492404C3F500D7B871 /* ReloadHeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReloadHeightViewController.h; sourceTree = "<group>"; };
+		17C9D64A2404C3F500D7B871 /* ReloadHeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReloadHeightViewController.m; sourceTree = "<group>"; };
+		17C9D6562404F1F300D7B871 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		17C9D6572404F1F300D7B871 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		17C9D6582404F1F300D7B871 /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+		17C9D65B2404FF0900D7B871 /* SetHeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetHeightViewController.h; sourceTree = "<group>"; };
+		17C9D65C2404FF0900D7B871 /* SetHeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetHeightViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +166,13 @@
 				17722FBE2404A78200CEC436 /* SceneDelegate.m */,
 				17722FC02404A78200CEC436 /* ViewController.h */,
 				17722FC12404A78200CEC436 /* ViewController.m */,
+				17C9D6492404C3F500D7B871 /* ReloadHeightViewController.h */,
+				17C9D64A2404C3F500D7B871 /* ReloadHeightViewController.m */,
+				17C9D65B2404FF0900D7B871 /* SetHeightViewController.h */,
+				17C9D65C2404FF0900D7B871 /* SetHeightViewController.m */,
+				17C9D6562404F1F300D7B871 /* TableViewController.h */,
+				17C9D6572404F1F300D7B871 /* TableViewController.m */,
+				17C9D6582404F1F300D7B871 /* TableViewController.xib */,
 				17722FC32404A78200CEC436 /* Main.storyboard */,
 				17722FC62404A78400CEC436 /* Assets.xcassets */,
 				17722FC82404A78400CEC436 /* LaunchScreen.storyboard */,
@@ -319,6 +337,7 @@
 			files = (
 				17722FCA2404A78400CEC436 /* LaunchScreen.storyboard in Resources */,
 				17722FC72404A78400CEC436 /* Assets.xcassets in Resources */,
+				17C9D65A2404F1F300D7B871 /* TableViewController.xib in Resources */,
 				17722FC52404A78200CEC436 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,8 +357,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				17722FC22404A78200CEC436 /* ViewController.m in Sources */,
+				17C9D6592404F1F300D7B871 /* TableViewController.m in Sources */,
+				17C9D65D2404FF0900D7B871 /* SetHeightViewController.m in Sources */,
 				17722FBC2404A78200CEC436 /* AppDelegate.m in Sources */,
 				17722FCD2404A78500CEC436 /* main.m in Sources */,
+				17C9D6502404CACF00D7B871 /* ReloadHeightViewController.m in Sources */,
 				17722FBF2404A78200CEC436 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

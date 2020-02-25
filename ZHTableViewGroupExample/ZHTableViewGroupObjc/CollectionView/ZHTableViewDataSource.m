@@ -338,3 +338,84 @@
 }
 
 @end
+
+@implementation ZHTableViewDataSource (ReloadHeight)
+
+#pragma mark - 根据标识符刷新高度
+- (void)reloadCellAutomaticHeightWithIdentifier:(NSString *)identifier {
+    [self reloadCellFixedHeight:NSNotFound
+                     identifier:identifier];
+}
+
+- (void)reloadCellFixedHeight:(CGFloat)height
+                   identifier:(NSString *)identifier {
+    [self reloadCellHeight:height
+       tableViewCellConfig:^BOOL(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
+        return [tableViewCell.identifier isEqualToString:identifier];
+    }];
+}
+
+#pragma mark - 根据类类型刷新高度
+- (void)reloadCellAutomaticHeightWithClass:(Class)className {
+    [self reloadCellFixedHeight:NSNotFound
+                      className:className];
+}
+
+- (void)reloadCellFixedHeight:(CGFloat)height
+                    className:(Class)className {
+    [self reloadCellHeight:height
+       tableViewCellConfig:^BOOL(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
+        return tableViewCell.anyClass == className;
+    }];
+}
+
+- (void)reloadCellAutomaticHeightWithTableViewCell:(ZHTableViewCell *)tableViewCell {
+    [self reloadCellFixedHeight:NSNotFound
+                  tableViewCell:tableViewCell];
+}
+
+- (void)reloadCellFixedHeight:(NSInteger)height
+                tableViewCell:(ZHTableViewCell *)tableViewCell {
+    [self reloadCellHeight:height
+       tableViewCellConfig:^BOOL(NSUInteger section, NSUInteger row, ZHTableViewCell *cell) {
+        return [cell isEqual:tableViewCell];
+    }];
+}
+
+- (void)reloadCellAutomicHeightWithGroupIndex:(NSUInteger)groupIndex
+                                    cellIndex:(NSUInteger)cellIndex {
+    [self reloadCellFixedHeight:NSNotFound
+                     groupIndex:groupIndex
+                      cellIndex:cellIndex];
+}
+
+- (void)reloadCellFixedHeight:(CGFloat)height
+                   groupIndex:(NSUInteger)groupIndex
+                    cellIndex:(NSUInteger)cellIndex {
+    [self reloadCellHeight:height
+       tableViewCellConfig:^BOOL(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
+        return section == groupIndex && row == cellIndex;
+    }];
+}
+
+- (void)reloadCellHeight:(CGFloat)height
+     tableViewCellConfig:(BOOL (^)(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell))tableViewCellConfig {
+    if (!tableViewCellConfig) {
+        return;
+    }
+    __block NSUInteger section = 0;
+    [self.groups enumerateObjectsUsingBlock:^(ZHTableViewGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        section = idx;
+        __block NSUInteger row = 0;
+        [obj.cells enumerateObjectsUsingBlock:^(ZHTableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            row += idx;
+            if (tableViewCellConfig(section,idx,obj)) {
+                obj.height = height;
+                [self.tableView beginUpdates];
+                [self.tableView endUpdates];
+            }
+        }];
+    }];
+}
+
+@end

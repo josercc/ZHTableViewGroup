@@ -168,3 +168,47 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
 
 
 @end
+
+@interface ZHTableViewDataSource (ReloadHeight)
+
+/// 根据标识符刷新自动计算高度
+/// @param identifier 标识符
+- (void)reloadCellAutomaticHeightWithIdentifier:(NSString *)identifier;
+/// 根据标识符刷新固定高度
+/// @param height 固定高度
+/// @param identifier 标识符
+- (void)reloadCellFixedHeight:(CGFloat)height
+                   identifier:(NSString *)identifier;
+
+/// 根据类类型刷新自动计算高度
+/// @param className 类类型
+- (void)reloadCellAutomaticHeightWithClass:(Class)className;
+/// 根据类类型刷新固定高度
+/// @param height 固定高度
+/// @param className 类类型
+- (void)reloadCellFixedHeight:(CGFloat)height
+                    className:(Class)className;
+
+/// 根据指定的`ZHTableViewCell`刷新自动计算高度
+/// @param tableViewCell 指定的`ZHTableViewCell`
+- (void)reloadCellAutomaticHeightWithTableViewCell:(ZHTableViewCell *)tableViewCell;
+/// 根据指定的`ZHTableViewCell`刷新固定高度
+/// @param height 固定的高度
+/// @param tableViewCell 指定的`ZHTableViewCell`
+- (void)reloadCellFixedHeight:(NSInteger)height
+                tableViewCell:(ZHTableViewCell *)tableViewCell;
+
+/// 根据对应分组个对应的`ZHTableViewCell`索引更新自动高度
+/// @param groupIndex 分组的索引
+/// @param cellIndex 对应的`ZHTableViewCell`索引
+- (void)reloadCellAutomicHeightWithGroupIndex:(NSUInteger)groupIndex
+                                    cellIndex:(NSUInteger)cellIndex;
+/// 根据对应分组个对应的`ZHTableViewCell`索引更新固定高度
+/// @param height 固定高度
+/// @param groupIndex 分组的索引
+/// @param cellIndex 对应的`ZHTableViewCell`索引
+- (void)reloadCellFixedHeight:(CGFloat)height
+                   groupIndex:(NSUInteger)groupIndex
+                    cellIndex:(NSUInteger)cellIndex;
+
+@end
