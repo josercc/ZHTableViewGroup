@@ -45,6 +45,8 @@
 		17C9D6592404F1F300D7B871 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D6572404F1F300D7B871 /* TableViewController.m */; };
 		17C9D65A2404F1F300D7B871 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C9D6582404F1F300D7B871 /* TableViewController.xib */; };
 		17C9D65D2404FF0900D7B871 /* SetHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D65C2404FF0900D7B871 /* SetHeightViewController.m */; };
+		17C9D660240514F900D7B871 /* ReloadCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D65F240514F900D7B871 /* ReloadCellViewController.m */; };
+		17C9D6632405198D00D7B871 /* ReloadCellDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D6622405198D00D7B871 /* ReloadCellDataViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,10 @@
 		17C9D6582404F1F300D7B871 /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 		17C9D65B2404FF0900D7B871 /* SetHeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetHeightViewController.h; sourceTree = "<group>"; };
 		17C9D65C2404FF0900D7B871 /* SetHeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetHeightViewController.m; sourceTree = "<group>"; };
+		17C9D65E240514F900D7B871 /* ReloadCellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReloadCellViewController.h; sourceTree = "<group>"; };
+		17C9D65F240514F900D7B871 /* ReloadCellViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReloadCellViewController.m; sourceTree = "<group>"; };
+		17C9D6612405198D00D7B871 /* ReloadCellDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReloadCellDataViewController.h; sourceTree = "<group>"; };
+		17C9D6622405198D00D7B871 /* ReloadCellDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReloadCellDataViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,10 @@
 				17C9D64A2404C3F500D7B871 /* ReloadHeightViewController.m */,
 				17C9D65B2404FF0900D7B871 /* SetHeightViewController.h */,
 				17C9D65C2404FF0900D7B871 /* SetHeightViewController.m */,
+				17C9D65E240514F900D7B871 /* ReloadCellViewController.h */,
+				17C9D65F240514F900D7B871 /* ReloadCellViewController.m */,
+				17C9D6612405198D00D7B871 /* ReloadCellDataViewController.h */,
+				17C9D6622405198D00D7B871 /* ReloadCellDataViewController.m */,
 				17C9D6562404F1F300D7B871 /* TableViewController.h */,
 				17C9D6572404F1F300D7B871 /* TableViewController.m */,
 				17C9D6582404F1F300D7B871 /* TableViewController.xib */,
@@ -359,6 +369,8 @@
 				17722FC22404A78200CEC436 /* ViewController.m in Sources */,
 				17C9D6592404F1F300D7B871 /* TableViewController.m in Sources */,
 				17C9D65D2404FF0900D7B871 /* SetHeightViewController.m in Sources */,
+				17C9D6632405198D00D7B871 /* ReloadCellDataViewController.m in Sources */,
+				17C9D660240514F900D7B871 /* ReloadCellViewController.m in Sources */,
 				17722FBC2404A78200CEC436 /* AppDelegate.m in Sources */,
 				17722FCD2404A78500CEC436 /* main.m in Sources */,
 				17C9D6502404CACF00D7B871 /* ReloadHeightViewController.m in Sources */,

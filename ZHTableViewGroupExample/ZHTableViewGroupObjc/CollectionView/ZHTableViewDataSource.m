@@ -403,16 +403,155 @@
     if (!tableViewCellConfig) {
         return;
     }
+    [self filterCellWithConfig:tableViewCellConfig completion:^(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
+        tableViewCell.height = height;
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
+    }];
+}
+
+@end
+
+@implementation ZHTableViewDataSource (ReloadCell)
+
+- (void)reloadCellWithIdentifier:(NSString *)identienfier {
+    [self reloadCellWithTableViewCellConfig:^BOOL(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
+        return [tableViewCell.identifier isEqualToString:identienfier];
+    }];
+}
+
+- (void)reloadCellWithClassName:(Class)className {
+    [self reloadCellWithTableViewCellConfig:^BOOL(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
+        return tableViewCell.anyClass == className;
+    }];
+}
+
+- (void)reloadCellWithTableViewCell:(ZHTableViewCell *)tableViewCell {
+    [self reloadCellWithTableViewCellConfig:^BOOL(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell1) {
+        return [tableViewCell isEqual:tableViewCell1];
+    }];
+}
+
+- (void)reloadCellWithGroupIndex:(NSUInteger)groupIndex
+                       cellIndex:(NSUInteger)cellIndex {
+    [self reloadCellWithTableViewCellConfig:^BOOL(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell1) {
+        return groupIndex == section && cellIndex == row;
+    }];
+}
+
+- (void)reloadCellWithTableViewCellConfig:(BOOL (^)(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell))tableViewCellConfig {
+    if (!tableViewCellConfig) {
+        return;
+    }
+    [self filterCellWithConfig:tableViewCellConfig completion:^(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
+        NSMutableArray<NSIndexPath *> *indexPaths = [NSMutableArray array];
+        for (NSUInteger i = 0; i < tableViewCell.cellNumber; i++) {
+            [indexPaths addObject:[NSIndexPath indexPathForRow:(row + i) inSection:section]];
+        }
+        [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
+}
+
+@end
+
+@implementation ZHTableViewDataSource (ReloadData)
+
+- (void)reloadCellWithDataCount:(NSUInteger)dataCount
+                     identifier:(NSString *)identifier {
+    [self reloadCellWithDataCount:dataCount tableViewCellConfig:^BOOL(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
+        return [tableViewCell.identifier isEqualToString:identifier];
+    }];
+}
+
+- (void)reloadCellWithDataCount:(NSUInteger)dataCount
+                 className:(Class)className {
+    [self reloadCellWithDataCount:dataCount tableViewCellConfig:^BOOL(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
+        return tableViewCell.anyClass == className;
+    }];
+}
+
+- (void)reloadCellWithDataCount:(NSUInteger)dataCount
+             tableViewCell:(ZHTableViewCell *)tableViewCell {
+    [self reloadCellWithDataCount:dataCount tableViewCellConfig:^BOOL(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell1) {
+        return [tableViewCell isEqual:tableViewCell1];
+    }];
+}
+
+- (void)reloadCellWithDataCount:(NSUInteger)dataCount
+                groupIndex:(NSUInteger)groupIndex
+                 cellIndex:(NSUInteger)cellIndex {
+    [self reloadCellWithDataCount:dataCount tableViewCellConfig:^BOOL(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell1) {
+        return groupIndex == section && cellIndex == row;
+    }];
+}
+
+- (void)reloadCellWithDataCount:(NSUInteger)dataCount
+            tableViewCellConfig:(BOOL (^)(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell))tableViewCellConfig {
+    [self filterCellWithConfig:tableViewCellConfig completion:^(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
+        NSUInteger cellNumber = tableViewCell.cellNumber;
+        tableViewCell.cellNumber = dataCount;
+        if (cellNumber == dataCount) {
+            NSMutableArray<NSIndexPath *> *indexPaths = [NSMutableArray array];
+            for (NSUInteger i = 0; i < cellNumber; i++) {
+                [indexPaths addObject:[NSIndexPath indexPathForRow:(row + i) inSection:section]];
+            }
+            [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+        } else if (cellNumber < dataCount) {
+            NSMutableArray<NSIndexPath *> *indexPaths = [NSMutableArray array];
+            NSMutableArray<NSIndexPath *> *insertIndexPaths = [NSMutableArray array];
+            for (NSUInteger i = 0; i < dataCount; i++) {
+                if (i < cellNumber) {
+                    [indexPaths addObject:[NSIndexPath indexPathForRow:(row + i) inSection:section]];
+                } else {
+                    [insertIndexPaths addObject:[NSIndexPath indexPathForRow:(row + i) inSection:section]];
+                }
+            }
+            [self updatesTableView:^{
+                [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+                [self.tableView insertRowsAtIndexPaths:insertIndexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+            }];
+        } else {
+            NSMutableArray<NSIndexPath *> *indexPaths = [NSMutableArray array];
+            NSMutableArray<NSIndexPath *> *deleteIndexPath = [NSMutableArray array];
+            for (NSUInteger i = 0; i < cellNumber; i++) {
+                if (i < dataCount) {
+                    [indexPaths addObject:[NSIndexPath indexPathForRow:(row + i) inSection:section]];
+                } else {
+                    [deleteIndexPath addObject:[NSIndexPath indexPathForRow:(row + i) inSection:section]];
+                }
+            }
+            [self updatesTableView:^{
+                [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+                [self.tableView deleteRowsAtIndexPaths:deleteIndexPath withRowAnimation:UITableViewRowAnimationAutomatic];
+            }];
+        }
+    }];
+}
+
+- (void)updatesTableView:(void(^)(void))update {
+    if (@available(iOS 11.0, *)) {
+        [self.tableView performBatchUpdates:update completion:nil];
+    } else {
+        [self.tableView beginUpdates];
+        update();
+        [self.tableView endUpdates];
+    }
+}
+
+@end
+
+@implementation ZHTableViewDataSource (Cell)
+
+- (void)filterCellWithConfig:(BOOL (^)(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell))config
+                  completion:(void (^)(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell))completion {
     __block NSUInteger section = 0;
     [self.groups enumerateObjectsUsingBlock:^(ZHTableViewGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         section = idx;
         __block NSUInteger row = 0;
         [obj.cells enumerateObjectsUsingBlock:^(ZHTableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             row += idx;
-            if (tableViewCellConfig(section,idx,obj)) {
-                obj.height = height;
-                [self.tableView beginUpdates];
-                [self.tableView endUpdates];
+            if (config(section,row,obj) && completion) {
+                completion(section,row,obj);
             }
         }];
     }];

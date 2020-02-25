@@ -212,3 +212,60 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
                     cellIndex:(NSUInteger)cellIndex;
 
 @end
+
+
+@interface ZHTableViewDataSource (ReloadCell)
+
+/// 通过标识符刷新对应的ZHTableViewCell
+/// @param identienfier 标识符
+- (void)reloadCellWithIdentifier:(NSString *)identienfier;
+/// 通过指定Class类型刷新对应的ZHTableViewCell
+/// @param className Class类型
+- (void)reloadCellWithClassName:(Class)className;
+/// 通过指定的ZHTableViewCell刷新ZHTableViewCell
+/// @param tableViewCell 指定ZHTableViewCell对象
+- (void)reloadCellWithTableViewCell:(ZHTableViewCell *)tableViewCell;
+/// 通过指定索引刷新ZHTableViewCell
+/// @param groupIndex 对应分组索引
+/// @param cellIndex 对应ZHTableViewCell索引
+- (void)reloadCellWithGroupIndex:(NSUInteger)groupIndex
+                       cellIndex:(NSUInteger)cellIndex;
+
+@end
+
+@interface ZHTableViewDataSource (ReloadData)
+
+/// 根据标识符更新数据
+/// @param dataCount 数据的总数
+/// @param identifier 标识符
+- (void)reloadCellWithDataCount:(NSUInteger)dataCount
+                     identifier:(NSString *)identifier;
+/// 根据Class类型更新数据
+/// @param dataCount 数据的总数
+/// @param className Class的类型
+- (void)reloadCellWithDataCount:(NSUInteger)dataCount
+                      className:(Class)className;
+/// 根据指定ZHTableViewCell更新数据
+/// @param dataCount 数据的总数
+/// @param tableViewCell 指定的ZHTableViewCell
+- (void)reloadCellWithDataCount:(NSUInteger)dataCount
+                  tableViewCell:(ZHTableViewCell *)tableViewCell;
+/// 根据指定的索引更新数据
+/// @param dataCount 数据的总数
+/// @param groupIndex 分组的索引
+/// @param cellIndex ZHTableViewCell的索引
+- (void)reloadCellWithDataCount:(NSUInteger)dataCount
+                     groupIndex:(NSUInteger)groupIndex
+                      cellIndex:(NSUInteger)cellIndex;
+
+@end
+
+@interface ZHTableViewDataSource (Cell)
+
+/// 根据条件过滤ZHTableViewCell 之后执行动作
+/// @param config 过滤的条件
+/// @param completion 过滤之后执行的动作
+- (void)filterCellWithConfig:(BOOL (^)(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell))config
+                  completion:(void (^)(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell))completion;
+
+@end

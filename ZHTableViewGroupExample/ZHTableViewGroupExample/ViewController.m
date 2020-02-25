@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import <ZHTableViewGroupObjc/ZHTableViewGroupObjc.h>
 #import "ReloadHeightViewController.h"
+#import "ReloadCellViewController.h"
+#import "ReloadCellDataViewController.h"
 
 @interface ViewController ()
 
@@ -26,6 +28,8 @@
     [self.tableViewDataSource addGroupWithCompletionHandle:^(ZHTableViewGroup *group) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf addReloadHeightInGroup:group];
+        [strongSelf addReloadCellInGroup:group];
+        [strongSelf addReloadDataInGroup:group];
     }];
     [self.tableViewDataSource reloadTableViewData];
 }
@@ -39,6 +43,34 @@
         }];
         [tableViewCell setDidSelectRowCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
             ReloadHeightViewController *controller = [[ReloadHeightViewController alloc] initWithNibName:nil bundle:nil];
+            [self.navigationController pushViewController:controller animated:YES];
+        }];
+    }];
+}
+
+- (void)addReloadCellInGroup:(ZHTableViewGroup *)group {
+    [group addCellWithCompletionHandle:^(ZHTableViewCell<UITableViewCell *> *tableViewCell) {
+        tableViewCell.anyClass = [UITableViewCell  class];
+        tableViewCell.identifier = @"UITableViewCell";
+        [tableViewCell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+            cell.textLabel.text = @"刷新Cell";
+        }];
+        [tableViewCell setDidSelectRowCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+            ReloadCellViewController *controller = [[ReloadCellViewController alloc] initWithNibName:nil bundle:nil];
+            [self.navigationController pushViewController:controller animated:YES];
+        }];
+    }];
+}
+
+- (void)addReloadDataInGroup:(ZHTableViewGroup *)group {
+    [group addCellWithCompletionHandle:^(ZHTableViewCell<UITableViewCell *> *tableViewCell) {
+        tableViewCell.anyClass = [UITableViewCell  class];
+        tableViewCell.identifier = @"UITableViewCell";
+        [tableViewCell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+            cell.textLabel.text = @"刷新数据";
+        }];
+        [tableViewCell setDidSelectRowCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+            ReloadCellDataViewController *controller = [[ReloadCellDataViewController alloc] initWithNibName:nil bundle:nil];
             [self.navigationController pushViewController:controller animated:YES];
         }];
     }];
