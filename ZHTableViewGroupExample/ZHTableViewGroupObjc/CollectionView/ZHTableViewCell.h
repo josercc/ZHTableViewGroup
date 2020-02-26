@@ -27,6 +27,7 @@
 @property (nonatomic, copy) void(^didSelectRowCompletionHandle)(CellType cell, NSIndexPath *indexPath);
 
 @property (nonatomic, copy) CGFloat(^customHeightBlock)(CellType cell, NSIndexPath *indexPath);
+@property (nonatomic, copy) BOOL(^hiddenBlock)(NSIndexPath *indexPath);
 
 /**
  * 为了是支持泛型

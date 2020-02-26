@@ -93,10 +93,13 @@
     if (!cell) {
         return 0;
     }
+    NSIndexPath *realyIndexPath = [self indexPathWithDataSource:dataSource
+                                                      indexPath:indexPath];
+    if (cell.hiddenBlock && cell.hiddenBlock(realyIndexPath)) {
+        return 0;
+    }
     if (cell.customHeightBlock) {
         UITableViewCell *tableViewCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath];
-        NSIndexPath *realyIndexPath = [self indexPathWithDataSource:dataSource
-                                                          indexPath:indexPath];
         [cell configCellWithCell:tableViewCell
                        indexPath:realyIndexPath];
         return cell.customHeightBlock(tableViewCell, realyIndexPath);
@@ -106,8 +109,6 @@
             automaticHeight = CGFLOAT_MAX;
             if (cell.height == NSNotFound) {
                 UITableViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath];
-                NSIndexPath *realyIndexPath = [self indexPathWithDataSource:dataSource
-                                                                  indexPath:indexPath];
                 [cell configCellWithCell:automaticHeightCell
                                indexPath:realyIndexPath];
                 automaticHeight = [automaticHeightCell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
@@ -403,11 +404,11 @@
     if (!tableViewCellConfig) {
         return;
     }
-    [self filterCellWithConfig:tableViewCellConfig completion:^(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
-        tableViewCell.height = height;
+    [[self filterCellWithConfig:tableViewCellConfig] enumerateObjectsUsingBlock:^(ZHTableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        obj.height = height;
         [self.tableView beginUpdates];
         [self.tableView endUpdates];
-    }];
+    }];;
 }
 
 @end
@@ -443,10 +444,11 @@
     if (!tableViewCellConfig) {
         return;
     }
-    [self filterCellWithConfig:tableViewCellConfig completion:^(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
+    [[self filterCellWithConfig:tableViewCellConfig] enumerateObjectsUsingBlock:^(ZHTableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSMutableArray<NSIndexPath *> *indexPaths = [NSMutableArray array];
-        for (NSUInteger i = 0; i < tableViewCell.cellNumber; i++) {
-            [indexPaths addObject:[NSIndexPath indexPathForRow:(row + i) inSection:section]];
+        for (NSUInteger i = 0; i < obj.cellNumber; i++) {
+            NSIndexPath *indexPath = [self indexPathWithTableViewCell:obj];
+            [indexPaths addObject:[NSIndexPath indexPathForRow:(indexPath.row + i) inSection:indexPath.section]];
         }
         [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     }];
@@ -487,13 +489,14 @@
 
 - (void)reloadCellWithDataCount:(NSUInteger)dataCount
             tableViewCellConfig:(BOOL (^)(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell))tableViewCellConfig {
-    [self filterCellWithConfig:tableViewCellConfig completion:^(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
-        NSUInteger cellNumber = tableViewCell.cellNumber;
-        tableViewCell.cellNumber = dataCount;
+    [[self filterCellWithConfig:tableViewCellConfig] enumerateObjectsUsingBlock:^(ZHTableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSUInteger cellNumber = obj.cellNumber;
+        NSIndexPath *indexPath = [self indexPathWithTableViewCell:obj];
+        obj.cellNumber = dataCount;
         if (cellNumber == dataCount) {
             NSMutableArray<NSIndexPath *> *indexPaths = [NSMutableArray array];
             for (NSUInteger i = 0; i < cellNumber; i++) {
-                [indexPaths addObject:[NSIndexPath indexPathForRow:(row + i) inSection:section]];
+                [indexPaths addObject:[NSIndexPath indexPathForRow:(indexPath.row + i) inSection:indexPath.section]];
             }
             [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
         } else if (cellNumber < dataCount) {
@@ -501,9 +504,9 @@
             NSMutableArray<NSIndexPath *> *insertIndexPaths = [NSMutableArray array];
             for (NSUInteger i = 0; i < dataCount; i++) {
                 if (i < cellNumber) {
-                    [indexPaths addObject:[NSIndexPath indexPathForRow:(row + i) inSection:section]];
+                    [indexPaths addObject:[NSIndexPath indexPathForRow:(indexPath.row + i) inSection:indexPath.section]];
                 } else {
-                    [insertIndexPaths addObject:[NSIndexPath indexPathForRow:(row + i) inSection:section]];
+                    [insertIndexPaths addObject:[NSIndexPath indexPathForRow:(indexPath.row + i) inSection:indexPath.section]];
                 }
             }
             [self updatesTableView:^{
@@ -515,9 +518,9 @@
             NSMutableArray<NSIndexPath *> *deleteIndexPath = [NSMutableArray array];
             for (NSUInteger i = 0; i < cellNumber; i++) {
                 if (i < dataCount) {
-                    [indexPaths addObject:[NSIndexPath indexPathForRow:(row + i) inSection:section]];
+                    [indexPaths addObject:[NSIndexPath indexPathForRow:(indexPath.row + i) inSection:indexPath.section]];
                 } else {
-                    [deleteIndexPath addObject:[NSIndexPath indexPathForRow:(row + i) inSection:section]];
+                    [deleteIndexPath addObject:[NSIndexPath indexPathForRow:(indexPath.row + i) inSection:indexPath.section]];
                 }
             }
             [self updatesTableView:^{
@@ -542,19 +545,51 @@
 
 @implementation ZHTableViewDataSource (Cell)
 
-- (void)filterCellWithConfig:(BOOL (^)(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell))config
-                  completion:(void (^)(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell))completion {
+- (NSArray<ZHTableViewCell *> *)filterCellWithConfig:(BOOL (^)(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell))config {
+    NSMutableArray<ZHTableViewCell *> *filterResults = [NSMutableArray array];
+    __block NSUInteger section = 0;
+    [self.groups enumerateObjectsUsingBlock:^(ZHTableViewGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        section = idx;
+        __block NSUInteger row = 0;
+        [obj.cells enumerateObjectsUsingBlock:^(ZHTableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            row = idx;
+            if (config(section,row,obj)) {
+                [filterResults addObject:obj];
+            }
+        }];
+    }];
+    return filterResults;
+}
+
+- (NSIndexPath *)indexPathWithTableViewCell:(ZHTableViewCell *)tableViewCell {
+    __block NSIndexPath *indexPath;
     __block NSUInteger section = 0;
     [self.groups enumerateObjectsUsingBlock:^(ZHTableViewGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         section = idx;
         __block NSUInteger row = 0;
         [obj.cells enumerateObjectsUsingBlock:^(ZHTableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             row += idx;
-            if (config(section,row,obj) && completion) {
-                completion(section,row,obj);
+            if ([tableViewCell isEqual:obj]) {
+                indexPath = [NSIndexPath indexPathForRow:row inSection:section];
             }
         }];
     }];
+    return indexPath;
+}
+
+@end
+
+@implementation ZHTableViewDataSource (Hidden)
+
+- (void)reloadAllHiddenCell {
+    [[self filterCellWithConfig:^BOOL(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
+        return YES;
+    }] enumerateObjectsUsingBlock:^(ZHTableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (!obj.hiddenBlock) {
+            return;
+        }
+        [self reloadCellWithTableViewCell:obj];
+    }] ;
 }
 
 @end

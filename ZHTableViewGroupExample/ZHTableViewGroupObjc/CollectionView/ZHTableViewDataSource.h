@@ -262,10 +262,19 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
 
 @interface ZHTableViewDataSource (Cell)
 
-/// 根据条件过滤ZHTableViewCell 之后执行动作
+/// 根据条件过滤ZHTableViewCell 
 /// @param config 过滤的条件
-/// @param completion 过滤之后执行的动作
-- (void)filterCellWithConfig:(BOOL (^)(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell))config
-                  completion:(void (^)(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell))completion;
+- (NSArray<ZHTableViewCell *> *)filterCellWithConfig:(BOOL (^)(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell))config;
+
+/// 根据tableViewCell找到对应在UITableView所在的索引
+/// @param tableViewCell 对应的tableViewCell
+- (NSIndexPath * __nullable)indexPathWithTableViewCell:(ZHTableViewCell *)tableViewCell;
+
+@end
+
+@interface ZHTableViewDataSource (Hidden)
+
+/// 刷新当前所有隐藏的Cell
+- (void)reloadAllHiddenCell;
 
 @end

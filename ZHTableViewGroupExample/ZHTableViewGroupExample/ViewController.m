@@ -11,6 +11,7 @@
 #import "ReloadHeightViewController.h"
 #import "ReloadCellViewController.h"
 #import "ReloadCellDataViewController.h"
+#import "HiddenViewController.h"
 
 @interface ViewController ()
 
@@ -30,6 +31,7 @@
         [strongSelf addReloadHeightInGroup:group];
         [strongSelf addReloadCellInGroup:group];
         [strongSelf addReloadDataInGroup:group];
+        [strongSelf addHiddenInGroup:group];
     }];
     [self.tableViewDataSource reloadTableViewData];
 }
@@ -71,6 +73,20 @@
         }];
         [tableViewCell setDidSelectRowCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
             ReloadCellDataViewController *controller = [[ReloadCellDataViewController alloc] initWithNibName:nil bundle:nil];
+            [self.navigationController pushViewController:controller animated:YES];
+        }];
+    }];
+}
+
+- (void)addHiddenInGroup:(ZHTableViewGroup *)group {
+    [group addCellWithCompletionHandle:^(ZHTableViewCell<UITableViewCell *> *tableViewCell) {
+        tableViewCell.anyClass = [UITableViewCell  class];
+        tableViewCell.identifier = @"UITableViewCell";
+        [tableViewCell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+            cell.textLabel.text = @"显示和隐藏";
+        }];
+        [tableViewCell setDidSelectRowCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+            HiddenViewController *controller = [[HiddenViewController alloc] initWithNibName:nil bundle:nil];
             [self.navigationController pushViewController:controller animated:YES];
         }];
     }];
