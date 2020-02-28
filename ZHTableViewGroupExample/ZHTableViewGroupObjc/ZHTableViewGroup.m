@@ -30,12 +30,13 @@
     }
 }
 
-- (void)addCellWithCompletionHandle:(ZHTableViewGroupAddCellCompletionHandle)completionHandle {
+- (ZHTableViewCell *)addCellWithCompletionHandle:(ZHTableViewGroupAddCellCompletionHandle)completionHandle {
     ZHTableViewCell *cell = [[ZHTableViewCell alloc] init];
     if (completionHandle) {
         completionHandle(cell);
     }
     [self.cells addObject:cell];
+    return cell;
 }
 
 - (void)addHeaderWithCompletionHandle:(ZHTableViewGroupAddHeaderFooterCompletionHandle)completionHandle {
@@ -67,7 +68,7 @@
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewCell.identifier];
     NSIndexPath *realIndexPath = [self indexPathWithCell:tableViewCell indexPath:indexPath];
-    BOOL isHidden = tableViewCell.hiddenBlock && tableViewCell.hiddenBlock(realIndexPath);
+    BOOL isHidden = [tableViewCell isHiddenWithIndexPath:realIndexPath];
     cell.hidden = isHidden;
     if (config) {
         [self tableViewCell:tableViewCell

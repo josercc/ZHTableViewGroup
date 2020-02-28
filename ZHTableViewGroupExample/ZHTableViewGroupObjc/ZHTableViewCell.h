@@ -29,6 +29,19 @@
 @property (nonatomic, copy) CGFloat(^customHeightBlock)(CellType cell, NSIndexPath *indexPath);
 @property (nonatomic, copy) BOOL(^hiddenBlock)(NSIndexPath *indexPath);
 
+/// 为指定的索引设置是否隐藏
+/// @param hidden 是否隐藏
+/// @param indexPath 指定索引
+- (void)setHidden:(BOOL)hidden
+        indexPath:(NSIndexPath *)indexPath;
+
+/// 获取指定的索引已经显示内容是否隐藏 如果不存在默认位显示
+/// @param indexPath 指定的索引
+- (BOOL)isHiddenDisplayWithIndexPath:(NSIndexPath *)indexPath;
+
+/// 获取最新当前索引是否隐藏
+/// @param indexPath 指定索引
+- (BOOL)isHiddenWithIndexPath:(NSIndexPath *)indexPath;
 /**
  * 为了是支持泛型
 

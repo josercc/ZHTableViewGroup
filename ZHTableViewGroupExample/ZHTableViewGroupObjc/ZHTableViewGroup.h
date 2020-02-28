@@ -26,7 +26,7 @@ typedef void(^ZHTableViewGroupAddHeaderFooterCompletionHandle)(ZHTableViewHeader
 
 - (UITableViewCell *)cellForTableViewWithTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath config:(BOOL)config;
 
-- (void)addCellWithCompletionHandle:(ZHTableViewGroupAddCellCompletionHandle)completionHandle;
+- (ZHTableViewCell *)addCellWithCompletionHandle:(ZHTableViewGroupAddCellCompletionHandle)completionHandle;
 
 - (void)addHeaderWithCompletionHandle:(ZHTableViewGroupAddHeaderFooterCompletionHandle)completionHandle;
 

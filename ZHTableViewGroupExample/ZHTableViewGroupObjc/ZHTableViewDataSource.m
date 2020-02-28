@@ -95,7 +95,7 @@
     }
     NSIndexPath *realyIndexPath = [self indexPathWithDataSource:dataSource
                                                       indexPath:indexPath];
-    if (cell.hiddenBlock && cell.hiddenBlock(realyIndexPath)) {
+    if ([cell isHiddenWithIndexPath:realyIndexPath]) {
         return 0;
     }
     if (cell.customHeightBlock) {
@@ -602,7 +602,13 @@
         if (!obj.hiddenBlock) {
             return;
         }
-        [needReloadIndexPath addObjectsFromArray:[self indexPathsWithTableViewCell:obj]];
+        [[self indexPathsWithTableViewCell:obj] enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull indexPath, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSIndexPath *realIndexPath = [NSIndexPath indexPathForRow:idx inSection:0];
+            if ([obj isHiddenDisplayWithIndexPath:realIndexPath] == [obj isHiddenWithIndexPath:realIndexPath]) {
+                return;
+            }
+            [needReloadIndexPath addObject:indexPath];
+        }];
     }] ;
     [self updatesTableView:^{
         [self.tableView reloadRowsAtIndexPaths:needReloadIndexPath

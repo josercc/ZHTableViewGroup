@@ -9,11 +9,13 @@
 #import "ZHTableViewCell.h"
 
 @implementation ZHTableViewCell {
+    NSMutableDictionary<NSString *, NSNumber *> *_hiddenMap;
 }
 
 - (instancetype)init {
     if (self = [super init]) {
         _cellNumber = 1;
+        _hiddenMap = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -49,6 +51,31 @@
     self.height = height;
     self.configCompletionHandle = configCompletionHandle;
     self.didSelectRowCompletionHandle = didSelectRowCompletionHandle;
+}
+
+- (void)setHidden:(BOOL)hidden
+        indexPath:(NSIndexPath *)indexPath {
+    NSString *key = [self hiddenKeyWithIndexPath:indexPath];
+    _hiddenMap[key] = @(hidden);
+}
+
+- (BOOL)isHiddenDisplayWithIndexPath:(NSIndexPath *)indexPath {
+    NSString *key = [self hiddenKeyWithIndexPath:indexPath];
+    NSNumber *hiddenNumber = _hiddenMap[key];
+    if (!hiddenNumber) {
+        return NO;
+    }
+    return [hiddenNumber boolValue];
+}
+
+- (BOOL)isHiddenWithIndexPath:(NSIndexPath *)indexPath {
+    BOOL isHidden = self.hiddenBlock && self.hiddenBlock(indexPath);
+    [self setHidden:isHidden indexPath:indexPath];
+    return isHidden;
+}
+
+- (NSString *)hiddenKeyWithIndexPath:(NSIndexPath *)indexPath {
+    return [NSString stringWithFormat:@"hidden-%@-%@",@(indexPath.section),@(indexPath.row)];
 }
 
 @end
