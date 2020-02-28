@@ -450,8 +450,19 @@
             NSIndexPath *indexPath = [self indexPathWithTableViewCell:obj];
             [indexPaths addObject:[NSIndexPath indexPathForRow:(indexPath.row + i) inSection:indexPath.section]];
         }
-        [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self updatesTableView:^{
+            [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+        }];
     }];
+}
+
+- (NSMutableArray<NSIndexPath *> *)indexPathsWithTableViewCell:(ZHTableViewCell *)tableViewCell {
+    NSMutableArray<NSIndexPath *> *indexPaths = [NSMutableArray array];
+    for (NSUInteger i = 0; i < tableViewCell.cellNumber; i++) {
+        NSIndexPath *indexPath = [self indexPathWithTableViewCell:tableViewCell];
+        [indexPaths addObject:[NSIndexPath indexPathForRow:(indexPath.row + i) inSection:indexPath.section]];
+    }
+    return indexPaths;
 }
 
 @end
@@ -568,10 +579,12 @@
         section = idx;
         __block NSUInteger row = 0;
         [obj.cells enumerateObjectsUsingBlock:^(ZHTableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            row += idx;
             if ([tableViewCell isEqual:obj]) {
                 indexPath = [NSIndexPath indexPathForRow:row inSection:section];
+                *stop = YES;
+                return;
             }
+            row += obj.cellNumber;
         }];
     }];
     return indexPath;
@@ -582,14 +595,19 @@
 @implementation ZHTableViewDataSource (Hidden)
 
 - (void)reloadAllHiddenCell {
+    NSMutableArray<NSIndexPath *> *needReloadIndexPath = [NSMutableArray array];
     [[self filterCellWithConfig:^BOOL(NSUInteger section, NSUInteger row, ZHTableViewCell *tableViewCell) {
         return YES;
     }] enumerateObjectsUsingBlock:^(ZHTableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (!obj.hiddenBlock) {
             return;
         }
-        [self reloadCellWithTableViewCell:obj];
+        [needReloadIndexPath addObjectsFromArray:[self indexPathsWithTableViewCell:obj]];
     }] ;
+    [self updatesTableView:^{
+        [self.tableView reloadRowsAtIndexPaths:needReloadIndexPath
+                              withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
 }
 
 @end

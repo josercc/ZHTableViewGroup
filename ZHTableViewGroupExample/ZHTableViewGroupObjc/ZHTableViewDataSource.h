@@ -231,6 +231,8 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
 - (void)reloadCellWithGroupIndex:(NSUInteger)groupIndex
                        cellIndex:(NSUInteger)cellIndex;
 
+- (NSMutableArray<NSIndexPath *> *)indexPathsWithTableViewCell:(ZHTableViewCell *)tableViewCell;
+
 @end
 
 @interface ZHTableViewDataSource (ReloadData)
@@ -257,6 +259,8 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
 - (void)reloadCellWithDataCount:(NSUInteger)dataCount
                      groupIndex:(NSUInteger)groupIndex
                       cellIndex:(NSUInteger)cellIndex;
+
+- (void)updatesTableView:(void(^)(void))update;
 
 @end
 

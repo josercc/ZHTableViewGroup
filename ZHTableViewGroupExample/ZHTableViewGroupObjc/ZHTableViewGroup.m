@@ -67,11 +67,8 @@
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewCell.identifier];
     NSIndexPath *realIndexPath = [self indexPathWithCell:tableViewCell indexPath:indexPath];
-    if (tableViewCell.hiddenBlock && tableViewCell.hiddenBlock(realIndexPath)) {
-        cell.hidden = YES;
-    } else {
-        cell.hidden = NO;
-    }
+    BOOL isHidden = tableViewCell.hiddenBlock && tableViewCell.hiddenBlock(realIndexPath);
+    cell.hidden = isHidden;
     if (config) {
         [self tableViewCell:tableViewCell
                  configCell:cell
