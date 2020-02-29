@@ -67,9 +67,6 @@
         return nil;
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewCell.identifier];
-    NSIndexPath *realIndexPath = [self indexPathWithCell:tableViewCell indexPath:indexPath];
-    BOOL isHidden = [tableViewCell isHiddenWithIndexPath:realIndexPath];
-    cell.hidden = isHidden;
     if (config) {
         [self tableViewCell:tableViewCell
                  configCell:cell

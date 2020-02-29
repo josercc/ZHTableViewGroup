@@ -76,6 +76,11 @@
     if (!resultCell) {
         return cell;
     }
+    ZHTableViewCell *tableViewCell = [group tableViewCellForIndexPath:indexPath];
+    NSIndexPath *realIndexPath = [group indexPathWithCell:tableViewCell indexPath:indexPath];
+    BOOL isHidden = [tableViewCell isHiddenWithIndexPath:realIndexPath];
+    cell.hidden = isHidden;
+    [tableViewCell setHidden:isHidden indexPath:realIndexPath];
     return resultCell;
 }
 

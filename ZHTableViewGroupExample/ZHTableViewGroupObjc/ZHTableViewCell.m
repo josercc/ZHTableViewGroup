@@ -70,7 +70,6 @@
 
 - (BOOL)isHiddenWithIndexPath:(NSIndexPath *)indexPath {
     BOOL isHidden = self.hiddenBlock && self.hiddenBlock(indexPath);
-    [self setHidden:isHidden indexPath:indexPath];
     return isHidden;
 }
 
