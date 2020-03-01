@@ -63,10 +63,14 @@
 
 + (UITableViewCell *)cellForRowAtWithDataSource:(ZHTableViewDataSource *)dataSource
                                       indexPath:(NSIndexPath *)indexPath {
-    return [self cellForRowAtWithDataSource:dataSource indexPath:indexPath config:!dataSource.isWillDisplayData];
+    return [self cellForRowAtWithDataSource:dataSource
+                                  indexPath:indexPath
+                                     config:!dataSource.isWillDisplayData];
 }
 
-+ (UITableViewCell *)cellForRowAtWithDataSource:(ZHTableViewDataSource *)dataSource indexPath:(NSIndexPath *)indexPath config:(BOOL)config {
++ (UITableViewCell *)cellForRowAtWithDataSource:(ZHTableViewDataSource *)dataSource
+                                      indexPath:(NSIndexPath *)indexPath
+                                         config:(BOOL)config {
     ZHTableViewGroup *group = [self groupForSectionWithDataSource:dataSource section:indexPath.section];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     if (!group) {
@@ -79,8 +83,7 @@
     ZHTableViewCell *tableViewCell = [group tableViewCellForIndexPath:indexPath];
     NSIndexPath *realIndexPath = [group indexPathWithCell:tableViewCell indexPath:indexPath];
     BOOL isHidden = [tableViewCell isHiddenWithIndexPath:realIndexPath];
-    cell.hidden = isHidden;
-    [tableViewCell setHidden:isHidden indexPath:realIndexPath];
+    resultCell.hidden = isHidden;
     return resultCell;
 }
 
@@ -104,18 +107,16 @@
         return 0;
     }
     if (cell.customHeightBlock) {
-        UITableViewCell *tableViewCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath];
-        [cell configCellWithCell:tableViewCell
-                       indexPath:realyIndexPath];
+        UITableViewCell *tableViewCell = [self cellForRowAtWithDataSource:dataSource
+                                                                indexPath:indexPath
+                                                                   config:YES];
         return cell.customHeightBlock(tableViewCell, realyIndexPath);
     }
     if (!dataSource.priorityHeight) {
         CGFloat automaticHeight = ({
             automaticHeight = CGFLOAT_MAX;
             if (cell.height == NSNotFound) {
-                UITableViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath];
-                [cell configCellWithCell:automaticHeightCell
-                               indexPath:realyIndexPath];
+                UITableViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath config:YES];
                 automaticHeight = [automaticHeightCell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
             }
             automaticHeight;
@@ -141,11 +142,9 @@
         CGFloat automaticHeight = ({
             automaticHeight = CGFLOAT_MAX;
             if (cell.height == NSNotFound) {
-                UITableViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath];
-                NSIndexPath *realyIndexPath = [self indexPathWithDataSource:dataSource
-                                                                  indexPath:indexPath];
-                [cell configCellWithCell:automaticHeightCell
-                               indexPath:realyIndexPath];
+                UITableViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource
+                                                                              indexPath:indexPath
+                                                                                 config:YES];
                 automaticHeight = [automaticHeightCell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
             }
             automaticHeight;
@@ -609,7 +608,8 @@
         }
         [[self indexPathsWithTableViewCell:obj] enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull indexPath, NSUInteger idx, BOOL * _Nonnull stop) {
             NSIndexPath *realIndexPath = [NSIndexPath indexPathForRow:idx inSection:0];
-            if ([obj isHiddenDisplayWithIndexPath:realIndexPath] == [obj isHiddenWithIndexPath:realIndexPath]) {
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            if (cell && cell.isHidden == [obj isHiddenWithIndexPath:realIndexPath]) {
                 return;
             }
             [needReloadIndexPath addObject:indexPath];
