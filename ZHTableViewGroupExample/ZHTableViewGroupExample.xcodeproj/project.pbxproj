@@ -102,7 +102,6 @@
 		17C9D6652406252200D7B871 /* HiddenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HiddenViewController.m; sourceTree = "<group>"; };
 		7F48484A240A84B600FD962B /* ZHTableViewGroupObjc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZHTableViewGroupObjc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F48484C240A84B600FD962B /* ZHTableViewGroupObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHTableViewGroupObjc.h; sourceTree = "<group>"; };
-		7F48484D240A84B600FD962B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F484856240A84D100FD962B /* ZHTableViewBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewBaseModel.m; sourceTree = "<group>"; };
 		7F484857240A84D100FD962B /* ZHCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionViewCell.m; sourceTree = "<group>"; };
 		7F484858240A84D200FD962B /* ZHCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewCell.h; sourceTree = "<group>"; };
@@ -225,7 +224,6 @@
 				7F484865240A84D300FD962B /* ZHTableViewHeaderFooter.h */,
 				7F48485B240A84D200FD962B /* ZHTableViewHeaderFooter.m */,
 				7F48484C240A84B600FD962B /* ZHTableViewGroupObjc.h */,
-				7F48484D240A84B600FD962B /* Info.plist */,
 			);
 			path = ZHTableViewGroupObjc;
 			sourceTree = "<group>";
