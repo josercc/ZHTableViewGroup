@@ -10,19 +10,20 @@
 #import "ZHTableViewGroup.h"
 #import "ZHAutoConfigurationTableViewDelegate.h"
 
+NS_ASSUME_NONNULL_BEGIN
 /**
   添加分组的回调
 
  @param group 创建的分组对象
  */
-typedef void(^ZHTableViewDataSourceAddGroupCompletionHandle)(ZHTableViewGroup *group);
+typedef void(^ZHTableViewDataSourceAddGroupCompletionHandle)(ZHTableViewGroup * group);
 
 /**
   自定义高度的回调
 
  @return 自定义算法返回的高度
  */
-typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableViewBaseModel *model);
+typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableViewBaseModel * model);
 
 /**
   进行 UITableView 进行数据托管的数据源
@@ -43,8 +44,10 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
  */
 @property (nonatomic, assign) BOOL priorityHeight;
 
-@property (nonatomic, strong, readonly) NSMutableArray<ZHTableViewGroup *> *groups;
-
+@property (nonatomic, strong, readonly) NSMutableArray<ZHTableViewGroup *> * groups;
+/// 设置ZHAutoConfigurationTableViewDelegate子类的代理
+@property (nonatomic, strong) ZHAutoConfigurationTableViewDelegate *tableViewDelegate;
+@property (nonatomic, weak) UITableView *tableView;
 /**
  唯一的初始化ZHTableViewDataSource
 
@@ -58,8 +61,9 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
 
  @param completionHandle 返回新注册的分组对象 可以进行配置
  */
-- (void)addGroupWithCompletionHandle:(ZHTableViewDataSourceAddGroupCompletionHandle)completionHandle;
+- (ZHTableViewGroup *)addGroupWithCompletionHandle:(ZHTableViewDataSourceAddGroupCompletionHandle)completionHandle;
 
+/// 注册所有的Cell
 - (void)registerClass;
 
 /**
@@ -165,6 +169,18 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
 @property (nonatomic, copy) void (^scrollViewDidScrollCompletionHandle)(UIScrollView *scrollView);
 /* UITableView 滑动,scrollViewWillBeginDragging的代理 */
 @property (nonatomic, copy) void (^scrollViewWillBeginDraggingCompletionHandle)(UIScrollView *scrollView);
+@property (nonatomic, copy) void (^scrollViewDidZoom)(UIScrollView *scrollView);
+@property (nonatomic, copy) void (^scrollViewWillEndDragging)(UIScrollView *scrollView, CGPoint velocity, CGPoint *targetContentOffset);
+@property (nonatomic, copy) void (^scrollViewDidEndDragging)(UIScrollView *scrollView, BOOL decelerate);
+@property (nonatomic, copy) void (^scrollViewWillBeginDecelerating)(UIScrollView *scrollView);
+@property (nonatomic, copy) void (^scrollViewDidEndDecelerating)(UIScrollView *scrollView);
+@property (nonatomic, copy) void (^scrollViewDidEndScrollingAnimation)(UIScrollView *scrollView);
+@property (nonatomic, copy) UIView *__nullable (^viewForZoomingInScrollView)(UIScrollView *scrollView);
+@property (nonatomic, copy) void (^scrollViewWillBeginZooming)(UIScrollView *scrollView, UIView *view);
+@property (nonatomic, copy) void (^scrollViewDidEndZooming)(UIScrollView *scrollView, UIView *view, CGFloat scale);
+@property (nonatomic, copy) BOOL (^scrollViewShouldScrollToTop)(UIScrollView *scrollView);
+@property (nonatomic, copy) void (^scrollViewDidScrollToTop)(UIScrollView *scrollView);
+@property (nonatomic, copy) void (^scrollViewDidChangeAdjustedContentInset)(UIScrollView *scrollView);
 
 
 @end
@@ -272,7 +288,7 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
 
 /// 根据tableViewCell找到对应在UITableView所在的索引
 /// @param tableViewCell 对应的tableViewCell
-- (NSIndexPath * __nullable)indexPathWithTableViewCell:(ZHTableViewCell *)tableViewCell;
+- (NSIndexPath *)indexPathWithTableViewCell:(ZHTableViewCell *)tableViewCell;
 
 @end
 
@@ -282,3 +298,5 @@ typedef CGFloat (^ZHTableViewDataSourceCustomHeightCompletionHandle)(ZHTableView
 - (void)reloadAllHiddenCell;
 
 @end
+
+NS_ASSUME_NONNULL_END

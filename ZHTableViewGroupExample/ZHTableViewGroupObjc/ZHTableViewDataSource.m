@@ -8,12 +8,11 @@
 
 #import "ZHTableViewDataSource.h"
 #import "ZHAutoConfigurationTableViewDelegate.h"
+NS_ASSUME_NONNULL_BEGIN
 
 @interface ZHTableViewDataSource ()
 
 @property (nonatomic, strong) NSMutableArray<ZHTableViewGroup *> *groups;
-@property (nonatomic, weak) UITableView *tableView;
-@property (nonatomic, strong) ZHAutoConfigurationTableViewDelegate *autoConfiguration;
 
 @end
 
@@ -33,19 +32,20 @@
         completionHandle(group);
     }
     [self.groups addObject:group];
+    return group;
 }
 
 - (void)reloadTableViewData {
     if (!self.tableView.dataSource) {
         if (self.isAutoConfigurationTableViewDelegate) {
-            self.tableView.dataSource = self.autoConfiguration;
+            self.tableView.dataSource = self.tableViewDelegate;
         } else {
             NSAssert(NO, @"必须给 UITableView 设置 DataSource 代理");
         }
     }
     if (!self.tableView.delegate) {
         if (self.isAutoConfigurationTableViewDelegate) {
-            self.tableView.delegate = self.autoConfiguration;
+            self.tableView.delegate = self.tableViewDelegate;
         }
     }
     [self registerClass];
@@ -335,11 +335,11 @@
     return _groups;
 }
 
-- (ZHAutoConfigurationTableViewDelegate *)autoConfiguration {
-    if (!_autoConfiguration) {
-        _autoConfiguration = [[ZHAutoConfigurationTableViewDelegate alloc] initWithDataSource:self];
+- (ZHAutoConfigurationTableViewDelegate *)tableViewDelegate {
+    if (!_tableViewDelegate) {
+        _tableViewDelegate = [[ZHAutoConfigurationTableViewDelegate alloc] initWithDataSource:self];
     }
-    return _autoConfiguration;
+    return _tableViewDelegate;
 }
 
 @end
@@ -622,3 +622,4 @@
 }
 
 @end
+NS_ASSUME_NONNULL_END

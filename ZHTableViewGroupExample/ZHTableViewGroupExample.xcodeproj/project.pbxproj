@@ -14,6 +14,33 @@
 		17722FC72404A78400CEC436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17722FC62404A78400CEC436 /* Assets.xcassets */; };
 		17722FCA2404A78400CEC436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17722FC82404A78400CEC436 /* LaunchScreen.storyboard */; };
 		17722FCD2404A78500CEC436 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17722FCC2404A78500CEC436 /* main.m */; };
+		178360BE240E34A800FEEC2E /* ZHTableViewGroupObjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178360B7240E34A800FEEC2E /* ZHTableViewGroupObjc.framework */; };
+		178360BF240E34A800FEEC2E /* ZHTableViewGroupObjc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 178360B7240E34A800FEEC2E /* ZHTableViewGroupObjc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		178360DC240E34C100FEEC2E /* ZHCollectionViewBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360C3240E34C000FEEC2E /* ZHCollectionViewBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		178360DD240E34C100FEEC2E /* ZHTableViewGroupObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360C4240E34C000FEEC2E /* ZHTableViewGroupObjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		178360DE240E34C100FEEC2E /* ZHCollectionViewBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 178360C5240E34C000FEEC2E /* ZHCollectionViewBaseModel.m */; };
+		178360DF240E34C100FEEC2E /* ZHTableViewHeaderFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360C6240E34C100FEEC2E /* ZHTableViewHeaderFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		178360E0240E34C100FEEC2E /* ZHCollectionViewGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360C7240E34C100FEEC2E /* ZHCollectionViewGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		178360E1240E34C100FEEC2E /* ZHTableViewBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360C8240E34C100FEEC2E /* ZHTableViewBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		178360E2240E34C100FEEC2E /* ZHTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360C9240E34C100FEEC2E /* ZHTableViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		178360E3240E34C100FEEC2E /* ZHCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 178360CA240E34C100FEEC2E /* ZHCollectionViewCell.m */; };
+		178360E4240E34C100FEEC2E /* ZHTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 178360CB240E34C100FEEC2E /* ZHTableViewDataSource.m */; };
+		178360E5240E34C100FEEC2E /* ZHAutoConfigurationTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 178360CC240E34C100FEEC2E /* ZHAutoConfigurationTableViewDelegate.m */; };
+		178360E6240E34C100FEEC2E /* ZHCollectionViewHeaderFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 178360CD240E34C100FEEC2E /* ZHCollectionViewHeaderFooter.m */; };
+		178360E7240E34C100FEEC2E /* ZHTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360CE240E34C100FEEC2E /* ZHTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		178360E8240E34C100FEEC2E /* ZHTableViewGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 178360CF240E34C100FEEC2E /* ZHTableViewGroup.m */; };
+		178360E9240E34C100FEEC2E /* ZHAutoConfigurationCollectionViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360D0240E34C100FEEC2E /* ZHAutoConfigurationCollectionViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		178360EA240E34C100FEEC2E /* ZHTableViewGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360D1240E34C100FEEC2E /* ZHTableViewGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		178360EB240E34C100FEEC2E /* ZHTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 178360D2240E34C100FEEC2E /* ZHTableViewCell.m */; };
+		178360EC240E34C100FEEC2E /* ZHAutoConfigurationTableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360D3240E34C100FEEC2E /* ZHAutoConfigurationTableViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		178360ED240E34C100FEEC2E /* ZHAutoConfigurationCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 178360D4240E34C100FEEC2E /* ZHAutoConfigurationCollectionViewDelegate.m */; };
+		178360EE240E34C100FEEC2E /* ZHCollectionViewGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 178360D5240E34C100FEEC2E /* ZHCollectionViewGroup.m */; };
+		178360EF240E34C100FEEC2E /* ZHCollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360D6240E34C100FEEC2E /* ZHCollectionViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		178360F0240E34C100FEEC2E /* ZHCollectionViewHeaderFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360D7240E34C100FEEC2E /* ZHCollectionViewHeaderFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		178360F1240E34C100FEEC2E /* ZHTableViewHeaderFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 178360D8240E34C100FEEC2E /* ZHTableViewHeaderFooter.m */; };
+		178360F2240E34C100FEEC2E /* ZHCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 178360D9240E34C100FEEC2E /* ZHCollectionViewDataSource.m */; };
+		178360F3240E34C100FEEC2E /* ZHTableViewBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 178360DA240E34C100FEEC2E /* ZHTableViewBaseModel.m */; };
+		178360F4240E34C100FEEC2E /* ZHCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360DB240E34C100FEEC2E /* ZHCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17C9D6502404CACF00D7B871 /* ReloadHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D64A2404C3F500D7B871 /* ReloadHeightViewController.m */; };
 		17C9D6592404F1F300D7B871 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D6572404F1F300D7B871 /* TableViewController.m */; };
 		17C9D65A2404F1F300D7B871 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C9D6582404F1F300D7B871 /* TableViewController.xib */; };
@@ -21,41 +48,14 @@
 		17C9D660240514F900D7B871 /* ReloadCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D65F240514F900D7B871 /* ReloadCellViewController.m */; };
 		17C9D6632405198D00D7B871 /* ReloadCellDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D6622405198D00D7B871 /* ReloadCellDataViewController.m */; };
 		17C9D6662406252200D7B871 /* HiddenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D6652406252200D7B871 /* HiddenViewController.m */; };
-		7F48484E240A84B600FD962B /* ZHTableViewGroupObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F48484C240A84B600FD962B /* ZHTableViewGroupObjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F484851240A84B600FD962B /* ZHTableViewGroupObjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F48484A240A84B600FD962B /* ZHTableViewGroupObjc.framework */; };
-		7F484852240A84B600FD962B /* ZHTableViewGroupObjc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7F48484A240A84B600FD962B /* ZHTableViewGroupObjc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F48486E240A84D500FD962B /* ZHTableViewBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F484856240A84D100FD962B /* ZHTableViewBaseModel.m */; };
-		7F48486F240A84D500FD962B /* ZHCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F484857240A84D100FD962B /* ZHCollectionViewCell.m */; };
-		7F484870240A84D500FD962B /* ZHCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F484858240A84D200FD962B /* ZHCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F484871240A84D500FD962B /* ZHTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F484859240A84D200FD962B /* ZHTableViewCell.m */; };
-		7F484872240A84D500FD962B /* ZHTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F48485A240A84D200FD962B /* ZHTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F484873240A84D500FD962B /* ZHTableViewHeaderFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F48485B240A84D200FD962B /* ZHTableViewHeaderFooter.m */; };
-		7F484874240A84D500FD962B /* ZHTableViewBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F48485C240A84D200FD962B /* ZHTableViewBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F484875240A84D500FD962B /* ZHCollectionViewGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F48485D240A84D200FD962B /* ZHCollectionViewGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F484876240A84D500FD962B /* ZHCollectionViewGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F48485E240A84D200FD962B /* ZHCollectionViewGroup.m */; };
-		7F484877240A84D500FD962B /* ZHCollectionViewBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F48485F240A84D200FD962B /* ZHCollectionViewBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F484878240A84D500FD962B /* ZHCollectionViewHeaderFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F484860240A84D200FD962B /* ZHCollectionViewHeaderFooter.m */; };
-		7F484879240A84D500FD962B /* ZHCollectionViewBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F484861240A84D200FD962B /* ZHCollectionViewBaseModel.m */; };
-		7F48487A240A84D500FD962B /* ZHTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F484862240A84D200FD962B /* ZHTableViewDataSource.m */; };
-		7F48487B240A84D500FD962B /* ZHAutoConfigurationTableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F484863240A84D200FD962B /* ZHAutoConfigurationTableViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F48487C240A84D500FD962B /* ZHTableViewGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F484864240A84D300FD962B /* ZHTableViewGroup.m */; };
-		7F48487D240A84D500FD962B /* ZHTableViewHeaderFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F484865240A84D300FD962B /* ZHTableViewHeaderFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F48487E240A84D500FD962B /* ZHAutoConfigurationCollectionViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F484866240A84D300FD962B /* ZHAutoConfigurationCollectionViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F48487F240A84D500FD962B /* ZHCollectionViewHeaderFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F484867240A84D300FD962B /* ZHCollectionViewHeaderFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F484880240A84D500FD962B /* ZHAutoConfigurationCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F484868240A84D300FD962B /* ZHAutoConfigurationCollectionViewDelegate.m */; };
-		7F484881240A84D500FD962B /* ZHTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F484869240A84D300FD962B /* ZHTableViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F484882240A84D500FD962B /* ZHTableViewGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F48486A240A84D400FD962B /* ZHTableViewGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F484883240A84D500FD962B /* ZHAutoConfigurationTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F48486B240A84D400FD962B /* ZHAutoConfigurationTableViewDelegate.m */; };
-		7F484884240A84D500FD962B /* ZHCollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F48486C240A84D400FD962B /* ZHCollectionViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F484885240A84D500FD962B /* ZHCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F48486D240A84D400FD962B /* ZHCollectionViewDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7F48484F240A84B600FD962B /* PBXContainerItemProxy */ = {
+		178360BC240E34A800FEEC2E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 17722FAF2404A78200CEC436 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7F484849240A84B600FD962B;
+			remoteGlobalIDString = 178360B6240E34A800FEEC2E;
 			remoteInfo = ZHTableViewGroupObjc;
 		};
 /* End PBXContainerItemProxy section */
@@ -67,7 +67,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7F484852240A84B600FD962B /* ZHTableViewGroupObjc.framework in Embed Frameworks */,
+				178360BF240E34A800FEEC2E /* ZHTableViewGroupObjc.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +87,33 @@
 		17722FC92404A78400CEC436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17722FCB2404A78400CEC436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17722FCC2404A78500CEC436 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		178360B7240E34A800FEEC2E /* ZHTableViewGroupObjc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZHTableViewGroupObjc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		178360BA240E34A800FEEC2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		178360C3240E34C000FEEC2E /* ZHCollectionViewBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewBaseModel.h; sourceTree = "<group>"; };
+		178360C4240E34C000FEEC2E /* ZHTableViewGroupObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHTableViewGroupObjc.h; path = "../../../../../Downloads/未命名文件夹/ZHTableViewGroupObjc.h"; sourceTree = "<group>"; };
+		178360C5240E34C000FEEC2E /* ZHCollectionViewBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionViewBaseModel.m; sourceTree = "<group>"; };
+		178360C6240E34C100FEEC2E /* ZHTableViewHeaderFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewHeaderFooter.h; sourceTree = "<group>"; };
+		178360C7240E34C100FEEC2E /* ZHCollectionViewGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewGroup.h; sourceTree = "<group>"; };
+		178360C8240E34C100FEEC2E /* ZHTableViewBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewBaseModel.h; sourceTree = "<group>"; };
+		178360C9240E34C100FEEC2E /* ZHTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewDataSource.h; sourceTree = "<group>"; };
+		178360CA240E34C100FEEC2E /* ZHCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionViewCell.m; sourceTree = "<group>"; };
+		178360CB240E34C100FEEC2E /* ZHTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewDataSource.m; sourceTree = "<group>"; };
+		178360CC240E34C100FEEC2E /* ZHAutoConfigurationTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAutoConfigurationTableViewDelegate.m; sourceTree = "<group>"; };
+		178360CD240E34C100FEEC2E /* ZHCollectionViewHeaderFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionViewHeaderFooter.m; sourceTree = "<group>"; };
+		178360CE240E34C100FEEC2E /* ZHTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewCell.h; sourceTree = "<group>"; };
+		178360CF240E34C100FEEC2E /* ZHTableViewGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewGroup.m; sourceTree = "<group>"; };
+		178360D0240E34C100FEEC2E /* ZHAutoConfigurationCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAutoConfigurationCollectionViewDelegate.h; sourceTree = "<group>"; };
+		178360D1240E34C100FEEC2E /* ZHTableViewGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewGroup.h; sourceTree = "<group>"; };
+		178360D2240E34C100FEEC2E /* ZHTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewCell.m; sourceTree = "<group>"; };
+		178360D3240E34C100FEEC2E /* ZHAutoConfigurationTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAutoConfigurationTableViewDelegate.h; sourceTree = "<group>"; };
+		178360D4240E34C100FEEC2E /* ZHAutoConfigurationCollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAutoConfigurationCollectionViewDelegate.m; sourceTree = "<group>"; };
+		178360D5240E34C100FEEC2E /* ZHCollectionViewGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionViewGroup.m; sourceTree = "<group>"; };
+		178360D6240E34C100FEEC2E /* ZHCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewDataSource.h; sourceTree = "<group>"; };
+		178360D7240E34C100FEEC2E /* ZHCollectionViewHeaderFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewHeaderFooter.h; sourceTree = "<group>"; };
+		178360D8240E34C100FEEC2E /* ZHTableViewHeaderFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewHeaderFooter.m; sourceTree = "<group>"; };
+		178360D9240E34C100FEEC2E /* ZHCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionViewDataSource.m; sourceTree = "<group>"; };
+		178360DA240E34C100FEEC2E /* ZHTableViewBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewBaseModel.m; sourceTree = "<group>"; };
+		178360DB240E34C100FEEC2E /* ZHCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewCell.h; sourceTree = "<group>"; };
 		17C9D6492404C3F500D7B871 /* ReloadHeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReloadHeightViewController.h; sourceTree = "<group>"; };
 		17C9D64A2404C3F500D7B871 /* ReloadHeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReloadHeightViewController.m; sourceTree = "<group>"; };
 		17C9D6562404F1F300D7B871 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -100,32 +127,6 @@
 		17C9D6622405198D00D7B871 /* ReloadCellDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReloadCellDataViewController.m; sourceTree = "<group>"; };
 		17C9D6642406252200D7B871 /* HiddenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HiddenViewController.h; sourceTree = "<group>"; };
 		17C9D6652406252200D7B871 /* HiddenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HiddenViewController.m; sourceTree = "<group>"; };
-		7F48484A240A84B600FD962B /* ZHTableViewGroupObjc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZHTableViewGroupObjc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F48484C240A84B600FD962B /* ZHTableViewGroupObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHTableViewGroupObjc.h; sourceTree = "<group>"; };
-		7F484856240A84D100FD962B /* ZHTableViewBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewBaseModel.m; sourceTree = "<group>"; };
-		7F484857240A84D100FD962B /* ZHCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionViewCell.m; sourceTree = "<group>"; };
-		7F484858240A84D200FD962B /* ZHCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewCell.h; sourceTree = "<group>"; };
-		7F484859240A84D200FD962B /* ZHTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewCell.m; sourceTree = "<group>"; };
-		7F48485A240A84D200FD962B /* ZHTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewCell.h; sourceTree = "<group>"; };
-		7F48485B240A84D200FD962B /* ZHTableViewHeaderFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewHeaderFooter.m; sourceTree = "<group>"; };
-		7F48485C240A84D200FD962B /* ZHTableViewBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewBaseModel.h; sourceTree = "<group>"; };
-		7F48485D240A84D200FD962B /* ZHCollectionViewGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewGroup.h; sourceTree = "<group>"; };
-		7F48485E240A84D200FD962B /* ZHCollectionViewGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionViewGroup.m; sourceTree = "<group>"; };
-		7F48485F240A84D200FD962B /* ZHCollectionViewBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewBaseModel.h; sourceTree = "<group>"; };
-		7F484860240A84D200FD962B /* ZHCollectionViewHeaderFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionViewHeaderFooter.m; sourceTree = "<group>"; };
-		7F484861240A84D200FD962B /* ZHCollectionViewBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionViewBaseModel.m; sourceTree = "<group>"; };
-		7F484862240A84D200FD962B /* ZHTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewDataSource.m; sourceTree = "<group>"; };
-		7F484863240A84D200FD962B /* ZHAutoConfigurationTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAutoConfigurationTableViewDelegate.h; sourceTree = "<group>"; };
-		7F484864240A84D300FD962B /* ZHTableViewGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHTableViewGroup.m; sourceTree = "<group>"; };
-		7F484865240A84D300FD962B /* ZHTableViewHeaderFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewHeaderFooter.h; sourceTree = "<group>"; };
-		7F484866240A84D300FD962B /* ZHAutoConfigurationCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHAutoConfigurationCollectionViewDelegate.h; sourceTree = "<group>"; };
-		7F484867240A84D300FD962B /* ZHCollectionViewHeaderFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewHeaderFooter.h; sourceTree = "<group>"; };
-		7F484868240A84D300FD962B /* ZHAutoConfigurationCollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAutoConfigurationCollectionViewDelegate.m; sourceTree = "<group>"; };
-		7F484869240A84D300FD962B /* ZHTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewDataSource.h; sourceTree = "<group>"; };
-		7F48486A240A84D400FD962B /* ZHTableViewGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewGroup.h; sourceTree = "<group>"; };
-		7F48486B240A84D400FD962B /* ZHAutoConfigurationTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHAutoConfigurationTableViewDelegate.m; sourceTree = "<group>"; };
-		7F48486C240A84D400FD962B /* ZHCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewDataSource.h; sourceTree = "<group>"; };
-		7F48486D240A84D400FD962B /* ZHCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionViewDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,11 +134,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F484851240A84B600FD962B /* ZHTableViewGroupObjc.framework in Frameworks */,
+				178360BE240E34A800FEEC2E /* ZHTableViewGroupObjc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7F484847240A84B600FD962B /* Frameworks */ = {
+		178360B4240E34A800FEEC2E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -151,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				17722FB92404A78200CEC436 /* ZHTableViewGroupExample */,
-				7F48484B240A84B600FD962B /* ZHTableViewGroupObjc */,
+				178360B8240E34A800FEEC2E /* ZHTableViewGroupObjc */,
 				17722FB82404A78200CEC436 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -160,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				17722FB72404A78200CEC436 /* ZHTableViewGroupExample.app */,
-				7F48484A240A84B600FD962B /* ZHTableViewGroupObjc.framework */,
+				178360B7240E34A800FEEC2E /* ZHTableViewGroupObjc.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,34 +197,35 @@
 			path = ZHTableViewGroupExample;
 			sourceTree = "<group>";
 		};
-		7F48484B240A84B600FD962B /* ZHTableViewGroupObjc */ = {
+		178360B8240E34A800FEEC2E /* ZHTableViewGroupObjc */ = {
 			isa = PBXGroup;
 			children = (
-				7F484866240A84D300FD962B /* ZHAutoConfigurationCollectionViewDelegate.h */,
-				7F484868240A84D300FD962B /* ZHAutoConfigurationCollectionViewDelegate.m */,
-				7F484863240A84D200FD962B /* ZHAutoConfigurationTableViewDelegate.h */,
-				7F48486B240A84D400FD962B /* ZHAutoConfigurationTableViewDelegate.m */,
-				7F48485F240A84D200FD962B /* ZHCollectionViewBaseModel.h */,
-				7F484861240A84D200FD962B /* ZHCollectionViewBaseModel.m */,
-				7F484858240A84D200FD962B /* ZHCollectionViewCell.h */,
-				7F484857240A84D100FD962B /* ZHCollectionViewCell.m */,
-				7F48486C240A84D400FD962B /* ZHCollectionViewDataSource.h */,
-				7F48486D240A84D400FD962B /* ZHCollectionViewDataSource.m */,
-				7F48485D240A84D200FD962B /* ZHCollectionViewGroup.h */,
-				7F48485E240A84D200FD962B /* ZHCollectionViewGroup.m */,
-				7F484867240A84D300FD962B /* ZHCollectionViewHeaderFooter.h */,
-				7F484860240A84D200FD962B /* ZHCollectionViewHeaderFooter.m */,
-				7F48485C240A84D200FD962B /* ZHTableViewBaseModel.h */,
-				7F484856240A84D100FD962B /* ZHTableViewBaseModel.m */,
-				7F48485A240A84D200FD962B /* ZHTableViewCell.h */,
-				7F484859240A84D200FD962B /* ZHTableViewCell.m */,
-				7F484869240A84D300FD962B /* ZHTableViewDataSource.h */,
-				7F484862240A84D200FD962B /* ZHTableViewDataSource.m */,
-				7F48486A240A84D400FD962B /* ZHTableViewGroup.h */,
-				7F484864240A84D300FD962B /* ZHTableViewGroup.m */,
-				7F484865240A84D300FD962B /* ZHTableViewHeaderFooter.h */,
-				7F48485B240A84D200FD962B /* ZHTableViewHeaderFooter.m */,
-				7F48484C240A84B600FD962B /* ZHTableViewGroupObjc.h */,
+				178360D0240E34C100FEEC2E /* ZHAutoConfigurationCollectionViewDelegate.h */,
+				178360D4240E34C100FEEC2E /* ZHAutoConfigurationCollectionViewDelegate.m */,
+				178360D3240E34C100FEEC2E /* ZHAutoConfigurationTableViewDelegate.h */,
+				178360CC240E34C100FEEC2E /* ZHAutoConfigurationTableViewDelegate.m */,
+				178360C3240E34C000FEEC2E /* ZHCollectionViewBaseModel.h */,
+				178360C5240E34C000FEEC2E /* ZHCollectionViewBaseModel.m */,
+				178360DB240E34C100FEEC2E /* ZHCollectionViewCell.h */,
+				178360CA240E34C100FEEC2E /* ZHCollectionViewCell.m */,
+				178360D6240E34C100FEEC2E /* ZHCollectionViewDataSource.h */,
+				178360D9240E34C100FEEC2E /* ZHCollectionViewDataSource.m */,
+				178360C7240E34C100FEEC2E /* ZHCollectionViewGroup.h */,
+				178360D5240E34C100FEEC2E /* ZHCollectionViewGroup.m */,
+				178360D7240E34C100FEEC2E /* ZHCollectionViewHeaderFooter.h */,
+				178360CD240E34C100FEEC2E /* ZHCollectionViewHeaderFooter.m */,
+				178360C8240E34C100FEEC2E /* ZHTableViewBaseModel.h */,
+				178360DA240E34C100FEEC2E /* ZHTableViewBaseModel.m */,
+				178360CE240E34C100FEEC2E /* ZHTableViewCell.h */,
+				178360D2240E34C100FEEC2E /* ZHTableViewCell.m */,
+				178360C9240E34C100FEEC2E /* ZHTableViewDataSource.h */,
+				178360CB240E34C100FEEC2E /* ZHTableViewDataSource.m */,
+				178360D1240E34C100FEEC2E /* ZHTableViewGroup.h */,
+				178360CF240E34C100FEEC2E /* ZHTableViewGroup.m */,
+				178360C4240E34C000FEEC2E /* ZHTableViewGroupObjc.h */,
+				178360C6240E34C100FEEC2E /* ZHTableViewHeaderFooter.h */,
+				178360D8240E34C100FEEC2E /* ZHTableViewHeaderFooter.m */,
+				178360BA240E34A800FEEC2E /* Info.plist */,
 			);
 			path = ZHTableViewGroupObjc;
 			sourceTree = "<group>";
@@ -231,23 +233,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7F484845240A84B600FD962B /* Headers */ = {
+		178360B2240E34A800FEEC2E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F48487E240A84D500FD962B /* ZHAutoConfigurationCollectionViewDelegate.h in Headers */,
-				7F484881240A84D500FD962B /* ZHTableViewDataSource.h in Headers */,
-				7F484882240A84D500FD962B /* ZHTableViewGroup.h in Headers */,
-				7F48487F240A84D500FD962B /* ZHCollectionViewHeaderFooter.h in Headers */,
-				7F484875240A84D500FD962B /* ZHCollectionViewGroup.h in Headers */,
-				7F48487B240A84D500FD962B /* ZHAutoConfigurationTableViewDelegate.h in Headers */,
-				7F48484E240A84B600FD962B /* ZHTableViewGroupObjc.h in Headers */,
-				7F484877240A84D500FD962B /* ZHCollectionViewBaseModel.h in Headers */,
-				7F48487D240A84D500FD962B /* ZHTableViewHeaderFooter.h in Headers */,
-				7F484874240A84D500FD962B /* ZHTableViewBaseModel.h in Headers */,
-				7F484872240A84D500FD962B /* ZHTableViewCell.h in Headers */,
-				7F484870240A84D500FD962B /* ZHCollectionViewCell.h in Headers */,
-				7F484884240A84D500FD962B /* ZHCollectionViewDataSource.h in Headers */,
+				178360E1240E34C100FEEC2E /* ZHTableViewBaseModel.h in Headers */,
+				178360E2240E34C100FEEC2E /* ZHTableViewDataSource.h in Headers */,
+				178360DD240E34C100FEEC2E /* ZHTableViewGroupObjc.h in Headers */,
+				178360DC240E34C100FEEC2E /* ZHCollectionViewBaseModel.h in Headers */,
+				178360F4240E34C100FEEC2E /* ZHCollectionViewCell.h in Headers */,
+				178360EF240E34C100FEEC2E /* ZHCollectionViewDataSource.h in Headers */,
+				178360E7240E34C100FEEC2E /* ZHTableViewCell.h in Headers */,
+				178360DF240E34C100FEEC2E /* ZHTableViewHeaderFooter.h in Headers */,
+				178360E9240E34C100FEEC2E /* ZHAutoConfigurationCollectionViewDelegate.h in Headers */,
+				178360E0240E34C100FEEC2E /* ZHCollectionViewGroup.h in Headers */,
+				178360F0240E34C100FEEC2E /* ZHCollectionViewHeaderFooter.h in Headers */,
+				178360EA240E34C100FEEC2E /* ZHTableViewGroup.h in Headers */,
+				178360EC240E34C100FEEC2E /* ZHAutoConfigurationTableViewDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,21 +268,21 @@
 			buildRules = (
 			);
 			dependencies = (
-				7F484850240A84B600FD962B /* PBXTargetDependency */,
+				178360BD240E34A800FEEC2E /* PBXTargetDependency */,
 			);
 			name = ZHTableViewGroupExample;
 			productName = ZHTableViewGroupExample;
 			productReference = 17722FB72404A78200CEC436 /* ZHTableViewGroupExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7F484849240A84B600FD962B /* ZHTableViewGroupObjc */ = {
+		178360B6240E34A800FEEC2E /* ZHTableViewGroupObjc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F484853240A84B600FD962B /* Build configuration list for PBXNativeTarget "ZHTableViewGroupObjc" */;
+			buildConfigurationList = 178360C0240E34A800FEEC2E /* Build configuration list for PBXNativeTarget "ZHTableViewGroupObjc" */;
 			buildPhases = (
-				7F484845240A84B600FD962B /* Headers */,
-				7F484846240A84B600FD962B /* Sources */,
-				7F484847240A84B600FD962B /* Frameworks */,
-				7F484848240A84B600FD962B /* Resources */,
+				178360B2240E34A800FEEC2E /* Headers */,
+				178360B3240E34A800FEEC2E /* Sources */,
+				178360B4240E34A800FEEC2E /* Frameworks */,
+				178360B5240E34A800FEEC2E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -288,7 +290,7 @@
 			);
 			name = ZHTableViewGroupObjc;
 			productName = ZHTableViewGroupObjc;
-			productReference = 7F48484A240A84B600FD962B /* ZHTableViewGroupObjc.framework */;
+			productReference = 178360B7240E34A800FEEC2E /* ZHTableViewGroupObjc.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -303,7 +305,7 @@
 					17722FB62404A78200CEC436 = {
 						CreatedOnToolsVersion = 11.1;
 					};
-					7F484849240A84B600FD962B = {
+					178360B6240E34A800FEEC2E = {
 						CreatedOnToolsVersion = 11.1;
 					};
 				};
@@ -322,7 +324,7 @@
 			projectRoot = "";
 			targets = (
 				17722FB62404A78200CEC436 /* ZHTableViewGroupExample */,
-				7F484849240A84B600FD962B /* ZHTableViewGroupObjc */,
+				178360B6240E34A800FEEC2E /* ZHTableViewGroupObjc */,
 			);
 		};
 /* End PBXProject section */
@@ -339,7 +341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7F484848240A84B600FD962B /* Resources */ = {
+		178360B5240E34A800FEEC2E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -366,32 +368,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7F484846240A84B600FD962B /* Sources */ = {
+		178360B3240E34A800FEEC2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F48487C240A84D500FD962B /* ZHTableViewGroup.m in Sources */,
-				7F484876240A84D500FD962B /* ZHCollectionViewGroup.m in Sources */,
-				7F48486F240A84D500FD962B /* ZHCollectionViewCell.m in Sources */,
-				7F48487A240A84D500FD962B /* ZHTableViewDataSource.m in Sources */,
-				7F484873240A84D500FD962B /* ZHTableViewHeaderFooter.m in Sources */,
-				7F484883240A84D500FD962B /* ZHAutoConfigurationTableViewDelegate.m in Sources */,
-				7F484871240A84D500FD962B /* ZHTableViewCell.m in Sources */,
-				7F484885240A84D500FD962B /* ZHCollectionViewDataSource.m in Sources */,
-				7F484879240A84D500FD962B /* ZHCollectionViewBaseModel.m in Sources */,
-				7F484878240A84D500FD962B /* ZHCollectionViewHeaderFooter.m in Sources */,
-				7F48486E240A84D500FD962B /* ZHTableViewBaseModel.m in Sources */,
-				7F484880240A84D500FD962B /* ZHAutoConfigurationCollectionViewDelegate.m in Sources */,
+				178360E3240E34C100FEEC2E /* ZHCollectionViewCell.m in Sources */,
+				178360F1240E34C100FEEC2E /* ZHTableViewHeaderFooter.m in Sources */,
+				178360F3240E34C100FEEC2E /* ZHTableViewBaseModel.m in Sources */,
+				178360F2240E34C100FEEC2E /* ZHCollectionViewDataSource.m in Sources */,
+				178360EB240E34C100FEEC2E /* ZHTableViewCell.m in Sources */,
+				178360E6240E34C100FEEC2E /* ZHCollectionViewHeaderFooter.m in Sources */,
+				178360ED240E34C100FEEC2E /* ZHAutoConfigurationCollectionViewDelegate.m in Sources */,
+				178360E4240E34C100FEEC2E /* ZHTableViewDataSource.m in Sources */,
+				178360E8240E34C100FEEC2E /* ZHTableViewGroup.m in Sources */,
+				178360E5240E34C100FEEC2E /* ZHAutoConfigurationTableViewDelegate.m in Sources */,
+				178360EE240E34C100FEEC2E /* ZHCollectionViewGroup.m in Sources */,
+				178360DE240E34C100FEEC2E /* ZHCollectionViewBaseModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7F484850240A84B600FD962B /* PBXTargetDependency */ = {
+		178360BD240E34A800FEEC2E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7F484849240A84B600FD962B /* ZHTableViewGroupObjc */;
-			targetProxy = 7F48484F240A84B600FD962B /* PBXContainerItemProxy */;
+			target = 178360B6240E34A800FEEC2E /* ZHTableViewGroupObjc */;
+			targetProxy = 178360BC240E34A800FEEC2E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -559,7 +561,7 @@
 			};
 			name = Release;
 		};
-		7F484854240A84B600FD962B /* Debug */ = {
+		178360C1240E34A800FEEC2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -586,7 +588,7 @@
 			};
 			name = Debug;
 		};
-		7F484855240A84B600FD962B /* Release */ = {
+		178360C2240E34A800FEEC2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -634,11 +636,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7F484853240A84B600FD962B /* Build configuration list for PBXNativeTarget "ZHTableViewGroupObjc" */ = {
+		178360C0240E34A800FEEC2E /* Build configuration list for PBXNativeTarget "ZHTableViewGroupObjc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7F484854240A84B600FD962B /* Debug */,
-				7F484855240A84B600FD962B /* Release */,
+				178360C1240E34A800FEEC2E /* Debug */,
+				178360C2240E34A800FEEC2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

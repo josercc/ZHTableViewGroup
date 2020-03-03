@@ -107,9 +107,84 @@ heightForFooterInSection:(NSInteger)section {
     }
 }
 
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    if (_dataSource.scrollViewDidZoom) {
+        _dataSource.scrollViewDidZoom(scrollView);
+    }
+}
+
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     if (_dataSource.scrollViewWillBeginDraggingCompletionHandle) {
         _dataSource.scrollViewWillBeginDraggingCompletionHandle(scrollView);
+    }
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    if (_dataSource.scrollViewWillEndDragging) {
+        _dataSource.scrollViewWillEndDragging(scrollView, velocity, targetContentOffset);
+    }
+}
+
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (_dataSource.scrollViewDidEndDragging) {
+        _dataSource.scrollViewDidEndDragging(scrollView, decelerate);
+    }
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+    if (_dataSource.scrollViewWillBeginDecelerating) {
+        _dataSource.scrollViewWillBeginDecelerating(scrollView);
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (_dataSource.scrollViewDidEndDecelerating) {
+        _dataSource.scrollViewDidEndDecelerating(scrollView);
+    }
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    if (_dataSource.scrollViewDidEndScrollingAnimation) {
+        _dataSource.scrollViewDidEndScrollingAnimation(scrollView);
+    }
+}
+
+- (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    if (_dataSource.viewForZoomingInScrollView) {
+        return _dataSource.viewForZoomingInScrollView(scrollView);
+    }
+    return nil;
+}
+
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view {
+    if (_dataSource.scrollViewWillBeginZooming) {
+        _dataSource.scrollViewWillBeginZooming(scrollView,view);
+    }
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale {
+    if (_dataSource.scrollViewDidEndZooming) {
+        _dataSource.scrollViewDidEndZooming(scrollView,view,scale);
+    }
+}
+
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
+    if (_dataSource.scrollViewShouldScrollToTop) {
+        return _dataSource.scrollViewShouldScrollToTop(scrollView);
+    }
+    return YES;
+}
+
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
+    if (_dataSource.scrollViewDidScrollToTop) {
+        _dataSource.scrollViewDidScrollToTop(scrollView);
+    }
+}
+
+- (void)scrollViewDidChangeAdjustedContentInset:(UIScrollView *)scrollView {
+    if (_dataSource.scrollViewDidChangeAdjustedContentInset) {
+        _dataSource.scrollViewDidChangeAdjustedContentInset(scrollView);
     }
 }
 

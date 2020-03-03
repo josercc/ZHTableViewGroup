@@ -2,7 +2,7 @@
 //  ZHTableViewGroupObjc.h
 //  ZHTableViewGroupObjc
 //
-//  Created by 张行 on 2020/2/29.
+//  Created by josercc on 2020/3/3.
 //  Copyright © 2020 josercc. All rights reserved.
 //
 
@@ -16,5 +16,4 @@ FOUNDATION_EXPORT const unsigned char ZHTableViewGroupObjcVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ZHTableViewGroupObjc/PublicHeader.h>
 
-#import "ZHTableViewDataSource.h"
-#import "ZHCollectionViewDataSource.h"
+
