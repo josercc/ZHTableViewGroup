@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZHTableViewGroupObjc'
-  s.version          = '3.5.0'
+  s.version          = '3.5.1'
   s.summary          = 'Manger UITableView DataSource More Cell Style'
 
   s.homepage         = 'https://github.com/josercc/ZHTableViewGroup'
