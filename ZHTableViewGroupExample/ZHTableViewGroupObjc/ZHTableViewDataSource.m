@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
     return self;
 }
 
-- (void)addGroupWithCompletionHandle:(ZHTableViewDataSourceAddGroupCompletionHandle)completionHandle {
+- (ZHTableViewGroup *)addGroupWithCompletionHandle:(ZHTableViewDataSourceAddGroupCompletionHandle)completionHandle {
     ZHTableViewGroup *group = [[ZHTableViewGroup alloc] init];
     if (completionHandle) {
         completionHandle(group);
