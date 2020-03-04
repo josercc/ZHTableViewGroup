@@ -16,12 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@implementation ZHTableViewDataSource
+@implementation ZHTableViewDataSource {
+    NSCache *_cellCache;
+}
 
 - (instancetype)initWithTableView:(UITableView *)tableView {
     if (self = [super init]) {
         _tableView = tableView;
         _autoConfigurationTableViewDelegate = YES;
+        _cellCache = [[NSCache alloc] init];
     }
     return self;
 }
@@ -70,13 +73,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UITableViewCell *)cellForRowAtWithDataSource:(ZHTableViewDataSource *)dataSource
                                       indexPath:(NSIndexPath *)indexPath
-                                         config:(BOOL)config {
+                                         config:(BOOL)config
+                                       useCache:(BOOL)useCache {
     ZHTableViewGroup *group = [self groupForSectionWithDataSource:dataSource section:indexPath.section];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     if (!group) {
         return cell;
     }
-    UITableViewCell *resultCell = [group cellForTableViewWithTableView:dataSource.tableView indexPath:indexPath config:config];
+    UITableViewCell *resultCell;
+    if (useCache) {
+        resultCell = [dataSource cacheCellWithIndexPath:indexPath];
+        ZHTableViewCell *tableViewCell = [group tableViewCellForIndexPath:indexPath];
+        [group tableViewCell:tableViewCell configCell:resultCell atIndexPath:indexPath];
+    }
+    if (!resultCell) {
+        resultCell = [group cellForTableViewWithTableView:dataSource.tableView
+                                                indexPath:indexPath
+                                                   config:config];
+    }
     if (!resultCell) {
         return cell;
     }
@@ -84,7 +98,31 @@ NS_ASSUME_NONNULL_BEGIN
     NSIndexPath *realIndexPath = [group indexPathWithCell:tableViewCell indexPath:indexPath];
     BOOL isHidden = [tableViewCell isHiddenWithIndexPath:realIndexPath];
     resultCell.hidden = isHidden;
+    if (!useCache) {
+        [dataSource saveCacheWithCell:resultCell indexPath:indexPath];
+    }
     return resultCell;
+}
+
+- (UITableViewCell *)cacheCellWithIndexPath:(NSIndexPath *)indexPath {
+    return [_cellCache objectForKey:[self cacheKeyWithIndexPath:indexPath]];
+}
+
+- (void)saveCacheWithCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath {
+    [_cellCache setObject:cell forKey:[self cacheKeyWithIndexPath:indexPath]];
+}
+
+- (NSString *)cacheKeyWithIndexPath:(NSIndexPath *)indexPath {
+    return [NSString stringWithFormat:@"%@-%@",@(indexPath.section),@(indexPath.row)];
+}
+
++ (UITableViewCell *)cellForRowAtWithDataSource:(ZHTableViewDataSource *)dataSource
+                                      indexPath:(NSIndexPath *)indexPath
+                                         config:(BOOL)config {
+    return [self cellForRowAtWithDataSource:dataSource
+                                  indexPath:indexPath
+                                     config:config
+                                   useCache:NO];
 }
 
 + (NSInteger)numberOfSectionsWithDataSource:(ZHTableViewDataSource *)dataSource {
@@ -109,14 +147,16 @@ NS_ASSUME_NONNULL_BEGIN
     if (cell.customHeightBlock) {
         UITableViewCell *tableViewCell = [self cellForRowAtWithDataSource:dataSource
                                                                 indexPath:indexPath
-                                                                   config:YES];
+                                                                   config:YES
+                                                                 useCache:YES];
         return cell.customHeightBlock(tableViewCell, realyIndexPath);
     }
     if (!dataSource.priorityHeight) {
         CGFloat automaticHeight = ({
             automaticHeight = CGFLOAT_MAX;
             if (cell.height == NSNotFound) {
-                UITableViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath config:YES];
+                UITableViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource indexPath:indexPath config:YES
+                                                                               useCache:YES];
                 automaticHeight = [automaticHeightCell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
             }
             automaticHeight;
@@ -144,7 +184,8 @@ NS_ASSUME_NONNULL_BEGIN
             if (cell.height == NSNotFound) {
                 UITableViewCell *automaticHeightCell = [self cellForRowAtWithDataSource:dataSource
                                                                               indexPath:indexPath
-                                                                                 config:YES];
+                                                                                 config:YES
+                                                                               useCache:YES];
                 automaticHeight = [automaticHeightCell sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width, CGFLOAT_MAX)].height;
             }
             automaticHeight;

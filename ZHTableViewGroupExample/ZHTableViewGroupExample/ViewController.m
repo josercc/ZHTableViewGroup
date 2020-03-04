@@ -42,6 +42,7 @@
         tableViewCell.identifier = @"UITableViewCell";
         [tableViewCell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
             cell.textLabel.text = @"刷新高度";
+            NSLog(@"%@",cell);
         }];
         [tableViewCell setDidSelectRowCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
             ReloadHeightViewController *controller = [[ReloadHeightViewController alloc] initWithNibName:nil bundle:nil];

@@ -17,7 +17,6 @@
 		178360BE240E34A800FEEC2E /* ZHTableViewGroupObjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178360B7240E34A800FEEC2E /* ZHTableViewGroupObjc.framework */; };
 		178360BF240E34A800FEEC2E /* ZHTableViewGroupObjc.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 178360B7240E34A800FEEC2E /* ZHTableViewGroupObjc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		178360DC240E34C100FEEC2E /* ZHCollectionViewBaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360C3240E34C000FEEC2E /* ZHCollectionViewBaseModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		178360DD240E34C100FEEC2E /* ZHTableViewGroupObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360C4240E34C000FEEC2E /* ZHTableViewGroupObjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		178360DE240E34C100FEEC2E /* ZHCollectionViewBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 178360C5240E34C000FEEC2E /* ZHCollectionViewBaseModel.m */; };
 		178360DF240E34C100FEEC2E /* ZHTableViewHeaderFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360C6240E34C100FEEC2E /* ZHTableViewHeaderFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		178360E0240E34C100FEEC2E /* ZHCollectionViewGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 178360C7240E34C100FEEC2E /* ZHCollectionViewGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,6 +47,7 @@
 		17C9D660240514F900D7B871 /* ReloadCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D65F240514F900D7B871 /* ReloadCellViewController.m */; };
 		17C9D6632405198D00D7B871 /* ReloadCellDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D6622405198D00D7B871 /* ReloadCellDataViewController.m */; };
 		17C9D6662406252200D7B871 /* HiddenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C9D6652406252200D7B871 /* HiddenViewController.m */; };
+		17E7C23D240F558A0073409B /* ZHTableViewGroupObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 17E7C23C240F558A0073409B /* ZHTableViewGroupObjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +90,6 @@
 		178360B7240E34A800FEEC2E /* ZHTableViewGroupObjc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZHTableViewGroupObjc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		178360BA240E34A800FEEC2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		178360C3240E34C000FEEC2E /* ZHCollectionViewBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewBaseModel.h; sourceTree = "<group>"; };
-		178360C4240E34C000FEEC2E /* ZHTableViewGroupObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHTableViewGroupObjc.h; path = "../../../../../Downloads/未命名文件夹/ZHTableViewGroupObjc.h"; sourceTree = "<group>"; };
 		178360C5240E34C000FEEC2E /* ZHCollectionViewBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHCollectionViewBaseModel.m; sourceTree = "<group>"; };
 		178360C6240E34C100FEEC2E /* ZHTableViewHeaderFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewHeaderFooter.h; sourceTree = "<group>"; };
 		178360C7240E34C100FEEC2E /* ZHCollectionViewGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHCollectionViewGroup.h; sourceTree = "<group>"; };
@@ -127,6 +126,7 @@
 		17C9D6622405198D00D7B871 /* ReloadCellDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReloadCellDataViewController.m; sourceTree = "<group>"; };
 		17C9D6642406252200D7B871 /* HiddenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HiddenViewController.h; sourceTree = "<group>"; };
 		17C9D6652406252200D7B871 /* HiddenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HiddenViewController.m; sourceTree = "<group>"; };
+		17E7C23C240F558A0073409B /* ZHTableViewGroupObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHTableViewGroupObjc.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				178360D0240E34C100FEEC2E /* ZHAutoConfigurationCollectionViewDelegate.h */,
+				17E7C23C240F558A0073409B /* ZHTableViewGroupObjc.h */,
 				178360D4240E34C100FEEC2E /* ZHAutoConfigurationCollectionViewDelegate.m */,
 				178360D3240E34C100FEEC2E /* ZHAutoConfigurationTableViewDelegate.h */,
 				178360CC240E34C100FEEC2E /* ZHAutoConfigurationTableViewDelegate.m */,
@@ -222,7 +223,6 @@
 				178360CB240E34C100FEEC2E /* ZHTableViewDataSource.m */,
 				178360D1240E34C100FEEC2E /* ZHTableViewGroup.h */,
 				178360CF240E34C100FEEC2E /* ZHTableViewGroup.m */,
-				178360C4240E34C000FEEC2E /* ZHTableViewGroupObjc.h */,
 				178360C6240E34C100FEEC2E /* ZHTableViewHeaderFooter.h */,
 				178360D8240E34C100FEEC2E /* ZHTableViewHeaderFooter.m */,
 				178360BA240E34A800FEEC2E /* Info.plist */,
@@ -239,13 +239,13 @@
 			files = (
 				178360E1240E34C100FEEC2E /* ZHTableViewBaseModel.h in Headers */,
 				178360E2240E34C100FEEC2E /* ZHTableViewDataSource.h in Headers */,
-				178360DD240E34C100FEEC2E /* ZHTableViewGroupObjc.h in Headers */,
 				178360DC240E34C100FEEC2E /* ZHCollectionViewBaseModel.h in Headers */,
 				178360F4240E34C100FEEC2E /* ZHCollectionViewCell.h in Headers */,
 				178360EF240E34C100FEEC2E /* ZHCollectionViewDataSource.h in Headers */,
 				178360E7240E34C100FEEC2E /* ZHTableViewCell.h in Headers */,
 				178360DF240E34C100FEEC2E /* ZHTableViewHeaderFooter.h in Headers */,
 				178360E9240E34C100FEEC2E /* ZHAutoConfigurationCollectionViewDelegate.h in Headers */,
+				17E7C23D240F558A0073409B /* ZHTableViewGroupObjc.h in Headers */,
 				178360E0240E34C100FEEC2E /* ZHCollectionViewGroup.h in Headers */,
 				178360F0240E34C100FEEC2E /* ZHCollectionViewHeaderFooter.h in Headers */,
 				178360EA240E34C100FEEC2E /* ZHTableViewGroup.h in Headers */,

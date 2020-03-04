@@ -16,4 +16,5 @@ FOUNDATION_EXPORT const unsigned char ZHTableViewGroupObjcVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ZHTableViewGroupObjc/PublicHeader.h>
 
-
+#import "ZHTableViewDataSource.h"
+#import "ZHCollectionViewDataSource.h"
