@@ -241,6 +241,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)clearData {
     [self.groups removeAllObjects];
+    [_cellCache removeAllObjects];
 }
 
 + (UITableViewHeaderFooterView *)viewHeaderFooterInSectionWithDtaSource:(ZHTableViewDataSource *)dataSource
