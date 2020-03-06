@@ -76,15 +76,18 @@ NS_ASSUME_NONNULL_BEGIN
                                          config:(BOOL)config
                                        useCache:(BOOL)useCache {
     ZHTableViewGroup *group = [self groupForSectionWithDataSource:dataSource section:indexPath.section];
+    ZHTableViewCell *tableViewCell = [group tableViewCellForIndexPath:indexPath];
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     if (!group) {
         return cell;
     }
     UITableViewCell *resultCell;
     if (useCache) {
-        resultCell = [dataSource cacheCellWithIndexPath:indexPath];
-        ZHTableViewCell *tableViewCell = [group tableViewCellForIndexPath:indexPath];
-        [group tableViewCell:tableViewCell configCell:resultCell atIndexPath:indexPath];
+        UITableViewCell *cacheCell = [dataSource cacheCellWithIndexPath:indexPath];
+        if ([cacheCell isKindOfClass:tableViewCell.anyClass]) {
+            resultCell = [dataSource cacheCellWithIndexPath:indexPath];
+            [group tableViewCell:tableViewCell configCell:resultCell atIndexPath:indexPath];
+        }
     }
     if (!resultCell) {
         resultCell = [group cellForTableViewWithTableView:dataSource.tableView
@@ -94,7 +97,6 @@ NS_ASSUME_NONNULL_BEGIN
     if (!resultCell) {
         return cell;
     }
-    ZHTableViewCell *tableViewCell = [group tableViewCellForIndexPath:indexPath];
     NSIndexPath *realIndexPath = [group indexPathWithCell:tableViewCell indexPath:indexPath];
     BOOL isHidden = [tableViewCell isHiddenWithIndexPath:realIndexPath];
     resultCell.hidden = isHidden;
