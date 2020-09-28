@@ -34,6 +34,7 @@
         [strongSelf addHiddenInGroup:group];
     }];
     [self.tableViewDataSource reloadTableViewData];
+    
 }
 
 - (void)addReloadHeightInGroup:(ZHTableViewGroup *)group {

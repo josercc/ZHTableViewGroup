@@ -6,165 +6,228 @@ filename:images
 
 ## Swift 版本请移步[这里](https://github.com/josercc/SwiftTableViewGroup)
 
-###  DriverListNode为 UITableView和 UICollectionView 而生
-
-> `ZHTableViewGroup`已经更名为`DriverListNode`
+`ZHTableViewGroup`为 `UITableView`和 `UICollectionView` 而生
 
 ## 演示
 
-### 简单的 UITableView
+### 简单的列表
 
-![image-20190820114515302](images/2019-08-20-035055.png)
-
-```objc
-NSUInteger count = arc4random() % 10 + 1;
-tableView.driverData(MakeDriverGroup {
-    list.makeGroup(MakeDriverNode {
-        group.makeCell(ZHDriverNode(MakeDriverBlock(UITableViewCell) {
-            [content setConfigBlock:^(UITableViewCell * _Nonnull view, NSUInteger index) {
-                view.textLabel.text = [@(index) stringValue];
-            }];
-        }))
-        .number(count)
-        .height(44);
-    });
-});
-```
-
-### 复杂的 UITableView
-
-![image-20190820115521632](images/image-20190820115521632.png)
-
-![image-20190820115538881](images/image-20190820115538881.png)
+![image-20200928175235608](https://gitee.com/joser_zhang/upic/raw/master/uPic/image-20200928175235608.png)
 
 ```objc
-tableView.driverData(MakeDriverGroup {
-  list.makeGroup(MakeDriverNode {
-      group.makeHeader(ZHDriverNode(MakeDriverBlock(UITableViewHeaderFooterView) {
-          [content setConfigBlock:^(UITableViewHeaderFooterView * _Nonnull view, NSUInteger index) {
-              view.textLabel.text = @"固定10个一样的 Cell";
-          }];
-      }))
-      .height(49);
-
-      group.makeCell(ZHDriverNode(MakeDriverBlock(UITableViewCell) {
-          [content setConfigBlock:^(UITableViewCell * _Nonnull view, NSUInteger index) {
-              view.textLabel.text = [@(index) stringValue];
-          }];
-      }))
-      .height(44)
-      .number(10);
-  });
-
-  list.makeGroup(MakeDriverNode {
-      group.makeHeader(ZHDriverNode(MakeDriverBlock(UITableViewHeaderFooterView) {
-          [content setConfigBlock:^(UITableViewHeaderFooterView * _Nonnull view, NSUInteger index) {
-              view.textLabel.text = @"展示高度区域";
-          }];
-      }))
-      .height(49);
-
-      group.makeCell(ZHDriverNode(MakeDriverBlock(UITableViewCell) {
-          [content setConfigBlock:^(UITableViewCell * _Nonnull view, NSUInteger index) {
-              view.textLabel.text = @"这是固定高度30";
-          }];
-      }))
-      .height(30);
-
-      group.makeCell(ZHDriverNode(MakeDriverBlock(AutomitcHeightCell) {
-          [content setConfigBlock:^(AutomitcHeightCell * _Nonnull view, NSUInteger index) {
-              view.multiLineLabel.text = @"这是自动通过`sizeToFit方法计算自动高度的 Cell,会根据我们自己设置的值返回 Cell 的高度。这是自动通过`sizeToFit方法计算自动高度的 Cell,会根据我们自己设置的值返回 Cell 的高度。";
-          }];
-      }));
-
-      group.makeCell(ZHDriverNode(MakeDriverBlock(UITableViewCell) {
-          [content setConfigBlock:^(UITableViewCell * _Nonnull view, NSUInteger index) {
-              view.textLabel.text = @"这个是自定义高度100";
-          }];
-          [content setCustomHeightBlock:^CGFloat(UITableViewCell * _Nonnull view, NSUInteger index) {
-              return 100;
-          }];
-      }))
-      .height(50);
-  });
-
-  list.makeGroup(MakeDriverNode {
-      group.makeHeader(ZHDriverNode(MakeDriverBlock(UITableViewHeaderFooterView) {
-          [content setConfigBlock:^(UITableViewHeaderFooterView * _Nonnull view, NSUInteger index) {
-              view.textLabel.text = @"创建间隙";
-          }];
-      }))
-      .height(49);
-
-      group.makeSpeacer(UIColor.lightGrayColor);
-
-      group.makeFooter(ZHDriverNode(MakeDriverBlock(UITableViewHeaderFooterView) {
-          [content setConfigBlock:^(UITableViewHeaderFooterView * _Nonnull view, NSUInteger index) {
-              view.textLabel.text = @"展示创建 Footer";
-          }];
-      }))
-      .height(49);
-  });
-});
+ZHTableViewDataSource *dataSource = [[ZHTableViewDataSource alloc] initWithTableView:self.tableView];
+[dataSource clearData];
+[dataSource addGroupWithCompletionHandle:^(ZHTableViewGroup * _Nonnull group) {
+    [group addCellWithCompletionHandle:^(ZHTableViewCell *tableViewCell) {
+        tableViewCell.anyClass = [UITableViewCell  class];
+        tableViewCell.identifier = @"UITableViewCell";
+        NSArray<NSString *> *titles = @[@"刷新高度",@"刷新Cell",@"刷新数据",@"显示和隐藏"];
+        tableViewCell.cellNumber = titles.count;
+        [tableViewCell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+            cell.textLabel.text = titles[indexPath.row];
+        }];
+    }];
+}];
+[dataSource reloadTableViewData];
 ```
 
-### 可变数据 UITableView
+### 动态刷新高度
 
-![image-20190820115647037](images/image-20190820115647037.png)
+![image-20200928175932428](https://gitee.com/joser_zhang/upic/raw/master/uPic/image-20200928175932428.png)
 
 ```objc
-tableView.driverData(MakeDriverGroup {
-  list.makeGroup(MakeDriverNode {
-      group.makeCell(ZHDriverNode(MakeDriverBlock(UITableViewCell) {
-          [content setConfigBlock:^(UITableViewCell * _Nonnull view, NSUInteger index) {
-              view.textLabel.text = texts[index];
-          }];
-      }))
-      .number(texts.count)
-      .height(44);
-  });
-});
+[self.tableViewDataSource clearData];
+[self.tableViewDataSource addGroupWithCompletionHandle:^(ZHTableViewGroup *group) {
+    [group addCellWithCompletionHandle:^(ZHTableViewCell<ReloadHeightCell1 *> *cell) {
+        self->_weakCell = cell;
+        cell.anyClass = [ReloadHeightCell1 class];
+        cell.identifier = @"ReloadHeightCell1";
+        [cell setConfigCompletionHandle:^(ReloadHeightCell1 *cell1, NSIndexPath *indexPath) {
+            cell1.textLabel.text = @"ReloadHeightCell1";
+        }];
+    }];
+}];
+[self.tableViewDataSource addGroupWithCompletionHandle:^(ZHTableViewGroup *group) {
+    [group addCellWithCompletionHandle:^(ZHTableViewCell<ReloadHeightCell2 *> *cell) {
+        cell.anyClass = [ReloadHeightCell2 class];
+        cell.identifier = @"ReloadHeightCell2";
+        cell.cellNumber = 2;
+        [cell setConfigCompletionHandle:^(ReloadHeightCell2 *cell1, NSIndexPath *indexPath) {
+            cell1.textLabel.text = @"ReloadHeightCell2";
+        }];
+    }];
+}];
+[self.tableViewDataSource reloadTableViewData];
 ```
 
-### 简单的 UICollectionView
+#### identifier更新自动高度
 
 ```objc
-collectionView.driverData(MakeDriverGroup {
-  list.makeGroup(MakeDriverNode {
-      group.makeHeader(ZHDriverNode(MakeDriverBlock(UICollectionReusableView) {
-          [content setConfigBlock:^(UICollectionReusableView * _Nonnull view, NSUInteger index) {
-              view.backgroundColor = [UIColor lightGrayColor];
-          }];
-      }))
-      .size(CGSizeMake(CGRectGetWidth(collectionView.frame), 49));
-
-      group.makeCell(ZHDriverNode(MakeDriverBlock(UICollectionViewCell) {
-          [content setConfigBlock:^(UICollectionViewCell * _Nonnull view, NSUInteger index) {
-              view.backgroundColor = index % 2 == 0 ? [UIColor redColor] : [UIColor greenColor];
-          }];
-      }))
-      .size(CGSizeMake(100, 100))
-      .number(100);
-
-      group.makeFooter(ZHDriverNode(MakeDriverBlock(UICollectionReusableView) {
-          [content setConfigBlock:^(UICollectionReusableView * _Nonnull view, NSUInteger index) {
-              view.backgroundColor = [UIColor darkGrayColor];
-          }];
-      }))
-      .size(CGSizeMake(CGRectGetWidth(collectionView.frame), 49));
-  })
-  .sectionEdgeInsets(UIEdgeInsetsMake(20, 20, 20, 20));
-});
+[self.tableViewDataSource reloadCellAutomaticHeightWithIdentifier:@"ReloadHeightCell1"]
 ```
 
+#### identifier更新固定250高度
 
+```objc
+[self.tableViewDataSource reloadCellFixedHeight:250 identifier:@"ReloadHeightCell1"]
+```
+
+#### Class更新自动高度
+
+```objc
+[self.tableViewDataSource reloadCellAutomaticHeightWithClass:NSClassFromString(@"ReloadHeightCell1")]
+```
+
+#### Class更新固定260高度
+
+```objc
+[self.tableViewDataSource reloadCellFixedHeight:260 className:NSClassFromString(@"ReloadHeightCell1")]
+```
+
+#### 指定ZHTableViewCell更新自动高度
+
+```objc
+[self.tableViewDataSource reloadCellAutomaticHeightWithTableViewCell:self.tableViewDataSource.groups[0].cells[0]]
+```
+
+#### 指定ZHTableViewCell更新固定270高度
+
+```objc
+[self.tableViewDataSource reloadCellFixedHeight:270 tableViewCell:self.tableViewDataSource.groups[0].cells[0]]
+```
+
+#### 指定索引更新自动高度
+
+```objc
+[self.tableViewDataSource reloadCellAutomicHeightWithGroupIndex:1 cellIndex:0]
+```
+
+#### 指定索引更新固定280高度
+
+```objc
+[self.tableViewDataSource reloadCellFixedHeight:280 groupIndex:1 cellIndex:0]
+```
+
+### 刷新值
+
+![image-20200928180955425](https://gitee.com/joser_zhang/upic/raw/master/uPic/image-20200928180955425.png)
+
+```objc
+[self.tableViewDataSource clearData];
+[self.tableViewDataSource addGroupWithCompletionHandle:^(ZHTableViewGroup *group) {
+    [group addCellWithCompletionHandle:^(ZHTableViewCell *cell) {
+        cell.anyClass = [UITableViewCell class];
+        cell.identifier = @"UITableViewCell";
+        [cell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+            cell.textLabel.text = [@(random() % 99 + 1) stringValue];
+        }];
+    }];
+}];
+[self.tableViewDataSource reloadTableViewData];
+```
+
+#### 通过Identifier刷新
+
+```objc
+[self.tableViewDataSource reloadCellWithIdentifier:@"UITableViewCell"]
+```
+
+#### 通过Class刷新
+
+```objc
+[self.tableViewDataSource reloadCellWithClassName:[UITableViewCell class]]
+```
+
+#### 通过指定UITableViewCell更新
+
+```objc
+[self.tableViewDataSource reloadCellWithTableViewCell:self.tableViewDataSource.groups[0].cells[0]]
+```
+
+#### 通过索引更新
+
+```objc
+[self.tableViewDataSource reloadCellWithGroupIndex:0 cellIndex:0]
+```
+
+### 刷新个数
+
+![image-20200928181349639](https://gitee.com/joser_zhang/upic/raw/master/uPic/image-20200928181349639.png)
+
+```objc
+_randoms = [NSMutableArray arrayWithArray:@[@"random"]];
+[self.tableViewDataSource clearData];
+[self.tableViewDataSource addGroupWithCompletionHandle:^(ZHTableViewGroup *group) {
+    [group addCellWithCompletionHandle:^(ZHTableViewCell *cell) {
+        cell.anyClass = [UITableViewCell class];
+        cell.identifier = @"UITableViewCell";
+        cell.cellNumber = _randoms.count;
+        [cell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+            cell.textLabel.text = _randoms[indexPath.row];
+        }];
+    }];
+}];
+[self.tableViewDataSource reloadTableViewData];
+```
+
+#### identifier刷新个数
+
+```objc
+[self.tableViewDataSource reloadCellWithDataCount:_randoms.count identifier:@"UITableViewCell"]
+```
+
+#### Class刷新个数
+
+```objc
+[self.tableViewDataSource reloadCellWithDataCount:_randoms.count className:[UITableViewCell class]]
+```
+
+#### UITableViewCell刷新个数
+
+```swift
+[self.tableViewDataSource reloadCellWithDataCount:_randoms.count tableViewCell:self.tableViewDataSource.groups[0].cells[0]]
+```
+
+#### 索引刷新个数
+
+```objc
+[self.tableViewDataSource reloadCellWithDataCount:_randoms.count groupIndex:0 cellIndex:0]
+```
+
+### 显示和隐藏
+
+![image-20200928190127141](https://gitee.com/joser_zhang/upic/raw/master/uPic/image-20200928190127141.png)
+
+```objc
+[self.tableViewDataSource clearData];
+[self.tableViewDataSource addGroupWithCompletionHandle:^(ZHTableViewGroup *group) {
+    [group addCellWithCompletionHandle:^(ZHTableViewCell *cell) {
+        cell.anyClass = [UITableViewCell class];
+        cell.identifier = @"UITableViewCell";
+        cell.cellNumber = 10;
+        [cell setConfigCompletionHandle:^(UITableViewCell *cell, NSIndexPath *indexPath) {
+            cell.textLabel.text = [@(indexPath.row + 1) stringValue];
+        }];
+        [cell setHiddenBlock:^BOOL(NSIndexPath *indexPath) {
+            return _hidden && indexPath.row >= 5 && indexPath.row <= 8;
+        }];
+    }];
+}];
+[self.tableViewDataSource reloadTableViewData];
+```
+
+#### 隐藏Cell
+
+```objc
+[self.tableViewDataSource reloadAllHiddenCell]
+```
 
 ## 怎么安装
 
 ### Cocoapods
 
 ```ruby
-pod 'DriverListNode'
+pod 'ZHTableViewGroup'
 ```
 
 ### Carthage
@@ -173,5 +236,9 @@ pod 'DriverListNode'
 github "josercc/ZHTableViewGroup"
 ```
 
+### Swift Package Manager
 
+```swift
+.package(url: "https://github.com/josercc/ZHTableViewGroup.git", from: "3.0.0")
+```
 
